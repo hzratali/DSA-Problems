@@ -1,0 +1,39 @@
+class Solution
+{
+    public:
+    bool check(int N,int M,vector<vector<int>> Edges)
+    {
+        // code here
+        vector<int> adjList[N+1];
+        for(auto i:Edges){
+            int x = i[0];
+            int y = i[1];
+            
+            adjList[x].push_back(y);
+            adjList[y].push_back(x);
+        }
+        int cnt = 1;
+        vector<int> vis(N+1, 0);
+        for(int i=1; i<=N; i++){
+            if(dfs(adjList, i, vis, cnt)){
+                return true;
+            }
+        }
+        return false;
+    }
+    bool dfs(vector<int>adjList[], int node, vector<int>vis, int cnt){
+        if(cnt == vis.size()-1){
+            return true;
+        }
+        vis[node] = 1;
+        cnt++;
+        for(auto i : adjList[node]){
+            if(!vis[i]){
+                if(dfs(adjList, i, vis, cnt)){
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+};
