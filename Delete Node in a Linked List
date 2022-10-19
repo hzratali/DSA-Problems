@@ -1,0 +1,61 @@
+C++ Code *********************
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    void deleteNode(ListNode* node) {
+        if(node->next == NULL){
+            node = NULL;
+        }
+        else{
+            node->val = node->next->val;
+            node->next = node->next->next;
+        }
+    }
+};
+
+Java Code **********************
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode(int x) { val = x; }
+ * }
+ */
+class Solution {
+    public void deleteNode(ListNode node) {
+        if(node.next == null){
+            node = null;
+        }
+        else{
+            node.val = node.next.val;
+            node.next = node.next.next;
+        }
+    }
+}
+
+Python3 Code *********************
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+
+class Solution:
+    def deleteNode(self, node):
+        """
+        :type node: ListNode
+        :rtype: void Do not return anything, modify node in-place instead.
+        """
+        if(node.next == None):
+            node = None
+        else:
+            node.val = node.next.val
+            node.next = node.next.next

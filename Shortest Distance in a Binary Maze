@@ -1,0 +1,38 @@
+class Solution {
+  public:
+    int shortestPath(vector<vector<int>> &grid, pair<int, int> source,
+                     pair<int, int> destination) {
+        // code here
+        int sf = source.first, ss = source.second;
+        int df = destination.first, ds = destination.second;
+        queue<pair<pair<int, int>, int>> q;
+        q.push({{sf, ss}, 0});
+        vector<vector<bool>> vis(grid.size(), vector<bool>(grid[0].size(), false));
+        vis[sf][ss] = true;
+        int dx[4] = {-1, 0, 1, 0};
+        int dy[4] = {0, 1, 0, -1};
+        while(!q.empty())
+        {
+            pair<int, int>p = q.front().first;
+            int x = p.first;
+            int y = p.second;
+            int dis = q.front().second;
+            q.pop();
+            for(int i=0; i<4; i++){
+                int newx = dx[i] + x;
+                int newy = dy[i] + y;
+                if(newx >= 0 && newy >=0 && newx<grid.size() && newy < grid[0].size() && grid[newx][newy]==1 && !vis[newx][newy]){
+                    vis[newx][newy] = true;
+                    if(newx == df && newy == ds){
+                        return dis+1;
+                    }
+                    q.push({{newx, newy}, dis+1});
+                }
+            }
+        }
+        if(sf == df && ss == ds){
+            return 0;
+        }
+        return -1;
+    }
+};
