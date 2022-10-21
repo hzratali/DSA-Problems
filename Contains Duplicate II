@@ -1,0 +1,32 @@
+// C++ Code
+class Solution {
+public:
+    bool containsNearbyDuplicate(vector<int>& nums, int k) {
+        map<int, int> m;
+        for(int i=0; i<nums.size(); i++)
+        {
+            if(m.count(nums[i]) > 0 && abs(m[nums[i]] - i) <= k)
+            {
+                return true;
+            }
+            m[nums[i]] = i;
+        }
+        return false;
+    }
+};
+
+// Java Code
+class Solution {
+    public boolean containsNearbyDuplicate(int[] nums, int k) {
+        HashMap<Integer, Integer> m = new HashMap<>();
+        for(int i=0; i<nums.length; i++)
+        {
+            if(m.containsKey(nums[i]) && Math.abs(m.get(nums[i]) - i) <= k)
+            {
+                return true;
+            }
+            m.put(nums[i], i);
+        }
+        return false;
+    }
+}
