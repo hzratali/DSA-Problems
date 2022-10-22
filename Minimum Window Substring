@@ -1,0 +1,29 @@
+class Solution {
+public:
+    string minWindow(string s, string t) {
+        if(t=="") return "";
+        string ans = "";
+        map<char, int> countT, window;
+        for(char c : t) countT[c]++;
+        int have=0, need=t.size();
+        int resLen = INT_MAX, l = 0;
+        for(int r=0; r<s.size(); r++){
+            char c = s[r];
+            if(countT.find(c) != countT.end()){
+                window[c]++;
+                if(window[c] <= countT[c]) have++;
+            }
+            if(have >= need){
+                while(countT.find(s[l]) == countT.end() || window[s[l]] > countT[s[l]]){
+                    window[s[l]]--;
+                    l++;
+                }
+                if((r - l + 1) < resLen){
+                    resLen = r - l + 1;
+                    ans = s.substr(l, resLen);
+                }
+            }
+        }
+        return ans;
+    }
+};
