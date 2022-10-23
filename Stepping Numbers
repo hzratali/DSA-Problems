@@ -1,0 +1,28 @@
+class Solution{
+public:
+
+    void dfs(int i, int n, int m, int &count)
+    {
+        if(i > m || i == 0) return;
+        if(i>=n && i<=m) count++;
+        int back = i % 10;
+        if(back != 0)
+        {
+            dfs(i*10+(back-1), n, m, count);
+        }
+        if(back != 9)
+        {
+            dfs(i*10+(back+1), n, m, count);
+        }
+    }
+    int steppingNumbers(int n, int m)
+    {
+        // Code Here
+        int count = 0;
+        for(int i=0; i<10; i++)
+        {
+            dfs(i, n, m, count);
+        }
+        return count;
+    }
+};
