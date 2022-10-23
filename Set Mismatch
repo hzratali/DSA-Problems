@@ -1,0 +1,63 @@
+// C++ Code
+// 1st One
+class Solution {
+public:
+    vector<int> findErrorNums(vector<int>& nums) {
+        vector<int> ans(2);
+        vector<int> arr(nums.size());
+        for(int x : nums){
+            arr[x-1]++;
+        }
+        for(int i=0; i<arr.size(); i++){
+            if(arr[i] == 2){
+                ans[0] = i+1;
+            }
+            if(arr[i] == 0){
+                ans[1] = i+1;
+            }
+        }
+        return ans;
+    }
+};
+//2nd One
+class Solution {
+public:
+    vector<int> findErrorNums(vector<int>& nums) {
+        vector<int> ans(2);
+        for(int i : nums){
+            if(nums[abs(i)-1] < 0){
+                ans[0] = abs(i);
+            }
+            else{
+                nums[abs(i) - 1] *= -1;
+            }
+        }
+        for(int i=0; i<nums.size(); i++){
+            if(nums[i] > 0){
+                ans[1] = i+1;
+            }
+        }
+        return ans;
+    }
+};
+
+//Java Code
+class Solution {
+    public int[] findErrorNums(int[] nums) {
+        int[] ans = new int[2];
+        for(int i : nums){
+            if(nums[Math.abs(i)-1] < 0){
+                ans[0] = Math.abs(i);
+            }
+            else{
+                nums[Math.abs(i)-1] *= -1;
+            }
+        }
+        for(int i=0; i<nums.length; i++){
+            if(nums[i] > 0){
+                ans[1] = i+1;
+            }
+        }
+        return ans;
+    }
+}
