@@ -1,0 +1,19 @@
+class Solution{
+public:
+    int findMin(int n, char a[]){
+        // code here
+        int rCount=0, gCount=0, bCount=0;
+        for(int i=0; i<n; i++){
+            if(a[i] == 'R') rCount++;
+            else if(a[i] == 'B') bCount++;
+            else gCount++;
+        }
+        if(rCount == n || bCount == n || gCount == n){
+            return n;
+        }
+        if((gCount%2 == 0 && rCount%2 == 0 && bCount%2 == 0) || (gCount%2 == 1 && rCount%2 == 1 && bCount%2 == 1)){
+            return 2;
+        }
+        return 1;
+    }
+};
