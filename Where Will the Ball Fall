@@ -1,0 +1,79 @@
+//C++ Code
+class Solution {
+public:
+    int dfs(int i, int j, vector<vector<int>>&grid){
+        if(i >= grid.size()){
+            return j;
+        }
+        //left to right
+        if(grid[i][j]==1 && j+1<grid[0].size() && grid[i][j+1]==1){
+            return dfs(i+1, j+1, grid);
+        }
+        //right to left
+        else if(grid[i][j]==-1 && j-1>=0 && grid[i][j-1]==-1){
+            return dfs(i+1, j-1, grid);
+        }
+        else{
+            return -1;
+        }
+    }
+    vector<int> findBall(vector<vector<int>>& grid) {
+        int row = grid.size();
+        int col = grid[0].size();
+        vector<int> ans(col);
+        for(int j=0; j<col; j++){
+            ans[j] = dfs(0, j, grid);
+        }
+        return ans;
+    }
+};
+
+//Java Code
+class Solution {
+    public int[] findBall(int[][] grid) {
+        int row = grid.length;
+        int col = grid[0].length;
+        int[] ans = new int[col];
+        for(int j=0; j<col; j++){
+            ans[j] = dfs(0, j, grid);
+        }
+        return ans;
+    }
+    int dfs(int i, int j, int[][] grid){
+        if(i >= grid.length){
+            return j;
+        }
+        //left to right
+        if(grid[i][j]==1 && j+1<grid[0].length && grid[i][j+1]==1){
+            return dfs(i+1, j+1, grid);
+        }
+        //right to left
+        else if(grid[i][j]==-1 && j-1>=0 && grid[i][j-1]==-1){
+            return dfs(i+1, j-1, grid);
+        }
+        else{
+            return -1;
+        }
+    }
+}
+
+// Python Code
+class Solution:
+    def findBall(self, grid: List[List[int]]) -> List[int]:
+        row = len(grid)
+        col = len(grid[0])
+        ans = []
+        def dfs(i, j, grid):
+            if(i >= len(grid)):
+                return j
+            # left to right
+            if(grid[i][j]==1 and j+1<len(grid[0]) and grid[i][j+1]==1):
+                return dfs(i+1, j+1, grid)
+            # right to left
+            elif(grid[i][j]==-1 and j-1>=0 and grid[i][j-1]==-1):
+                return dfs(i+1, j-1, grid)
+            else:
+                return -1
+        for j in range(0, col):
+            ans.append(dfs(0, j, grid))
+        return ans
