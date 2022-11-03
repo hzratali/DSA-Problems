@@ -1,0 +1,58 @@
+// Leetcode 2131
+/* You are given an array of strings words. Each element of words consists of two lowercase English letters.
+Create the longest possible palindrome by selecting some elements from words and concatenating them in any order. Each element can be selected at most once.
+Return the length of the longest palindrome that you can create. If it is impossible to create any palindrome, return 0.
+A palindrome is a string that reads the same forward and backward.
+Example 1:
+Input: words = ["lc","cl","gg"]
+Output: 6
+Explanation: One longest palindrome is "lc" + "gg" + "cl" = "lcggcl", of length 6.
+Note that "clgglc" is another longest palindrome that can be created.
+Example 2:
+Input: words = ["ab","ty","yt","lc","cl","ab"]
+Output: 8
+Explanation: One longest palindrome is "ty" + "lc" + "cl" + "yt" = "tylcclyt", of length 8.
+Note that "lcyttycl" is another longest palindrome that can be created.
+Example 3:
+Input: words = ["cc","ll","xx"]
+Output: 2
+Explanation: One longest palindrome is "cc", of length 2.
+Note that "ll" is another longest palindrome that can be created, and so is "xx".  */
+
+// C++ Code below--
+class Solution {
+public:
+    int longestPalindrome(vector<string>& words) {
+        map<string, int> mp;
+        int ans = 0, len = 0;
+        bool flag = false;
+        for(string x : words){
+            mp[x]++;
+        }
+        for(auto x : mp){
+            if(x.first[0]==x.first[1]){
+                if(x.second % 2){
+                    flag = true;
+                    len += (x.second - 1);
+                }
+                else{
+                    len += x.second;
+                }
+                mp.erase(x.first);
+            }
+            else{
+                string str = x.first;
+                reverse(str.begin(), str.end());
+                if(mp.find(str) != mp.end()){
+                    ans += min(mp[str], x.second) * 4;
+                }
+                mp.erase(str);
+                mp.erase(x.first);
+            }
+        }
+        if(flag){
+            return ans+len*2+2;
+        }
+        return ans+len*2;
+    }
+};
