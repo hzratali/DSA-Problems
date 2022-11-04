@@ -1,0 +1,38 @@
+/* Given a number (n) and no. of digits (m) to represent the number, we have to check if we can represent n using exactly m digits in any base from 2 to 32.
+Example 1:
+Input: n = 8, m = 2
+Output: Yes 
+Explanation: Possible in base 3 as 8 in base 3 is 22.  
+Example 2:
+Input: n = 8, m = 3
+Output: No
+Explanation: Not possible in any base. */
+
+// C++ Code -- 
+#include <bits/stdc++.h>
+using namespace std;
+class Solution {
+  public:
+    string baseEquiv(int n, int m){
+        // code here
+        int i=2;
+        while(i<=32){
+            if((int(log(n)/log(i))+1) == m){
+                return "Yes";
+            }
+            i++;
+        }
+        return "No";
+    }
+};
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int n, m;
+        cin >> n >> m;
+        Solution ob;
+        cout<<ob.baseEquiv(n,m)<<endl;
+    }
+    return 0;
+}
