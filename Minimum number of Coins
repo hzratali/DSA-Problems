@@ -1,0 +1,91 @@
+/* Given an infinite supply of each denomination of Indian currency { 1, 2, 5, 10, 20, 50, 100, 200, 500, 2000 } and a target value N.
+Find the minimum number of coins and/or notes needed to make the change for Rs N. You must return the list containing the value of coins required. 
+Example 1:
+Input: N = 43
+Output: 20 20 2 1
+Explaination: 
+Minimum number of coins and notes needed 
+to make 43. 
+Example 2:
+Input: N = 1000
+Output: 500 500
+Explaination: minimum possible notes
+is 2 notes of 500.    */
+
+//C++ Code---
+#include <bits/stdc++.h>
+using namespace std;
+class Solution{
+public:
+    vector<int> minPartition(int N)
+    {
+        // code here
+        int a[10] = {1, 2, 5, 10, 20, 50, 100, 200, 500, 2000};
+        vector<int> ans;
+        int r=9;
+        while(N){
+            if(N>=a[r]){
+                ans.push_back(a[r]);
+                N -= a[r];
+            }
+            else{
+                r--;
+            }
+        }
+        return ans;
+    }
+};
+int main(){
+    int t;
+    cin>>t;
+    while(t--){
+        int N;
+        cin>>N;
+        
+        Solution ob;
+        vector<int> numbers = ob.minPartition(N);
+        for(auto u: numbers)
+            cout<<u<<" ";
+        cout<<"\n";
+    }
+    return 0;
+}
+
+//C++ Code below--
+#include <bits/stdc++.h>
+using namespace std;
+class Solution{
+public:
+    vector<int> minPartition(int N)
+    {
+        // code here
+        int a[10] = {2000, 500, 200, 100, 50, 20, 10, 5, 2, 1};
+        vector<int> ans;
+        int l=0;
+        while(N){
+            if(N>=a[l]){
+                ans.push_back(a[l]);
+                N -= a[l];
+            }
+            else{
+                l++;
+            }
+        }
+        return ans;
+    }
+};
+int main(){
+    int t;
+    cin>>t;
+    while(t--){
+        int N;
+        cin>>N;
+        
+        Solution ob;
+        vector<int> numbers = ob.minPartition(N);
+        for(auto u: numbers)
+            cout<<u<<" ";
+        cout<<"\n";
+    }
+    return 0;
+}
