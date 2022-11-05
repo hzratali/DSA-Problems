@@ -1,0 +1,87 @@
+// Leetcode 41 Hard
+/* Given an unsorted integer array nums, return the smallest missing positive integer.
+You must implement an algorithm that runs in O(n) time and uses constant extra space.
+Example 1:
+Input: nums = [1,2,0]
+Output: 3
+Explanation: The numbers in the range [1,2] are all in the array.
+Example 2:
+Input: nums = [3,4,-1,1]
+Output: 2
+Explanation: 1 is in the array but 2 is missing.
+Example 3:
+Input: nums = [7,8,9,11,12]
+Output: 1
+Explanation: The smallest positive integer 1 is missing.  */
+
+// 1st one is easy but gives you TLE
+//C++ Code below
+class Solution {
+public:
+    int firstMissingPositive(vector<int>& nums) {
+        int ans = 1;
+        int l = 0, r = nums.size()-1;
+        while(l <= r){
+            if(nums[l]==ans){
+                ans++;
+                l = 0;
+            }
+            else{
+                l++;
+            }
+        }
+        return ans;
+    }
+};
+//Below C++ code is accepted
+class Solution {
+public:
+    int firstMissingPositive(vector<int>& nums) {
+        sort(nums.begin(), nums.end());
+        int ans = 1;
+        for(int i=0; i<nums.size(); i++){
+            if(nums[i] == ans) ans++;
+        }
+        return ans;
+    }
+};
+
+// 1st one is easy but gives you TLE
+//Java Code below
+class Solution {
+    public int firstMissingPositive(int[] nums) {
+        int ans = 1;
+        int l = 0, r = nums.length-1;
+        while(l <= r){
+            if(nums[l]==ans){
+                ans++;
+                l = 0;
+            }
+            else{
+                l++;
+            }
+        }
+        return ans;
+    }
+}
+//Below Java code is accepted
+class Solution {
+    public int firstMissingPositive(int[] nums) {
+        Arrays.sort(nums);
+        int ans = 1;
+        for(int i=0; i<nums.length; i++){
+            if(nums[i] == ans) ans++;
+        }
+        return ans;
+    }
+}
+
+// Python accepted code below-
+class Solution:
+    def firstMissingPositive(self, nums: List[int]) -> int:
+        nums.sort()
+        ans  = 1
+        for i in range(0, len(nums)):
+            if nums[i] == ans:
+                ans += 1
+        return ans
