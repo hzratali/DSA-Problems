@@ -1,0 +1,76 @@
+/* There are n stones at some integer coordinate points on a 2D plane. Each coordinate point may have at most one stone.
+You need to remove some stones. 
+A stone can be removed if it shares either the same row or the same column as another stone that has not been removed.
+Given an array stones of length n where stones[i] = [xi, yi] represents the location of the ith stone, return the maximum possible number of stones that you can remove.
+Example 1:
+Input:
+n=6
+[[0 0] ,[ 0 1], [1 0] ,[1 2] ,[2 1] ,[2 2]]
+Output:
+5
+Example:
+One way to remove 5 stones are
+1--[0,0]
+2--[1,0]
+3--[0,1]
+4--[2,1]
+5--[1,2]    */
+
+// C++ Code below
+//{ Driver Code Starts
+// Initial Template for C++
+
+#include <bits/stdc++.h>
+using namespace std;
+
+
+// } Driver Code Ends
+class Solution {
+public:
+    vector<int> vis;
+    void dfs(int ind, vector<vector<int>> &stones, int n){
+        vis[ind] = 1;
+        for(int i=0; i<n; i++){
+            if(vis[i]) continue;
+            if(stones[ind][0]==stones[i][0] || stones[ind][1]==stones[i][1]){
+                dfs(i, stones, n);
+            }
+        }
+    }
+    int maxRemove(vector<vector<int>>& stones, int n) {
+        // Code here
+        vis.resize(n, 0);
+        int cnt = 0;
+        for(int i=0; i<n; i++){
+            if(vis[i]) continue;
+            cnt++;
+            dfs(i, stones, n);
+        }
+        return n-cnt;
+    }
+};
+
+//{ Driver Code Starts.
+
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int n; cin >> n;
+        vector<vector<int>> adj;
+
+        for (int i = 0; i < n; ++i) {
+            vector<int> temp;
+            for (int i = 0; i < 2; ++i) {
+                int x; cin >> x;
+                temp.push_back(x);
+            }
+            adj.push_back(temp);
+        }
+
+        Solution obj;
+
+        cout << obj.maxRemove(adj,n) << "\n";
+    }
+}
+// } Driver Code Ends
