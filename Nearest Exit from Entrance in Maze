@@ -1,0 +1,97 @@
+//Leetcode --1926-- Medium
+/* You are given an m x n matrix maze (0-indexed) with empty cells (represented as '.') and walls (represented as '+'). You are also given the entrance of the maze, where entrance = [entrancerow, entrancecol] denotes the row and column of the cell you are initially standing at.
+In one step, you can move one cell up, down, left, or right. You cannot step into a cell with a wall, and you cannot step outside the maze. Your goal is to find the nearest exit from the entrance. An exit is defined as an empty cell that is at the border of the maze. The entrance does not count as an exit.
+Return the number of steps in the shortest path from the entrance to the nearest exit, or -1 if no such path exists.
+Example 1:
+Input: maze = [["+","+",".","+"],[".",".",".","+"],["+","+","+","."]], entrance = [1,2]
+Output: 1
+Explanation: There are 3 exits in this maze at [1,0], [0,2], and [2,3].
+Initially, you are at the entrance cell [1,2].
+- You can reach [1,0] by moving 2 steps left.
+- You can reach [0,2] by moving 1 step up.
+It is impossible to reach [2,3] from the entrance.
+Thus, the nearest exit is [0,2], which is 1 step away.
+Example 2:
+Input: maze = [["+","+","+"],[".",".","."],["+","+","+"]], entrance = [1,0]
+Output: 2
+Explanation: There is 1 exit in this maze at [1,2].
+[1,0] does not count as an exit since it is the entrance cell.
+Initially, you are at the entrance cell [1,0].
+- You can reach [1,2] by moving 2 steps right.
+Thus, the nearest exit is [1,2], which is 2 steps away.
+Example 3:
+Input: maze = [[".","+"]], entrance = [0,0]
+Output: -1
+Explanation: There are no exits in this maze.  */
+
+//C++ Code Below-
+class Solution {
+public:
+    int nearestExit(vector<vector<char>>& maze, vector<int>& entrance) {
+        int n = maze.size(), m = maze[0].size();
+        queue<pair<int,int>> q;
+        q.push({entrance[0], entrance[1]});
+        maze[entrance[0]][entrance[1]] = '+';
+        int level = 0;
+        int dx[4] = {1, -1, 0, 0};
+        int dy[4] = {0, 0, -1, 1};
+        while(!q.empty()){
+            int size = q.size();
+            level++;
+            for(int i=0; i<size; i++){
+                auto x = q.front();
+                q.pop();
+                int row = x.first;
+                int col = x.second;
+                for(int j=0; j<4; j++){
+                    int n_row = row + dx[j];
+                    int n_col = col + dy[j];
+                    if(n_row>=0 && n_col>=0 && n_row<n && n_col<m){
+                        if(maze[n_row][n_col] == '+') continue;
+                        if(n_row==0 || n_col==0 || n_row==n-1 || n_col==m-1){
+                            return level;
+                        }
+                        q.push({n_row, n_col});
+                        maze[n_row][n_col] = '+';
+                    }
+                }
+            }
+        }
+        return -1;
+    }
+};
+
+//Java Code Below--
+class Solution {
+    public int nearestExit(char[][] maze, int[] entrance) {
+        int n = maze.length, m = maze[0].length;
+        Queue<int[]> q = new LinkedList<>();
+        q.offer(entrance);
+        maze[entrance[0]][entrance[1]] = '+';
+        int level = 0;
+        int[] dx = {1, -1, 0, 0};
+        int[] dy = {0, 0, -1, 1};
+        while(!q.isEmpty()){
+            int size = q.size();
+            level++;
+            for(int i=0; i<size; i++){
+                int[] x = q.poll();
+                int row = x[0];
+                int col = x[1];
+                for(int j=0; j<4; j++){
+                    int n_row = row + dx[j];
+                    int n_col = col + dy[j];
+                    if(n_row>=0 && n_col>=0 && n_row<n && n_col<m){
+                        if(maze[n_row][n_col] == '+') continue;
+                        if(n_row==0 || n_col==0 || n_row==n-1 || n_col==m-1){
+                            return level;
+                        }
+                        q.offer(new int[]{n_row, n_col});
+                        maze[n_row][n_col] = '+';
+                    }
+                }
+            }
+        }
+        return -1;
+    }
+}
