@@ -1,0 +1,49 @@
+// GFG -- Medium 
+/* Given an array of size n, a triplet (a[i], a[j], a[k]) is called a Magic Triplet if a[i] < a[j] < a[k] and i < j < k.  Count the number of magic triplets in a given array.
+Example 1:
+Input: arr = [3, 2, 1]
+Output: 0
+Explanation: There is no magic triplet.
+Example 2:
+Input: arr = [1, 2, 3, 4]
+Output: 4
+Explanation: Fours magic triplets are 
+(1, 2, 3), (1, 2, 4), (1, 3, 4) and 
+(2, 3, 4).  */
+
+//C++ Code Below--
+#include<bits/stdc++.h>
+using namespace std;
+class Solution{
+	public:
+	int countTriplets(vector<int>nums){
+	    // Code here.
+	    int ans = 0;
+	    for(int i=0; i<nums.size(); i++){
+	        int small = 0;
+	        for(int j=0; j<i; j++){
+	            if(nums[j] < nums[i]) small++;
+	        }
+	        int large = 0;
+	        for(int j=i+1; j<nums.size(); j++){
+	            if(nums[i] < nums[j]) large++;
+	        }
+	        ans += (small*large);
+	    }
+	    return ans;
+	}
+};
+int main(){
+	int tc;
+	cin >> tc;
+	while(tc--){
+		int n;
+		cin >> n;
+		vector<int>nums(n);
+		for(int i = 0; i < n; i++)cin >> nums[i];
+		Solution ob;
+		int ans = ob.countTriplets(nums);
+		cout << ans << "\n";
+	}  
+	return 0;
+}
