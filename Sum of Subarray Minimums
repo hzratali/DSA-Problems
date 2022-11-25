@@ -1,0 +1,79 @@
+//Leetcode--907--Medium
+/* Given an array of integers arr, find the sum of min(b), where b ranges over every (contiguous) subarray of arr. Since the answer may be large, return the answer modulo 109 + 7.
+Example 1:
+Input: arr = [3,1,2,4]
+Output: 17
+Explanation: 
+Subarrays are [3], [1], [2], [4], [3,1], [1,2], [2,4], [3,1,2], [1,2,4], [3,1,2,4]. 
+Minimums are 3, 1, 2, 4, 1, 1, 2, 1, 1, 1.
+Sum is 17.
+Example 2:
+Input: arr = [11,81,94,43,3]
+Output: 444   */
+
+//C++ Code below--
+class Solution {
+public:
+    int sumSubarrayMins(vector<int>& arr) {
+        int mod = 1000000007;
+        stack<int> s;
+        long ans = 0;
+        for(int i=0; i<=arr.size(); i++){
+            while(!s.empty() && (i==arr.size() || arr[s.top()]>=arr[i])){
+                long mid = s.top();
+                s.pop();
+                long left_boundary = s.empty() ? -1 : s.top();
+                long right_boundary = i;
+                
+                long cnt = (mid - left_boundary) * (right_boundary - mid) % mod;
+
+                ans += (cnt * arr[mid]) % mod;
+                ans %= mod;
+            }
+            s.push(i);
+        }
+        return ans;
+    }
+};
+
+//Java Code Below--
+
+class Solution {
+    public int sumSubarrayMins(int[] arr) {
+        int MOD = 1000000007;
+        Stack<Integer> stack = new Stack<>();
+        long ans = 0;
+        for(int i = 0; i <= arr.length; i++) {
+            while(!stack.empty() && (i==arr.length || arr[stack.peek()] >= arr[i])){
+                int mid = stack.pop();
+                int leftBoundary = stack.empty() ? -1 : stack.peek();
+                int rightBoundary = i;
+
+                long count = (mid - leftBoundary) * (rightBoundary - mid) % MOD;
+
+                ans += (count * arr[mid]) % MOD;
+                ans %= MOD;
+            }
+            stack.push(i);
+        }
+
+        return (int)ans;
+    }
+}
+
+//Python3 Code Below--
+class Solution:
+    def sumSubarrayMins(self, arr: List[int]) -> int:
+        mod = 1000000007
+        stack = []
+        ans = 0
+        for i in range(0, len(arr)+1):
+            while stack and (i==len(arr) or arr[stack[-1]] >= arr[i]):
+                mid = stack.pop()
+                left_boundary = -1 if not stack else stack[-1]
+                right_boundary = i
+
+                cnt = (mid-left_boundary) * (right_boundary-mid)
+                ans += cnt * arr[mid]
+            stack.append(i)
+        return ans%mod
