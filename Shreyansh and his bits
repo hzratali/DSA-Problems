@@ -1,0 +1,76 @@
+//GFG --Medium
+/* Shreyansh has an integer N. He is really curious about the binary representation of integers. He sees that any given integer has a number of set bits. Now he wants to find out that how many positive integers, strictly less than N, have the same number of set bits as N.
+He is a little weak in maths. Help him find the number of integers.
+Note : Since N takes large values, brute force won't work.
+Example 1:
+Input:
+N = 8
+Output: 3
+Explanation:
+Binary representation of 8 : 1000
+So the integers less than 8 with 
+same number of set bits are : 4, 2, 1
+Hence, the result is 3.  
+Example 2:
+Input:
+N = 4
+Output: 2
+Explanation:
+Binary representation of 4 : 100
+So the integers less than 4 with 
+same number of set bits are : 2, 1
+So, The result is 2.   */
+
+// C++ Code below
+//{ Driver Code Starts
+//Initial Template for C++
+
+#include <iostream>
+using namespace std;
+
+
+// } Driver Code Ends
+//User function Template for C++
+#include <bits/stdc++.h>
+#define ll long long
+class Solution{
+public:
+    
+    ll count(ll x) {
+        // Code Here
+        int ones = 0;
+        int pos = 0;
+        ll ans = 0;
+        vector<vector<ll>> dp(64, vector<ll> (64, -1));
+        while(x > 0){
+            if(x&1){
+                ones++;
+                ans += nCr(pos, ones, dp);
+            }
+            x = x>>1;
+            pos++;
+        }
+        return ans;
+    }
+    ll nCr(int n, int r, vector<vector<ll>> &dp){
+        if(r>n) return 0;
+        if(r==0 || r==n) return 1;
+        if(dp[n][r] != -1) return dp[n][r];
+        return dp[n][r] = nCr(n-1, r-1, dp)+nCr(n-1, r, dp);
+    }
+};
+
+//{ Driver Code Starts.
+
+int main() {
+    
+	int t;
+	cin >> t;
+	while (t-- > 0) {
+	    long long x; cin >> x;
+	    Solution ob;
+	    cout << ob.count(x) << '\n';
+	}
+	return 0;
+}
+// } Driver Code Ends
