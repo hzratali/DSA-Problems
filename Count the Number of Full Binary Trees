@@ -1,0 +1,93 @@
+//GFG -- Medium
+/* Given an array arr[] of n integers, where each integer is greater than 1. The task is to find the number of Full binary tree from the given integers, such that each non-leaf node value is the product of its children value.
+Note: Each integer can be used multiple times in a full binary tree. The answer can be large, return  answer modulo 1000000007
+Example 1:
+Input:
+n = 4
+arr[] = {2, 3, 4, 6}
+Output:
+7
+Explanation:
+There are 7 full binary tree with
+the given product property.
+Four trees with single nodes
+2  3  4  6
+Three trees with three nodes
+    4   
+   / \
+  2   2 ,
+   6    
+  / \
+ 2   3 ,
+   6
+  / \
+ 3   2
+Example 2:
+Input: 
+n = 3
+arr[] = {2, 4, 5} 
+Output: 4
+Explanation: There are 4 full binary tree
+with the given product property. 
+Three trees with single nodes 2 4 5
+One tree with three nodes
+   4
+  / \
+ 2  2             */
+ 
+ 
+// C++ Code below--
+#include <bits/stdc++.h>
+using namespace std;
+class Solution{
+public:
+    
+    const int mod = 1e9+7;
+    const int N = 1e5+1;
+    long long int numoffbt(long long int arr[], int n){
+        // Your code goes here
+        vector<int> dp(N, 0);
+        int mx = -1e9, mn = 1e9;
+        long long ans = 0;
+        for(int i=0; i<n; i++){
+            dp[arr[i]] = 1;
+            int temp = arr[i];
+            mx = max(mx, temp);
+            mn = min(mn, temp);
+        }
+        for(int i=mn; i<=mx; i++){
+            if(dp[i] != 1 || dp[i] == 0) continue;
+            for(int j=mn; j*j<=i; j++){
+                if(i%j==0 and dp[i/j]!=0 and dp[j]!=0){
+                    if(i/j != j){
+                        dp[i] += 2*(dp[i/j]*dp[j]);
+                    }
+                    else{
+                        dp[i] += dp[j]*dp[j];
+                    }
+                    dp[i] %= mod;
+                }
+            }
+            ans += dp[i];
+            ans %= mod;
+        }
+        return ans;
+    }
+};
+int main() {
+	// your code goes here
+	int t;
+	cin>>t;
+	while(t--)
+	{
+		int n;
+		cin>>n;
+		long long int a[n];
+		for(int i=0;i<n;i++)
+		cin>>a[i];
+		Solution ob;
+		cout<<ob.numoffbt(a,n)<<endl;
+		
+	}
+	return 0;
+}
