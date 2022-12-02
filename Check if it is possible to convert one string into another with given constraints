@@ -1,0 +1,34 @@
+// GFG -- Easy
+#include <bits/stdc++.h>
+using namespace std;
+class Solution {
+  public:
+    int isItPossible(string S, string T, int M, int N) {
+        // code here
+        int i=0, j=0;
+        while(i<M && j<N){
+            if(S[i]=='#') i++;
+            else if(T[j]=='#') j++;
+            else if(S[i]!=T[j] || (S[i]=='A' && i<j) || (S[i]=='B' && i>j)) return 0;
+            else{
+                i++;
+                j++;
+            }
+        }
+        while(i<M && S[i]=='#') i++;
+        while(j<N && T[j]=='#') j++;
+        return i==M && j==N;
+    }
+};
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        string S, T;
+        cin >> S >> T;
+        int M = S.length(), N = T.length();
+        Solution ob;
+        cout << ob.isItPossible(S, T, M, N);
+        cout << "\n";
+    }
+}
