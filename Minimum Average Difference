@@ -1,0 +1,59 @@
+//C++ Code Below--
+class Solution {
+public:
+    int minimumAverageDifference(vector<int>& nums) {
+        int n = nums.size();
+        int ans = -1, minAvgDiff = INT_MAX;
+        vector<long long> prefSum(n+1), sufSum(n+1);
+        for(int i=0; i<n; i++){
+            prefSum[i+1] = prefSum[i] + nums[i];
+        }
+        for(int i=n-1; i>=0; i--){
+            sufSum[i] = sufSum[i+1] + nums[i];
+        }
+        for(int i=0; i<n; i++){
+            long long leftAvg = prefSum[i+1];
+            leftAvg /= i+1;
+            long long rightAvg = sufSum[i+1];
+            if(i != n-1){
+                rightAvg /= n-i-1;
+            }
+            long long curDiff = abs(leftAvg - rightAvg);
+            if(curDiff < minAvgDiff){
+                minAvgDiff = curDiff;
+                ans = i;
+            }
+        }
+        return ans;
+    }
+};
+
+//Java Code Below--
+class Solution {
+    public int minimumAverageDifference(int[] nums) {
+        int n = nums.length;
+        int ans = -1, minAvgDiff = Integer.MAX_VALUE;
+        long[] prefSum = new long[n+1];
+        long[] sufSum = new long[n+1];
+        for(int i=0; i<n; i++){
+            prefSum[i+1] = prefSum[i] + nums[i];
+        }
+        for(int i=n-1; i>=0; i--){
+            sufSum[i] = sufSum[i+1] + nums[i];
+        }
+        for(int i=0; i<n; i++){
+            long leftAvg = prefSum[i+1];
+            leftAvg /= i+1;
+            long rightAvg = sufSum[i+1];
+            if(i != n-1){
+                rightAvg /= n-i-1;
+            }
+            int curDiff = (int)Math.abs(leftAvg - rightAvg);
+            if(curDiff < minAvgDiff){
+                minAvgDiff = curDiff;
+                ans = i;
+            }
+        }
+        return ans;
+    }
+}
