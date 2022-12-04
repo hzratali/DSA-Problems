@@ -1,0 +1,83 @@
+//GFG -- Medium
+#include<bits/stdc++.h>
+using namespace std;
+class Solution{
+    public:
+    vector<int> vowel{0, 'e'-'a', 'i'-'a', 'o'-'a', 'u'-'a'};
+    string rearrange (string S, int N)
+    {
+        // your code here
+        vector<int> fre(26, 0);
+        int cntV = 0;
+        for(int i=0; i<N; i++){
+            char c = S[i];
+            for(int x : vowel){
+                if(x == c-'a'){
+                    cntV++;
+                    break;
+                }
+            }
+            fre[c-'a']++;
+        }
+        int cntC = N - cntV;
+        if(!(cntV==cntC || cntV == cntC+1 || cntC == cntV+1)){
+            return "-1";
+        }
+        string ans = "";
+        for(int i=0; i<N; i++){
+            if(i%2==0){
+                if(cntV == cntC || cntC+1 == cntV){
+                    addV(fre, ans);
+                }
+                else{
+                    addC(fre, ans);
+                }
+            }
+            else{
+                if(cntV==cntC || cntC+1 == cntV){
+                    addC(fre, ans);
+                }
+                else{
+                    addV(fre, ans);
+                }
+            }
+        }
+        return ans;
+    }
+    void addV(vector<int>&fre, string &s){
+        for(int x : vowel){
+            if(fre[x] > 0){
+                fre[x]--;
+                char c = (char)(x+'a');
+                s += c;
+                return;
+            }
+        }
+    }
+    void addC(vector<int>&fre,string &s){
+        for(int i=0; i<26; i++){
+            if(fre[i]<=0) continue;
+            bool isV = false;
+            for(int x : vowel){
+                if(i==x) isV = true;
+            }
+            if(!isV){
+                fre[i]--;
+                char c = (char)(i+'a');
+                s += c;
+                return;
+            }
+        }
+    }
+};
+int main()
+{
+	int t; cin >> t;
+	while (t--)
+	{
+		int n; cin >> n;
+		string s; cin >> s;
+		Solution ob;
+		cout << ob.rearrange (s, n) << endl;
+	}
+}
