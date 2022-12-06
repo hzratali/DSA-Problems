@@ -1,0 +1,67 @@
+// GFG -- Medium
+#include<bits/stdc++.h>
+using namespace std;
+class Solution 
+{
+  public:
+	vector<vector<int>>nearest(vector<vector<int>>grid)
+	{
+	    // Code here
+	    int row = grid.size(), col = grid[0].size();
+	    queue<vector<int>> q;
+	    vector<vector<int>> ans(row, vector<int>(col));
+	    for(int i=0; i<row; i++){
+	        for(int j=0; j<col; j++){
+	            if(grid[i][j] == 1){
+	                ans[i][j] = 0;
+	                q.push({i, j, 0});
+	            }
+	            else{
+	                ans[i][j] = INT_MAX;
+	            }
+	        }
+	    }
+	    int dx[4] = {1, -1, 0, 0};
+	    int dy[4] = {0, 0, 1, -1};
+	    while(!q.empty()){
+	        int sz = q.size();
+	        for(int i=0; i<sz; i++){
+	            auto v = q.front();
+	            q.pop();
+	            for(int j=0; j<4; j++){
+	                int nRow = v[0]+dx[j];
+	                int nCol = v[1]+dy[j];
+	                int dis = v[2];
+	                if(nRow>=0 && nRow<row && nCol>=0 && nCol<col && ans[nRow][nCol]>dis+1){
+	                    ans[nRow][nCol] = dis+1;
+	                    q.push({nRow, nCol, dis+1});
+	                }
+	            }
+	        }
+	    }
+	    return ans;
+	}
+};
+int main(){
+	int tc;
+	cin >> tc;
+	while(tc--){
+		int n, m;
+		cin >> n >> m;
+		vector<vector<int>>grid(n, vector<int>(m, -1));
+		for(int i = 0; i < n; i++){
+			for(int j = 0; j < m; j++){
+				cin >> grid[i][j];
+			}
+		}
+		Solution obj;
+		vector<vector<int>> ans = obj.nearest(grid);
+		for(auto i: ans){
+			for(auto j: i){
+				cout << j << " ";
+			}
+			cout << "\n";
+		}
+	}
+	return 0;
+}
