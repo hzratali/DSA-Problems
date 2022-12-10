@@ -1,0 +1,44 @@
+// GFG -- Medium
+// C++ Code
+#include<bits/stdc++.h>
+using namespace std;
+string buildLowestNumber(string num, int k);
+int main()
+{
+    int t,n;
+    string str;
+    cin>>t;
+    while(t--)
+    {
+    cin>>n;
+    cin>>str;
+    cout << buildLowestNumber(str, n)<<endl;
+    }
+    return 0;
+}
+string buildLowestNumber(string num, int k)
+{
+    //code here.
+    int n = num.size();
+    stack<char> st;
+    for(char c : num)
+    {
+        while(!st.empty() && st.top()>c && k>0)
+        {
+            st.pop();
+            k--;
+        }
+        if(!st.empty() || c != '0') st.push(c);
+    }
+    while(!st.empty() && k--) st.pop();
+    if(st.empty()) return "0";
+    
+    string ans;
+    while(!st.empty())
+    {
+        ans += st.top();
+        st.pop();
+    }
+    reverse(ans.begin(), ans.end());
+    return ans;
+}
