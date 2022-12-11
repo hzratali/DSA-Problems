@@ -1,0 +1,51 @@
+//Leetcode -- Hard
+
+//C++ Code Below--
+class Solution {
+public:
+    int ans;
+    int maxPathSum(TreeNode* root) {
+        ans = INT_MIN;
+        solve(root);
+        return ans;
+    }
+    int solve(TreeNode *node){
+        if(node==NULL) return 0;
+        int fromLeft = max(solve(node->left), 0);
+        int fromRight = max(solve(node->right), 0);
+        ans = max(ans, fromLeft+fromRight+node->val);
+        return max(fromLeft+node->val, fromRight+node->val);
+    }
+};
+
+//Java Code Below--
+class Solution {
+    int ans;
+    public int maxPathSum(TreeNode root) {
+        ans = Integer.MIN_VALUE;
+        solve(root);
+        return ans;
+    }
+    int solve(TreeNode node){
+        if(node==null) return 0;
+        int fromLeft = Math.max(solve(node.left), 0);
+        int fromRight = Math.max(solve(node.right), 0);
+        ans = Math.max(ans, fromLeft+fromRight+node.val);
+        return Math.max(fromLeft+node.val, fromRight+node.val);
+    }
+}
+
+//Python Code Below--
+class Solution:
+    def maxPathSum(self, root: Optional[TreeNode]) -> int:
+        ans = float(-inf)
+        def solve(node):
+            nonlocal ans
+            if not node:
+                return 0
+            fromLeft = max(solve(node.left), 0)
+            fromRight = max(solve(node.right), 0)
+            ans = max(ans, fromLeft+fromRight+node.val)
+            return max(fromLeft+node.val, fromRight+node.val)
+        solve(root)
+        return ans
