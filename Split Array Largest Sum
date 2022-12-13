@@ -1,0 +1,57 @@
+//GFG -- Hard -- Google--
+//C++ Code below-- 
+#include <bits/stdc++.h>
+using namespace std;
+class Solution {
+  public:
+    int splitArray(int arr[] ,int N, int K) {
+        // code here
+        int mx = INT_MIN, sum = 0;
+        for(int i=0; i<N; i++){
+            mx = max(mx, arr[i]);
+            sum += arr[i];
+        }
+        int ans, l = mx, r = sum, mid;
+        while(l<=r)
+        {
+            mid = (l+r)/2;
+            int cnt = 1, s = 0;
+            for(int i=0; i<N; i++)
+            {
+                s += arr[i];
+                if(s>mid)
+                {
+                    cnt++;
+                    s = arr[i];
+                }
+            }
+            if(cnt > K)
+            {
+                l = mid+1;
+            }
+            else{
+                ans = mid;
+                r = mid-1;
+            }
+        }
+        return ans;
+    }
+};
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int N, K;
+        
+        cin>>N>>K;
+        int arr[N];
+        
+        for(int i=0 ; i<N ; i++)
+            cin>>arr[i];
+
+        Solution ob;
+        cout<<ob.splitArray(arr,N,K);
+        cout<<"\n";
+    }
+    return 0;
+}
