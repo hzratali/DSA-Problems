@@ -1,0 +1,25 @@
+// C++ Code Below--
+#include<bits/stdc++.h> 
+using namespace std; 
+class Solution{   
+public:
+    int waysToBreakNumber(int N){
+        // code here
+        long mod = 1e9+7;
+        long ans = N+1;
+        return (ans*(ans+1))/2%mod;
+    }
+};
+int main() 
+{ 
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int N;
+        cin >> N;
+        Solution ob;
+        cout << ob.waysToBreakNumber(N) << endl;
+    }
+    return 0; 
+}
