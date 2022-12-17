@@ -1,0 +1,78 @@
+//Leetcode --150 --Medium
+
+//C++ Code below--
+class Solution {
+public:
+    int evalRPN(vector<string>& tokens) {
+        stack<int> s;
+        for(string x : tokens)
+        {
+            if(x == "+")
+            {
+                int a = s.top();
+                s.pop();
+                int b = s.top();
+                s.pop();
+                s.push(a+b);
+            }
+            else if(x == "*")
+            {
+                int a = s.top();
+                s.pop();
+                int b = s.top();
+                s.pop();
+                s.push((long)a*b);
+            }
+            else if(x == "-")
+            {
+                int a = s.top();
+                s.pop();
+                int b = s.top();
+                s.pop();
+                s.push(b-a);
+            }
+            else if(x == "/")
+            {
+                int a = s.top();
+                s.pop();
+                int b = s.top();
+                s.pop();
+                s.push(b/a);
+            }
+            else{
+                s.push(stoi(x));
+            }
+        }
+        return s.top();
+    }
+};
+
+//Java Code Below--
+class Solution {
+    public int evalRPN(String[] tokens) {
+        Stack<Integer> s = new Stack<>();
+        for(String x : tokens)
+        {
+            if(x.equals("+")){
+                s.add(s.pop()+s.pop());
+            }
+            else if(x.equals("*")){
+                s.add(s.pop()*s.pop());
+            }
+            else if(x.equals("-")){
+                int a = s.pop();
+                int b = s.pop();
+                s.add(b-a);
+            }
+            else if(x.equals("/")){
+                int a = s.pop();
+                int b = s.pop();
+                s.add(b/a);
+            }
+            else{
+                s.add(Integer.parseInt(x));
+            }
+        }
+        return s.pop();
+    }
+}
