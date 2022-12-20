@@ -1,0 +1,52 @@
+//Leetcode -- 841 -- Medium
+
+//C++ Code below--
+class Solution {
+public:
+    bool canVisitAllRooms(vector<vector<int>>& rooms) {
+        int n = rooms.size();
+        vector<bool> visited(n, false);
+        queue<int> q;
+        q.push(0);
+        visited[0] = true;
+        while(!q.empty()){
+            int room = q.front();
+            q.pop();
+            for(auto key : rooms[room]){
+                if(!visited[key]){
+                    visited[key] = true;
+                    q.push(key);
+                }
+            }
+        }
+        for(auto x : visited){
+            if(!x)
+                return x;
+        }
+        return true;
+    }
+};
+
+//Java Code below--
+class Solution {
+    public boolean canVisitAllRooms(List<List<Integer>> rooms) {
+        int n = rooms.size();
+        boolean[] vis = new boolean[n];
+        vis[0] = true;
+        Stack<Integer> st = new Stack<>();
+        st.push(0);
+        while(!st.isEmpty()){
+            int node = st.pop();
+            for(int x : rooms.get(node)){
+                if(!vis[x]){
+                    vis[x] = true;
+                    st.push(x);
+                }
+            }
+        }
+        for(boolean x : vis){
+            if(!x) return false;
+        }
+        return true;
+    }
+}
