@@ -1,0 +1,85 @@
+// Medium
+//C++ Code
+class Solution {
+public:
+    bool possibleBipartition(int n, vector<vector<int>>& dislikes) {
+        vector<vector<int>> adj(n+1);
+        for(auto x:dislikes)
+        {
+            adj[x[0]].push_back(x[1]);
+            adj[x[1]].push_back(x[0]);
+        }
+        vector<int> color(n+1, -1);
+        for(int i=1; i<=n; i++)
+        {
+            if(color[i] == -1){
+                if(!bfs(i, color, adj)) return false;
+            }
+        }
+        return true;
+    }
+    bool bfs(int src, vector<int>&color, vector<vector<int>>&adj)
+    {
+        queue<int> q;
+        q.push(src);
+        color[src] = 0;
+        while(!q.empty())
+        {
+            int node = q.front();
+            q.pop();
+            for(auto nei : adj[node])
+            {
+                if(color[nei] == color[node]) return false;
+                if(color[nei] == -1)
+                {
+                    color[nei] = 1 - color[node];
+                    q.push(nei);
+                }
+            }
+        }
+        return true;
+    }
+};
+
+//Java Code --
+class Solution {
+    public boolean possibleBipartition(int n, int[][] dislikes) {
+        Map<Integer, List<Integer>> adj = new HashMap<>();
+        for(int edge[] : dislikes)
+        {
+            adj.computeIfAbsent(edge[1], value -> new ArrayList<Integer>()).add(edge[0]);
+            adj.computeIfAbsent(edge[0], value -> new ArrayList<Integer>()).add(edge[1]);
+        }
+        int[] color = new int[n+1];
+        Arrays.fill(color, -1);
+        for(int i=1; i<=n; i++)
+        {
+            if(color[i] == -1)
+            {
+                if(!bfs(i, color, adj)) return false;
+            }
+        }
+        return true;
+    }
+    boolean bfs(int src, int[] color, Map<Integer, List<Integer>> adj)
+    {
+        Queue<Integer> q = new LinkedList<>();
+        q.offer(src);
+        color[src] = 0;
+        while(!q.isEmpty())
+        {
+            int node = q.poll();
+            if(!adj.containsKey(node)) continue;
+            for(int nei : adj.get(node))
+            {
+                if(color[nei] == color[node]) return false;
+                if(color[nei] == -1)
+                {
+                    color[nei] = 1 - color[node];
+                    q.offer(nei);
+                }
+            }
+        }
+        return true;
+    }
+}
