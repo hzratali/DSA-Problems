@@ -1,0 +1,91 @@
+//Leetcode -- 834 -- Hard
+//C++ Code--
+class Solution {
+public:
+    vector<vector<int>> adj;
+    vector<int> ans, count;
+    int n;
+    vector<int> sumOfDistancesInTree(int n, vector<vector<int>>& edges) {
+        this->n = n;
+        adj.resize(n);
+        for(int i=0; i<n-1; i++)
+        {
+            adj[edges[i][0]].push_back(edges[i][1]);
+            adj[edges[i][1]].push_back(edges[i][0]);
+        }
+        ans.resize(n);
+        count.resize(n);
+        dfs(0, -1);
+        dfs2(0, -1);
+        return ans;
+    }
+    void dfs(int node, int parent)
+    {
+        for(int child : adj[node]){
+            if(child != parent)
+            {
+                dfs(child, node);
+                count[node] += count[child];
+                ans[node] += ans[child] + count[child];
+            }
+        }
+        count[node] += 1;
+    }
+    void dfs2(int node, int parent)
+    {
+        for(int child : adj[node])
+        {
+            if(child != parent){
+                ans[child] = ans[node] - count[child] + n - count[child];
+                dfs2(child, node);
+            }
+        }
+    }
+};
+
+//Java Code Below--
+class Solution {
+    List<List<Integer>> adj;
+    int[] ans, count;
+    int n;
+    public int[] sumOfDistancesInTree(int n, int[][] edges) {
+        this.n = n;
+        adj = new ArrayList<List<Integer>>();
+        ans = new int[n];
+        count = new int[n];
+        for(int i=0; i<n; i++){
+            adj.add(new ArrayList<Integer>());
+        }
+        for(int[] edge : edges)
+        {
+            adj.get(edge[0]).add(edge[1]);
+            adj.get(edge[1]).add(edge[0]);
+        }
+        dfs(0, -1);
+        dfs2(0, -1);
+        return ans;
+    }
+    void dfs(int node, int parent)
+    {
+        for(int child : adj.get(node))
+        {
+            if (child != parent) {
+                dfs(child, node);
+                count[node] += count[child];
+                ans[node] += ans[child] + count[child];
+            }
+        }
+        count[node] += 1;
+    }
+    void dfs2(int node, int parent)
+    {
+        for(int child : adj.get(node))
+        {
+            if(child != parent)
+            {
+                ans[child] = ans[node] - count[child] + n - count[child];
+                dfs2(child, node);
+            }
+        }
+    }
+}
