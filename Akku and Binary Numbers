@@ -1,0 +1,44 @@
+//GFG -- Easy
+//C++ Code Below
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long int
+class Solution{
+public:
+    void precompute()
+    {
+        // Code Here
+    }
+    
+    long long solve(long long l, long long r){
+        // Code Here
+        ll ans = 0;
+        for(ll i=1; i<=r; i*=2)
+        {
+            for(ll j=i*2; j<=r; j*=2)
+            {
+                for(ll k=j*2; k<=r; k*=2)
+                {
+                    ll t = i | j | k;
+                    if(t>=l && t<=r) ans++;
+                }
+            }
+        }
+        return ans;
+    }
+    
+};
+int main()
+{
+    int t;
+    Solution ob;
+    ob.precompute();
+    cin>>t;
+    while(t--)
+    {
+        long long l,r;
+        cin>>l>>r;
+        cout << ob.solve(l, r) << endl; 
+    }
+    return 0;
+}
