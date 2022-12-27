@@ -1,0 +1,34 @@
+//GFG -- Medium -- Google, Amazon, Flipkart
+//C++ Code--
+
+#include<bits/stdc++.h>
+using namespace std;
+#define ll long long
+ll maxArea(ll A[], int len)
+{
+    // Your code goes here
+    int l=0, r=len-1;
+    ll area = 0;
+    while(l < r)
+    {
+        area = max(area, min(A[l], A[r]) * (r - l));
+        if(A[l] < A[r]) l++;
+        else r--;
+    }
+    return area;
+}
+int main()
+{
+	int t;
+	cin>>t;
+	while(t--)
+    {
+        int n;
+        cin>>n;
+        long long arr[n];
+        for(int i=0;i<n;i++)
+            cin>>arr[i];
+        cout<<maxArea(arr,n)<<endl;
+    }
+return 0;
+}
