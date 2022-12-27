@@ -1,0 +1,65 @@
+//LeetCode -- 2279 -- Medium
+//C++ Code
+class Solution {
+public:
+    int maximumBags(vector<int>& capacity, vector<int>& rocks, int additionalRocks) {
+        int cnt=0, n = capacity.size();
+        vector<int> remCap(n);
+        for(int i=0; i<n; i++)
+        {
+            remCap[i] = capacity[i] - rocks[i];
+        }
+        sort(remCap.begin(), remCap.end());
+        for(int i=0; i<n; i++)
+        {
+            if(additionalRocks >= remCap[i])
+            {
+                additionalRocks -= remCap[i];
+                cnt++;
+            }
+            else{
+                break;
+            }
+        }
+        return cnt;
+    }
+};
+
+//Java Code
+class Solution {
+    public int maximumBags(int[] capacity, int[] rocks, int additionalRocks) {
+        int cnt=0, n = capacity.length;
+        int[] remCap = new int[n];
+        for(int i=0; i<n; i++)
+        {
+            remCap[i] = capacity[i] - rocks[i];
+        }
+        Arrays.sort(remCap);
+        for(int i=0; i<n; i++)
+        {
+            if(additionalRocks >= remCap[i])
+            {
+                additionalRocks -= remCap[i];
+                cnt++;
+            }
+            else{
+                break;
+            }
+        }
+        return cnt;
+    }
+}
+
+//Python3 Code
+class Solution:
+    def maximumBags(self, capacity: List[int], rocks: List[int], additionalRocks: int) -> int:
+        remCap = [cap - roc for cap, roc in zip(capacity, rocks)]
+        remCap.sort()
+        cnt = 0
+        for curCap in remCap:
+            if additionalRocks >= curCap:
+                cnt += 1
+                additionalRocks -= curCap
+            else:
+                break
+        return cnt
