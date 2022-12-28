@@ -1,0 +1,35 @@
+//Leetcode -- Medium
+//C++ Code--
+class Solution {
+public:
+    int minStoneSum(vector<int>& piles, int k) {
+        priority_queue<int> pq(piles.begin(), piles.end());
+        int sum = accumulate(piles.begin(), piles.end(), 0);
+        for(int i=0; i<k; i++)
+        {
+            int cur = pq.top();
+            pq.pop();
+            int remove = cur / 2;
+            sum -= remove;
+            pq.push(cur-remove);
+        }
+        return sum;
+    }
+};
+
+//Java Code--
+class Solution {
+    public int minStoneSum(int[] piles, int k) {
+        PriorityQueue<Integer> pq = new PriorityQueue<>((a, b) -> b - a);
+        for(int x : piles) pq.add(x);
+        for(int i=0; i<k; i++)
+        {
+            int cur = pq.remove();
+            int remove = cur/2;
+            pq.add(cur-remove);
+        }
+        int ans = 0;
+        for(int x : pq) ans += x;
+        return ans;
+    }
+}
