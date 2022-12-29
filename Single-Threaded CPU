@@ -1,0 +1,70 @@
+//Leetcode -- 1834 -- Medium
+//C++ Code Below--
+class Solution {
+public:
+    vector<int> getOrder(vector<vector<int>>& tasks) {
+        priority_queue<pair<int, int>, vector<pair<int, int>>, greater<>> minHeap;
+        vector<array<int, 3>> sortedTask;
+        for(int i=0; i<tasks.size(); i++)
+        {
+            sortedTask.push_back({tasks[i][0], tasks[i][1], i});
+        }
+        sort(sortedTask.begin(), sortedTask.end());
+        vector<int> ans;
+        long long currTime = 0;
+        int taskIndex = 0;
+        while(taskIndex<tasks.size() || !minHeap.empty())
+        {
+            if(minHeap.empty() && currTime < sortedTask[taskIndex][0])
+            {
+                currTime = sortedTask[taskIndex][0];
+            }
+            while(taskIndex<sortedTask.size() && currTime>=sortedTask[taskIndex][0])
+            {
+                minHeap.push({sortedTask[taskIndex][1], sortedTask[taskIndex][2]});
+                taskIndex++;
+            }
+            auto [processTime, index] = minHeap.top();
+            minHeap.pop();
+            currTime += processTime;
+            ans.push_back(index);
+        }
+        return ans;
+    }
+};
+
+//Java Code Below--
+class Solution {
+    public int[] getOrder(int[][] tasks) {
+        PriorityQueue<int[]> minHeap = new PriorityQueue<int[]> ((a, b) -> (a[1] != b[1] ? (a[1]-b[1]) : (a[2]-b[2])));
+        int sortedTask[][] = new int[tasks.length][3];
+        for(int i=0; i<tasks.length; i++)
+        {
+            sortedTask[i][0] = tasks[i][0];
+            sortedTask[i][1] = tasks[i][1];
+            sortedTask[i][2] = i;
+        }
+        Arrays.sort(sortedTask, (a, b) -> Integer.compare(a[0], b[0]));
+        int ans[] = new int[tasks.length];
+        long currTime = 0;
+        int taskIndex = 0, k = 0;
+        while(taskIndex < tasks.length || !minHeap.isEmpty())
+        {
+            if(minHeap.isEmpty() && currTime < sortedTask[taskIndex][0])
+            {
+                currTime = sortedTask[taskIndex][0];
+            }
+            while(taskIndex<tasks.length && currTime >= sortedTask[taskIndex][0])
+            {
+                minHeap.add(sortedTask[taskIndex]);
+                taskIndex++;
+            }
+            int processTime = minHeap.peek()[1];
+            int index = minHeap.peek()[2];
+            minHeap.remove();
+            currTime += processTime;
+            ans[k++] = index;
+        }
+        return ans;
+    }
+}
