@@ -1,0 +1,47 @@
+//Leetcode -- 797 -- Medium
+//C++ Code--
+class Solution {
+public:
+    vector<vector<int>> allPathsSourceTarget(vector<vector<int>>& graph) {
+        vector<vector<int>> ans;
+        vector<int> path;
+        
+        dfs(graph, ans, path, 0);
+        
+        return ans;
+    }
+    void dfs(vector<vector<int>>&graph, vector<vector<int>>&ans, vector<int>&path, int curr){
+        path.push_back(curr);
+        if(curr == graph.size()-1)
+            ans.push_back(path);
+        else
+            for(auto x : graph[curr])
+                dfs(graph, ans, path, x);
+        path.pop_back();
+    }
+};
+
+//Java Code Below--
+class Solution {
+    public List<List<Integer>> allPathsSourceTarget(int[][] graph) {
+        List<List<Integer>> ans = new LinkedList<>();
+        List<Integer> path = new ArrayList<>();
+        dfs(graph, ans, path, 0);
+        return ans;
+    }
+    void dfs(int[][] graph, List<List<Integer>> ans, List<Integer> path, int curr)
+    {
+        path.add(curr);
+        if(curr == graph.length-1)
+        {
+            ans.add(new ArrayList<>(path));
+        }
+        else{
+            for(int x : graph[curr])
+            {
+                dfs(graph, ans, path, x);
+            }
+        }
+        path.remove(path.size()-1);
+    }
+}
