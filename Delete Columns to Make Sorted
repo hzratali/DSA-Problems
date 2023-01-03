@@ -1,0 +1,34 @@
+//Leetcode -- 944 -- Easy
+//C++ Code --
+class Solution {
+public:
+    int minDeletionSize(vector<string>& strs) {
+        int cnt = 0;
+        for(int c=0; c<strs[0].size(); c++){
+            for(int r=1; r<strs.size(); r++){
+                if(strs[r][c] < strs[r-1][c])
+                {
+                    cnt++;
+                    break;
+                }
+            }
+        }
+        return cnt;
+    }
+};
+
+//Java Code Below--
+class Solution {
+    public int minDeletionSize(String[] strs) {
+        int cnt = 0;
+        for(int c=0; c<strs[0].length(); c++){
+            for(int r=1; r<strs.length; r++){
+                if(strs[r].charAt(c) < strs[r-1].charAt(c)){
+                    cnt++;
+                    break;
+                }
+            }
+        }
+        return cnt;
+    }
+}
