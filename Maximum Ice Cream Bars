@@ -1,0 +1,48 @@
+//Leetcode -- 1833 -- Medium
+//C++ code 
+class Solution {
+public:
+    int maxIceCream(vector<int>& costs, int coins) {
+        sort(costs.begin(), costs.end());
+        int ans = 0;
+        for(int i=0; i<costs.size(); i++)
+        {
+            if(costs[i] <= coins)
+            {
+                ans++;
+                coins -= costs[i];
+            }
+            else break;
+        }
+        return ans;
+    }
+};
+
+//Java Code 
+class Solution {
+    public int maxIceCream(int[] costs, int coins) {
+        Arrays.sort(costs);
+        int ans = 0;
+        for(int i=0; i<costs.length; i++)
+        {
+            if(costs[i] <= coins)
+            {
+                ans++;
+                coins -= costs[i];
+            }
+            else break;
+        }
+        return ans;
+    }
+}
+
+//Python3 code
+class Solution:
+    def maxIceCream(self, costs: List[int], coins: int) -> int:
+        costs.sort()
+        ans = 0
+        for x in costs:
+            if x <= coins:
+                ans += 1
+                coins -= x
+        return ans
