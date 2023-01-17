@@ -1,0 +1,37 @@
+//Leetcode -- 926 -- Medium
+//C++ Code Below--
+class Solution {
+public:
+    int minFlipsMonoIncr(string s) {
+        int cnt = 0;
+        for(char c : s)
+        {
+            if(c == '0') cnt++;
+        }
+        int ans = cnt;
+        for(char c : s)
+        {
+            if(c == '0') ans = min(ans, --cnt);
+            else cnt++;
+        }
+        return ans;
+    }
+};
+
+//Java Code Below--
+class Solution {
+    public int minFlipsMonoIncr(String s) {
+        int cnt = 0;
+        for(int i=0; i<s.length(); i++)
+        {
+            if(s.charAt(i) == '0') cnt++;
+        }
+        int ans = cnt;
+        for(int i=0; i<s.length(); i++)
+        {
+            if(s.charAt(i) == '0') ans = Math.min(ans, --cnt);
+            else cnt++;
+        }
+        return ans;
+    }
+}
