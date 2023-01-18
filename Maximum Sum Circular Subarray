@@ -1,0 +1,55 @@
+//Leetcode -- 918 -- Medium
+//C++ Code Below--
+class Solution {
+public:
+    int maxSubarraySumCircular(vector<int>& nums) {
+        int n = nums.size();
+        vector<int> rightMax(n);
+        rightMax[n-1] = nums[n-1];
+        for(int sufSum=nums[n-1], i=n-2; i>=0; i--)
+        {
+            sufSum += nums[i];
+            rightMax[i] = max(rightMax[i+1], sufSum);
+        }
+        int maxSum = nums[0];
+        int specialSum = nums[0];
+        for(int sufSum=0, curMax=0, i=0; i<n; i++)
+        {
+            curMax = max(curMax, 0) + nums[i];
+            maxSum = max(maxSum, curMax);
+            sufSum += nums[i];
+            if(i+1 < n)
+            {
+                specialSum = max(specialSum, sufSum+rightMax[i+1]);
+            }
+        }
+        return max(maxSum, specialSum);
+    }
+};
+
+//Java Code Below--
+class Solution {
+    public int maxSubarraySumCircular(int[] nums) {
+        int n = nums.length;
+        int[] rightMax = new int[n];
+        rightMax[n-1] = nums[n-1];
+        for(int sufSum=nums[n-1], i=n-2; i>=0; i--)
+        {
+            sufSum += nums[i];
+            rightMax[i] = Math.max(rightMax[i+1], sufSum);
+        }
+        int maxSum = nums[0];
+        int specialSum = nums[0];
+        for(int prefSum=0, curMax=0, i=0; i<n; i++)
+        {
+            curMax = Math.max(curMax, 0) + nums[i];
+            maxSum = Math.max(maxSum, curMax);
+            prefSum += nums[i];
+            if(i+1 < n)
+            {
+                specialSum = Math.max(specialSum, prefSum+rightMax[i+1]);
+            }
+        }
+        return Math.max(maxSum, specialSum);
+    }
+}
