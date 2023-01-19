@@ -1,0 +1,55 @@
+//GFG -- Medium -- Nutanix
+//C++ Code Below
+#include<bits/stdc++.h>
+using namespace std;
+class Solution{
+    public:
+    int carpetBox(int A, int B, int C, int D){
+        //code here
+        int movesWithoutRotation = 0;
+        int movesWithRotation = 0;
+        // Storing Length and Breadth for later use
+        int L1 = A;
+        int B1 = B;
+        while(A > C)
+        {
+            A = A/2;
+            movesWithoutRotation++;
+        }
+        while(B > D)
+        {
+            B = B/2;
+            movesWithoutRotation++;
+        }
+        //Swapping Length and Breadth
+        // Second Case, where L=B and B=L
+        A = B1;
+        B = L1;
+        while(A > C)
+        {
+            A = A/2;
+            movesWithRotation++;
+        }
+        while(B > D)
+        {
+            B = B/2;
+            movesWithRotation++;
+        }
+        // Returning Minimum moves from each way
+        return min(movesWithoutRotation, movesWithRotation);
+    }
+};
+int main(){
+    int t;
+    cin>>t;
+    while(t--){
+        int A,B,C,D;
+        cin>>A>>B>>C>>D;
+        
+        Solution ob;
+
+        int ans = ob.carpetBox(A,B,C,D);
+        
+        cout<<ans<<endl;
+    }
+}
