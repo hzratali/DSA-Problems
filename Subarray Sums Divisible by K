@@ -1,0 +1,33 @@
+//Leetcode -- 974 -- Medium
+//C++ Code Below--
+class Solution {
+public:
+    int subarraysDivByK(vector<int>& nums, int k) {
+        int prefSum = 0, ans = 0;
+        vector<int> modGroup(k);
+        modGroup[0] = 1;
+        for(int x : nums)
+        {
+            prefSum = (prefSum + x % k + k) % k;
+            ans += modGroup[prefSum];
+            modGroup[prefSum]++;
+        }
+        return ans;
+    }
+};
+
+//Java Code Below
+class Solution {
+    public int subarraysDivByK(int[] nums, int k) {
+        int prefSum = 0, ans = 0;
+        int[] modGroup = new int[k];
+        modGroup[0] = 1;
+        for(int x : nums)
+        {
+            prefSum = (prefSum + x % k + k) % k;
+            ans += modGroup[prefSum];
+            modGroup[prefSum]++;
+        }
+        return ans;
+    }
+}
