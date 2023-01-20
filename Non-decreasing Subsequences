@@ -1,0 +1,76 @@
+//Leetcode -- 491 -- Medium
+//C++ Code Below
+class Solution {
+public:
+    vector<vector<int>> findSubsequences(vector<int>& nums) {
+        set<vector<int>> ans;
+        vector<int> seq;
+        solve(ans, seq, nums, 0);
+        return vector(ans.begin(), ans.end());
+    }
+    void solve(set<vector<int>>&ans, vector<int>&seq, vector<int>&nums, int ind)
+    {
+        if(nums.size() == ind)
+        {
+            if(seq.size() >= 2)
+            {
+                ans.insert(seq);
+            }
+            return;
+        }
+        if(seq.empty() || seq.back() <= nums[ind])
+        {
+            seq.push_back(nums[ind]);
+            solve(ans, seq, nums, ind+1);
+            seq.pop_back();
+        }
+        solve(ans, seq, nums, ind+1);
+    }
+};
+
+//Java Code Below
+class Solution {
+    public List<List<Integer>> findSubsequences(int[] nums) {
+        Set<List<Integer>> ans = new HashSet<List<Integer>>();
+        List<Integer> seq = new ArrayList<>();
+        solve(ans, seq, nums, 0);
+        return new ArrayList(ans);
+    }
+    void solve(Set<List<Integer>> ans, List<Integer> seq, int[] nums, int ind)
+    {
+        if(nums.length == ind)
+        {
+            if(seq.size() >= 2)
+            {
+                ans.add(new ArrayList<>(seq));
+            }
+            return;
+        }
+        if(seq.isEmpty() || seq.get(seq.size()-1) <= nums[ind])
+        {
+            seq.add(nums[ind]);
+            solve(ans, seq, nums, ind+1);
+            seq.remove(seq.size()-1);
+        }
+        solve(ans, seq, nums, ind+1);
+    }
+}
+
+//Python3 Code Below--
+class Solution:
+    def findSubsequences(self, nums: List[int]) -> List[List[int]]:
+        ans = set()
+        seq = []
+        def solve(ind):
+            if(ind == len(nums)):
+                if len(seq) >= 2:
+                    ans.add(tuple(seq))
+                return
+            if not seq or seq[-1] <= nums[ind]:
+                seq.append(nums[ind])
+                solve(ind+1)
+                seq.pop()
+            solve(ind+1)
+        solve(0)
+        return ans
+        
