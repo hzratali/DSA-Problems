@@ -1,0 +1,82 @@
+//Leetcode -- Medium
+//C++ Code Below
+class Solution {
+public:
+    vector<string> restoreIpAddresses(string s) {
+        vector<string> ans;
+        if(s.size() > 12 || s.size() < 4) return ans;
+        string temp;
+        solve(ans, temp, 0, 0, s);
+        return ans;
+    }
+    void solve(vector<string>&ans, string temp, int i, int part, string &s)
+    {
+        if(s.size() == i && part == 4)
+        {
+            ans.push_back(temp.substr(0, temp.size()-1));
+            return;
+        }
+        else if(s.size() == i || part == 4)
+        {
+            return;
+        }
+        solve(ans, temp+s[i]+".", i+1, part+1, s);
+        if(s.size() > i+1 && isValid(s.substr(i, 2)))
+        {
+            solve(ans, temp+s.substr(i, 2)+".", i+2, part+1, s);
+        }
+        if(s.size() > i+2 && isValid(s.substr(i, 3)))
+        {
+            solve(ans, temp+s.substr(i, 3)+".", i+3, part+1, s);
+        }
+    }
+    bool isValid(string s)
+    {
+        int n = s.size();
+        if(n == 1) return true;
+        if(n > 3 || s[0] == '0') return false;
+        int num = stoi(s);
+        if(num > 255) return false;
+        return true;
+    }
+};
+
+//Java code
+class Solution {
+    public List<String> restoreIpAddresses(String s) {
+        List<String> ans = new ArrayList<>();
+        if(s.length() > 12 || s.length() < 4) return ans;
+        solve(ans, "", 0, 0, s);
+        return ans;
+    }
+    void solve(List<String> ans, String temp, int i, int part, String s)
+    {
+        if(i == s.length() && part == 4)
+        {
+            ans.add(temp.substring(0, temp.length()-1));
+            return;
+        }
+        else if(i == s.length() || part == 4)
+        {
+            return;
+        }
+        solve(ans, temp+s.charAt(i)+".", i+1, part+1, s);
+        if(s.length() > i+1 && isValid(s.substring(i, i+2)))
+        {
+            solve(ans, temp+s.substring(i, i+2)+".", i+2, part+1, s);
+        }
+        if(s.length() > i+2 && isValid(s.substring(i, i+3)))
+        {
+            solve(ans, temp+s.substring(i, i+3)+".", i+3, part+1, s);
+        }
+    }
+    boolean isValid(String s)
+    {
+        int n = s.length();
+        if(n == 1) return true;
+        if(n > 3 || s.charAt(0) == '0') return false;
+        int num = Integer.parseInt(s);
+        if(num > 255) return false;
+        return true;
+    }
+}
