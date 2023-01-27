@@ -1,0 +1,44 @@
+//GFG -- Medium -- Amazon, Zoho, Flipkart, Morgan Stanley, Microsoft, OYO Rooms, MakeMyTrip, Goldman Sachs, Nutanix, Linkedin, Faceb
+//C++ Code below--
+//{ Driver Code Starts
+#include<bits/stdc++.h>
+using namespace std;
+
+// } Driver Code Ends
+class Solution {
+	public:
+		int mod = 1e9+7;
+		vector<int> dp;
+		int CountWays(string s){
+		    // Code here
+		    dp.resize(s.size());
+		    dp.assign(s.size(), -1);
+		    return nways(0, s);
+		}
+		int nways(int i, string s)
+		{
+		    if(i >= s.size()) return 1;
+		    else if(s[i] == '0') return 0;
+		    else if(i == s.size()-1) return 1;
+		    else if(dp[i] != -1) return dp[i];
+		    else if(s[i] == '1' || (s[i] == '2' && (s[i+1] >= 48 && s[i+1] <= 54)))
+                 return dp[i] = (nways(i+1, s) + nways(i+2, s)) % mod;
+            else return dp[i] = nways(i+1, s)%mod;
+		}
+
+};
+
+//{ Driver Code Starts.
+int main(){
+	int tc;
+	cin >> tc;
+	while(tc--){
+		string str;
+		cin >> str;
+		Solution obj;
+		int ans = obj.CountWays(str);
+		cout << ans << "\n";
+	}
+	return 0;
+}
+// } Driver Code Ends
