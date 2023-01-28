@@ -1,0 +1,51 @@
+//GFG -- Hard -- Nutanix
+//C++ Code Below
+#include<bits/stdc++.h>
+using namespace std;
+class Solution{
+    public:
+    unordered_map<string, bool> mp;
+    bool isScramble(string s1, string s2){
+        //code here
+        if(s1.compare(s2)==0) return true;
+        if(s1.size()<=1) return false;
+        string key;
+        key=s1;
+        key.push_back(' ');
+        key.append(s2);
+        if(mp.find(key)!=mp.end()) return mp[key];
+        int n=s1.size();
+        bool flag=false;
+        for(int i=1; i<n; i++)
+        {
+            if((isScramble(s1.substr(0,i),s2.substr(0,i)) &&
+            isScramble(s1.substr(i,n-i),s2.substr(i,n-i))) || 
+            (isScramble(s1.substr(0,i),s2.substr(n-i,i)) && 
+            isScramble(s1.substr(i,n-i),s2.substr(0,n-i))))
+            {
+                flag = true;
+                break;
+            }
+        }
+        return mp[key] = flag;
+    }    
+};
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--){
+        string S1, S2;
+        cin>>S1>>S2;
+        Solution ob;
+        
+        if (ob.isScramble(S1, S2)) {
+            cout << "Yes";
+        }
+        else {
+            cout << "No";
+        }
+        cout<<endl;
+    }
+    return 0;
+}
