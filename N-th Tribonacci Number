@@ -1,0 +1,49 @@
+// Leetcode -- 1137 -- Easy
+//C++ Code
+class Solution {
+public:
+    int tribonacci(int n) {
+        if(n == 0) return 0;
+        if(n == 1 || n == 2) return 1;
+        int f = 0, s = 1, t = 1;
+        int ans = 0;
+        for(int i=3; i<=n; i++)
+        {
+            ans = f+s+t;
+            f = s;
+            s = t;
+            t = ans;
+        }
+        return ans;
+    }
+};
+
+//Java Code
+class Solution {
+    public int tribonacci(int n) {
+        if(n == 0) return 0;
+        if(n == 1 || n == 2) return 1;
+        int f = 0, s = 1, t = 1;
+        int ans = 0;
+        for(int i=3; i<=n; i++)
+        {
+            ans = f+s+t;
+            f = s;
+            s = t;
+            t = ans;
+        }
+        return ans;
+    }
+}
+
+//Python3 Code
+class Solution:
+    def tribonacci(self, n: int) -> int:
+        if n == 0: return 0
+        if n == 1 or n == 2: return 1
+        f, s, t, = 0, 1, 1
+        ans = 0
+        for i in range(3, n+1):
+            ans = f+s+t
+            f, s, t = s, t, ans
+        return ans
