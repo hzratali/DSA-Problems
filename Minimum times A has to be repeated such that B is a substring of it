@@ -1,0 +1,45 @@
+//GFG -- Medium -- Google
+//C++ code
+#include <bits/stdc++.h>
+using namespace std;
+class Solution {
+  public:
+    int minRepeats(string A, string B) {
+        // code here
+        int n = A.size(), m = B.size(), i = 0, j = 0, ans = 1;
+        while(i < n && j < m)
+        {
+            if(A[i] == B[j])
+            {
+                i++;
+                j++;
+                break;
+            }
+            i++;
+        }
+        while(j < m)
+        {
+            if(A[i] == B[j])
+            {
+                if(i == 0) ans++;
+                i = (i+1) % n;
+                j++;
+            }
+            else return -1;
+        }
+        return ans;
+    }
+};
+int main() {
+    int t;
+    scanf("%d ",&t);
+    while (t--) {
+        string A,B;
+        getline(cin,A);
+        getline(cin,B);
+
+        Solution ob;
+        cout << ob.minRepeats(A,B) << endl;
+    }
+    return 0;
+}
