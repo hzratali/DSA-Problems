@@ -1,0 +1,108 @@
+//LeetCode -- Medium
+//C++ Code Below
+class Solution {
+public:
+    int bestTeamScore(vector<int>& scores, vector<int>& ages) {
+        int n = scores.size();
+        vector<pair<int, int>> vp;
+        for(int i=0; i<n; i++)
+        {
+            vp.push_back({ages[i], scores[i]});
+        }
+        sort(vp.begin(), vp.end());
+        vector<vector<int>> dp(n, vector<int>(n, -1));
+        return f(vp, dp, -1, 0);
+    }
+    int f(vector<pair<int, int>> &vp, vector<vector<int>> &dp, int prev, int ind)
+    {
+        if(ind >= vp.size()) return 0;
+        if(dp[prev+1][ind] != -1) return dp[prev+1][ind];
+        if(prev == -1 || vp[ind].second >= vp[prev].second)
+        {
+            return dp[prev+1][ind] = max(f(vp, dp, prev, ind+1),
+                                    vp[ind].second + f(vp, dp, ind, ind+1));
+        }
+        return dp[prev+1][ind] = f(vp, dp, prev, ind+1);
+    }
+};
+//2nd Code
+class Solution {
+public:
+    int bestTeamScore(vector<int>& scores, vector<int>& ages) {
+        int n = scores.size(), ans = 0;
+        vector<pair<int, int>> vp;
+        for(int i=0; i<n; i++)
+        {
+            vp.push_back({ages[i], scores[i]});
+        }
+        sort(vp.begin(), vp.end());
+        vector<int> dp(n);
+        for(int i=0; i<n; i++)
+        {
+            dp[i] = vp[i].second;
+            for(int j=0; j<i; j++)
+            {
+                if(vp[j].second <= vp[i].second)
+                {
+                    dp[i] = max(dp[i], vp[i].second+dp[j]);
+                }
+            }
+            ans = max(ans, dp[i]);
+        }
+        return ans;
+    }
+};
+
+//Java Code Below--
+class Solution {
+    public int bestTeamScore(int[] scores, int[] ages) {
+        int n = scores.length;
+        int[][] lis = new int[n][2];
+        for(int i=0; i<n; i++)
+        {
+            lis[i][0] = ages[i];
+            lis[i][1] = scores[i];
+        }
+        Arrays.sort(lis, (a, b) -> a[0]==b[0] ? a[1]-b[1] : a[0]-b[0]);
+        Integer[][] dp = new Integer[n][n];
+        return f(lis, dp, -1, 0);
+    }
+    int f(int[][] lis, Integer[][] dp, int prev, int ind)
+    {
+        if(ind >= lis.length) return 0;
+        if(dp[prev + 1][ind] != null) return dp[prev+1][ind];
+        if(prev == -1 || lis[ind][1] >= lis[prev][1])
+        {
+            return dp[prev+1][ind] = Math.max(f(lis, dp, prev, ind+1),
+                                   lis[ind][1] + f(lis, dp, ind, ind+1));
+        }
+        return dp[prev+1][ind] = f(lis, dp, prev, ind+1);
+    }
+}
+//2nd Code
+class Solution {
+    public int bestTeamScore(int[] scores, int[] ages) {
+        int n = scores.length, ans = 0;
+        int[][] lis = new int[n][2];
+        for(int i=0; i<n; i++)
+        {
+            lis[i][0] = ages[i];
+            lis[i][1] = scores[i];
+        }
+        Arrays.sort(lis, (a, b) -> a[0]==b[0] ? a[1]-b[1] : a[0]-b[0]);
+        int[] dp = new int[n];
+        for(int i=0; i<n; i++)
+        {
+            dp[i] = lis[i][1];
+            for(int j=0; j<i; j++)
+            {
+                if(lis[j][1] <= lis[i][1])
+                {
+                    dp[i] = Math.max(dp[i], lis[i][1]+dp[j]);
+                }
+            }
+            ans = Math.max(ans, dp[i]);
+        }
+        return ans;
+    }
+}
