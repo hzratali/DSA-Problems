@@ -1,0 +1,60 @@
+//LeetCode -- Easy
+//C++ Code below
+class Solution {
+public:
+    bool isAlienSorted(vector<string>& words, string order) {
+        vector<int> mp(26, 0);
+        for(int i=0; i<order.size(); i++) mp[order[i]-'a'] = i;
+        for(int i=0; i<words.size()-1; i++)
+        {
+            for(int j=0; j<words[i].size(); j++)
+            {
+                if(j >= words[i+1].size()) return false;
+                if(words[i][j] != words[i+1][j])
+                {
+                    int charVal = words[i][j]-'a';
+                    int nxtCharVal = words[i+1][j]-'a';
+                    if(mp[charVal] > mp[nxtCharVal]) return false;
+                    else break;
+                }
+            }
+        }
+        return true;
+    }
+};
+
+//Java Code
+class Solution {
+    public boolean isAlienSorted(String[] words, String order) {
+        int[] mp = new int[26];
+        for(int i=0; i<order.length(); i++) mp[order.charAt(i)-'a'] = i;
+        for(int i=0; i<words.length-1; i++)
+        {
+            for(int j=0; j<words[i].length(); j++)
+            {
+                if(j >= words[i+1].length()) return false;
+                if(words[i].charAt(j) != words[i+1].charAt(j))
+                {
+                    int charVal = words[i].charAt(j)-'a';
+                    int nxtCharVal = words[i+1].charAt(j)-'a';
+                    if(mp[charVal] > mp[nxtCharVal]) return false;
+                    else break;
+                }
+            }
+        }
+        return true;
+    }
+}
+
+//Python3 Code
+class Solution:
+    def isAlienSorted(self, words: List[str], order: str) -> bool:
+        mp = {}
+        for index, val in enumerate(order): mp[val] = index
+        for i in range(0, len(words)-1):
+            for j in range(0, len(words[i])):
+                if j >= len(words[i+1]): return False
+                if words[i][j] != words[i+1][j]:
+                    if mp[words[i][j]] > mp[words[i+1][j]]: return False
+                    else: break
+        return True
