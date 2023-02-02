@@ -1,0 +1,64 @@
+//GFG -- Hard -- JUSPAY
+//C++ Code Below
+#include<bits/stdc++.h>
+using namespace std;
+class Solution
+{
+  public:
+  long long ans = -1;
+  long long largestSumCycle(int N, vector<int> Edge)
+  {
+    // code here
+    vector<bool> vis(N, 0);
+    vector<bool> pathVis(N, 0);
+    for(int i=0; i<N; i++)
+    {
+        if(!vis[i])
+        {
+            dfs(i, Edge, vis, pathVis);
+        }
+    }
+    return ans;
+  }
+  void dfs(int node, vector<int>&edge, vector<bool> &vis, vector<bool> &pathVis)
+  {
+      vis[node] = true;
+      pathVis[node] = true;
+      if(edge[node] != -1)
+      {
+          int adj = edge[node];
+          if(!vis[adj])
+          {
+              dfs(adj, edge, vis, pathVis);
+          }
+          else if(pathVis[adj])
+          {
+              int cur = adj;
+              long long sum = 0;
+              do
+              {
+                  sum += cur;
+                  cur = edge[cur];
+              }while(cur != adj);
+              ans = max(ans, sum);
+          }
+      }
+      pathVis[node] = false;
+  }
+};
+signed main(){
+   int tc;
+   cin >> tc;
+   while(tc--){
+      int N;
+      cin >> N;
+      vector<int> Edge(N);
+      for(int i=0;i<N;i++){
+        cin>>Edge[i];
+      }
+      Solution obj;
+      long long ans=obj.largestSumCycle(N, Edge);
+      cout<<ans<<endl;
+   }
+   return 0;
+}
