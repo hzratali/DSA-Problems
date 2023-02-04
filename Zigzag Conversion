@@ -1,0 +1,83 @@
+//Leetcode -- Medium -- 6
+//C++ Code below
+class Solution {
+public:
+    string convert(string s, int numRows) {
+        if(numRows == 1) return s;
+        int n = s.size();
+        int sections = ceil(n/(2*numRows-2.0));
+        int numCols = sections*(numRows-1);
+        vector<vector<char>> matrix(numRows, vector<char>(numCols, ' '));
+        int currRow = 0, currCol = 0, currStrIndex = 0;
+        while(currStrIndex < n)
+        {
+            while(currRow < numRows && currStrIndex < n)
+            {
+                matrix[currRow][currCol] = s[currStrIndex];
+                currRow++;
+                currStrIndex++;
+            }
+            currRow -= 2;
+            currCol++;
+            while(currRow > 0 && currCol < numCols && currStrIndex < n)
+            {
+                matrix[currRow][currCol] = s[currStrIndex];
+                currRow--;
+                currCol++;
+                currStrIndex++;
+            }
+        }
+        string ans;
+        for(auto& row : matrix)
+        {
+            for(auto& x : row)
+            {
+                if(x != ' ')
+                {
+                    ans += x;
+                }
+            }
+        }
+        return ans;
+    }
+};
+
+//Java Code Below
+class Solution {
+    public String convert(String s, int numRows) {
+        if(numRows == 1) return s;
+        int n = s.length();
+        int sections = (int)Math.ceil(n/(2*numRows-2.0));
+        int numCols = sections * (numRows-1);
+        char[][] matrix = new char[numRows][numCols];
+        for(char[] row : matrix) Arrays.fill(row, ' ');
+        int currRow = 0, currCol = 0, currStrIndex = 0;
+        while(currStrIndex < n)
+        {
+            while(currRow < numRows && currStrIndex < n)
+            {
+                matrix[currRow][currCol] = s.charAt(currStrIndex);
+                currRow++;
+                currStrIndex++;
+            }
+            currRow -= 2;
+            currCol++;
+            while(currRow > 0 && currCol < numCols && currStrIndex < n)
+            {
+                matrix[currRow][currCol] = s.charAt(currStrIndex);
+                currRow--;
+                currCol++;
+                currStrIndex++;
+            }
+        }
+        StringBuilder ans = new StringBuilder();
+        for(char[] row : matrix)
+        {
+            for(char c : row)
+            {
+                if(c != ' ') ans.append(c);
+            }
+        }
+        return ans.toString();
+    }
+}
