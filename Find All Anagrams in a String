@@ -1,0 +1,76 @@
+//Leetcode -- Medium -- 438
+//C++ Code below
+class Solution {
+public:
+    vector<int> findAnagrams(string s, string p) {
+        int len = s.size(), win = p.size();
+        vector<int> hash(26, 0), pHash(26, 0);
+        vector<int> ans;
+        if(len < win) return ans;
+        int left = 0, right = 0;
+        while(right < win){
+            pHash[p[right] - 'a']++;
+            hash[s[right++] - 'a']++;
+        }
+        right -= 1;
+        while(right<len){
+            if(pHash==hash) ans.push_back(left);
+            right++;
+            if(right != len) hash[s[right] - 'a']++;
+            hash[s[left] - 'a']--;
+            left++;
+        }
+        return ans;
+    }
+};
+
+//Java Code below
+class Solution {
+    public List<Integer> findAnagrams(String s, String p) {
+        int len = s.length(), win = p.length();
+        int[] sHash = new int[26];
+        int[] pHash = new int[26];
+        List<Integer> ans = new ArrayList<Integer>();
+        if(win > len) return ans;
+        int right = 0, left = 0;
+        while(right < win)
+        {
+            sHash[s.charAt(right)-'a']++;
+            pHash[p.charAt(right)-'a']++;
+            right++;
+        }
+        right--;
+        while(right < len)
+        {
+            if(Arrays.equals(sHash, pHash)) ans.add(left);
+            right++;
+            if(right != len) sHash[s.charAt(right)-'a']++;
+            sHash[s.charAt(left)-'a']--;
+            left++;
+        }
+        return ans;
+    }
+}
+
+//Python3 code below
+class Solution:
+    def findAnagrams(self, s: str, p: str) -> List[int]:
+        slen = len(s)
+        win = len(p)
+        sHash = [0]*26
+        pHash = [0]*26
+        ans = []
+        if win > slen: return ans
+        right, left = 0, 0
+        while right < win:
+            sHash[ord(s[right])-97] += 1
+            pHash[ord(p[right])-97] += 1
+            right += 1
+        right -= 1
+        while right < slen:
+            if sHash == pHash: ans.append(left)
+            right += 1
+            if right != slen: sHash[ord(s[right])-97] += 1
+            sHash[ord(s[left])-97] -= 1
+            left += 1
+        return ans
