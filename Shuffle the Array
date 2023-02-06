@@ -1,0 +1,52 @@
+//Leetcode -- 1470 -- Easy
+//C++ Code
+class Solution {
+public:
+    vector<int> shuffle(vector<int>& nums, int n) {
+        vector<int> ans(2*n);
+        for(int i=0; i<n; i++)
+        {
+            ans[2*i] = nums[i];
+            ans[2*i+1] = nums[n+i];
+        }
+        return ans;
+    }
+};
+
+//Java Code
+class Solution {
+    public int[] shuffle(int[] nums, int n) {
+        int[] ans = new int[2*n];
+        for(int i=0; i<n; i++)
+        {
+            ans[2*i] = nums[i];
+            ans[2*i+1] = nums[i+n];
+        }
+        return ans;
+    }
+}
+
+//Python3 Code
+class Solution:
+    def shuffle(self, nums: List[int], n: int) -> List[int]:
+        ans = [0] * (2*n)
+        for i in range(0, n):
+            ans[2*i] = nums[i]
+            ans[2*i+1] = nums[n+i]
+        return ans
+        
+//JavaScript Code
+/**
+ * @param {number[]} nums
+ * @param {number} n
+ * @return {number[]}
+ */
+var shuffle = function(nums, n) {
+    let ans = Array(2*n);
+    for(let i=0; i<n; i++)
+    {
+        ans[2*i] = nums[i];
+        ans[2*i+1] = nums[n+i];
+    }
+    return ans;
+};
