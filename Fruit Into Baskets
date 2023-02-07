@@ -1,0 +1,44 @@
+//Leetcode -- 904 -- Medium
+
+//C++ Code
+class Solution {
+public:
+    int totalFruit(vector<int>& fruits) {
+        int left=0, right=0, ans = 0;
+        map<int, int> mp;
+        while(left < fruits.size())
+        {
+            mp[fruits[left]]++;
+            while(right<fruits.size() && mp.size()>2)
+            {
+                if(mp[fruits[right]] == 1) mp.erase(fruits[right]);
+                else mp[fruits[right]]--;
+                right++;
+            }
+            ans = max(ans, left-right+1);
+            left++;
+        }
+        return ans;
+    }
+};
+
+//Java code below
+class Solution {
+    public int totalFruit(int[] fruits) {
+        int left=0, right=0, ans = 0;
+        Map<Integer, Integer> mp = new HashMap<>();
+        while(left < fruits.length)
+        {
+            mp.put(fruits[left], mp.getOrDefault(fruits[left], 0)+1);
+            while(right<fruits.length && mp.size()>2)
+            {
+                if(mp.get(fruits[right]) == 1) mp.remove(fruits[right]);
+                else mp.put(fruits[right], mp.get(fruits[right])-1);
+                right++;
+            }
+            ans = Math.max(ans, left-right+1);
+            left++;
+        }
+        return ans;
+    }
+}
