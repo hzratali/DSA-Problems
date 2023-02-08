@@ -1,0 +1,63 @@
+//Leetcode -- Medium -- 45
+//C++ code below
+class Solution {
+public:
+    int jump(vector<int>& nums) {
+        int jumps = 0, current = 0, farthest = 0;
+        for(int i=0; i<nums.size()-1; i++){
+            farthest = max(farthest, nums[i]+i);
+            if(i == current){
+                current = farthest;
+                jumps++;
+            }
+        }
+        return jumps;
+    }
+};
+
+//Java Code
+class Solution {
+    public int jump(int[] nums) {
+        int farthest = 0, current = 0, jumps = 0;
+        for(int i=0; i<nums.length-1; i++)
+        {
+            farthest = Math.max(farthest, nums[i]+i);
+            if(i == current)
+            {
+                current = farthest;
+                jumps++;
+            }
+        }
+        return jumps;
+    }
+}
+
+//Python3 Code
+class Solution:
+    def jump(self, nums: List[int]) -> int:
+        farthest, current, jumps = 0, 0, 0
+        for i in range(0, len(nums)-1):
+            farthest = max(farthest, nums[i]+i)
+            if current == i:
+                current = farthest
+                jumps += 1
+        return jumps
+
+//Javascript Code
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var jump = function(nums) {
+    var farthest = 0, current = 0, jumps = 0;
+    for(let i=0; i<nums.length-1; i++)
+    {
+        farthest = Math.max(farthest, nums[i]+i);
+        if(current == i)
+        {
+            current = farthest;
+            jumps++;
+        }
+    }
+    return jumps;
+};
