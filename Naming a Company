@@ -1,0 +1,57 @@
+//Leetcode -- hard -- 2306
+//C++ Code Below
+class Solution {
+public:
+    long long distinctNames(vector<string>& ideas) {
+        unordered_set<string> group[26];
+        for(auto x : ideas) group[x[0]-'a'].insert(x.substr(1));
+        long long ans = 0;
+        for(int i=0; i<25; i++){
+            for(int j=i+1; j<26; j++){
+                int noMutual = 0;
+                for(auto x : group[i]){
+                    if(group[j].count(x)) noMutual++;
+                }
+                ans += 2LL * (group[i].size()-noMutual) * (group[j].size()-noMutual);
+            }
+        }
+        return ans;
+    }
+};
+
+//Java Code below
+class Solution {
+    public long distinctNames(String[] ideas) {
+        HashSet<String>[] group = new HashSet[26];
+        for(int i=0; i<26; i++){
+            group[i] = new HashSet<>();
+        }
+        for(String x : ideas){
+            group[x.charAt(0)-'a'].add(x.substring(1));
+        }
+        long ans = 0;
+        for(int i=0; i<25; i++){
+            for(int j=i+1; j<26; j++){
+                int noMutual = 0;
+                for(String x : group[i]){
+                    if(group[j].contains(x)) noMutual++;
+                }
+                ans += 2 * (group[i].size()-noMutual) * (group[j].size()-noMutual);
+            }
+        }
+        return ans;
+    }
+}
+
+//Python3 Code below
+class Solution:
+    def distinctNames(self, ideas: List[str]) -> int:
+        group = [set() for _ in range(26)]
+        for x in ideas:
+            group[ord(x[0])-ord('a')].add(x[1:])
+        ans = 0
+        for i in range(25):
+            for j in range(i+1, 26):
+                noMutual = len(group[i] & group[j])
+                ans += 2 * (len(group[i])-noMutual) * (len(group[j])-noMutual)
+        return ans
