@@ -1,0 +1,33 @@
+//GFG -- Easy
+//C++ Code Below
+#include <bits/stdc++.h>
+using namespace std;
+class Solution{
+public:
+    int maxInstance(string s){
+        map<int, int> mp;
+        for(char c : s) mp[c]++;
+        int ans = INT_MAX;
+        for(auto x : mp){
+            if(x.first == 'b' || x.first == 'a' || x.first == 'n'){
+                ans = min(ans, x.second);
+            }
+            if(x.first == 'l' || x.first == 'o'){
+                ans = min(ans, x.second/2);
+            }
+        }
+        return ans;
+    }
+};
+int main(){
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        string s;
+        cin>>s;
+        Solution ob;
+        cout<<ob.maxInstance(s)<<endl;
+    }
+    return 0;
+}
