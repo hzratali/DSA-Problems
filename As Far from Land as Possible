@@ -1,0 +1,69 @@
+//Leetcode -- Medium -- 1162
+//C++ Code
+class Solution {
+public:
+    int maxDistance(vector<vector<int>>& grid) {
+        int n = grid.size(), m = grid[0].size(), ans = -1;
+        vector<vector<int>> vis(n, vector<int>(m));
+        queue<pair<int, int>> q;
+        for(int i=0; i<n; i++){
+            for(int j=0; j<m; j++){
+                vis[i][j] = grid[i][j];
+                if(grid[i][j] == 1) q.push({i, j});
+            }
+        }
+        int dx[] = {0, 0, 1, -1};
+        int dy[] = {1, -1, 0, 0};
+        while(!q.empty()){
+            int sz = q.size();
+            while(sz--){
+                auto x = q.front(); q.pop();
+                for(int i=0; i<4; i++){
+                    int r = x.first + dx[i];
+                    int c = x.second + dy[i];
+                    if(r>=0 && c>=0 && r<n && c<m && vis[r][c]==0){
+                        vis[r][c] = 1;
+                        q.push({r, c});
+                    }
+                }
+            }
+            ans++;
+        }
+        return ans==0 ? -1 : ans;
+    }
+};
+
+//Java Code Below
+class Solution {
+    public int maxDistance(int[][] grid) {
+        int n = grid.length, m = grid[0].length, ans = -1;
+        int[][] vis = new int[n][m];
+        Queue<Pair<Integer, Integer>> q = new LinkedList<>();
+        for(int i=0; i<n; i++){
+            for(int j=0; j<m; j++){
+                vis[i][j] = grid[i][j];
+                if(grid[i][j] == 1){
+                    q.offer(new Pair(i, j));
+                }
+            }
+        }
+        int[] dx = {0, 0, 1, -1};
+        int[] dy = {1, -1, 0, 0};
+        while(!q.isEmpty()){
+            int sz = q.size();
+            while(sz-- > 0){
+                Pair<Integer, Integer> landCell = q.poll();
+                for(int i=0; i<4; i++){
+                    int r = landCell.getKey() + dx[i];
+                    int c = landCell.getValue() + dy[i];
+                    if(r>=0 && c>=0 && r<n && c<m && vis[r][c]==0){
+                        vis[r][c] = 1;
+                        q.offer(new Pair(r, c));
+                    }
+                }
+            }
+            ans++;
+        }
+        return ans==0 ? -1 : ans;
+    }
+}
