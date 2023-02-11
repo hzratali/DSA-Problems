@@ -1,0 +1,69 @@
+//Leetcode -- Medium -- 1129
+//C++ Code Below
+class Solution {
+public:
+    vector<int> shortestAlternatingPaths(int n, vector<vector<int>>& redEdges, vector<vector<int>>& blueEdges) {
+        vector<vector<pair<int, int>>> adj(n);
+        for(auto x : redEdges) adj[x[0]].push_back({x[1], 0});
+        for(auto x : blueEdges) adj[x[0]].push_back({x[1], 1});
+        vector<int> ans(n, -1);
+        vector<vector<bool>> vis(n, vector<bool>(2));
+        queue<vector<int>> q;
+        q.push({0, 0, -1});
+        vis[0][0] = vis[0][1] = true;
+        ans[0] = 0;
+        while(!q.empty())
+        {
+            auto x = q.front(); q.pop();
+            int node = x[0], step = x[1], prevColor = x[2];
+            for(auto [neighbor, color] : adj[node])
+            {
+                if(!vis[neighbor][color] && color != prevColor)
+                {
+                    vis[neighbor][color] = true;
+                    q.push({neighbor, step+1, color});
+                    if(ans[neighbor] == -1) ans[neighbor] = step+1;
+                }
+            }
+        }
+        return ans;
+    }
+};
+
+//Java Code Below
+class Solution {
+    public int[] shortestAlternatingPaths(int n, int[][] redEdges, int[][] blueEdges) {
+        Map<Integer, List<List<Integer>>> adj = new HashMap<>();
+        for(int[] x : redEdges){
+            adj.computeIfAbsent(x[0], k->new ArrayList<List<Integer>>()).add(Arrays.asList(x[1], 0));
+        }
+        for(int[] x : blueEdges){
+            adj.computeIfAbsent(x[0], k->new ArrayList<List<Integer>>()).add(Arrays.asList(x[1], 1));
+        }
+        int[] ans = new int[n];
+        Arrays.fill(ans, -1);
+        boolean[][] vis = new boolean[n][2];
+        Queue<int[]> q = new LinkedList<>();
+        q.offer(new int[]{0, 0, -1});
+        ans[0] = 0;
+        vis[0][0] = vis[0][1] = true;
+        while(!q.isEmpty())
+        {
+            int[] x = q.poll();
+            int node = x[0], step = x[1], prevColor = x[2];
+            if(!adj.containsKey(node)) continue;
+            for(List<Integer> nei : adj.get(node)){
+                int neighbor = nei.get(0);
+                int color = nei.get(1);
+                if(!vis[neighbor][color] && color != prevColor){
+                    if(ans[neighbor] == -1){
+                        ans[neighbor] = step+1;
+                    }
+                    vis[neighbor][color] = true;
+                    q.offer(new int[]{neighbor, step+1, color});;
+                }
+            }
+        }
+        return ans;
+    }
+}
