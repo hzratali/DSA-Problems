@@ -1,0 +1,51 @@
+//Leetcode -- 67 -- Easy
+//C++ Code Below
+class Solution {
+public:
+    string addBinary(string a, string b) {
+        int i = a.size()-1, j = b.size()-1;
+        string ans;
+        int carry = 0;
+        while(i >= 0 || j>= 0 || carry)
+        {
+            if(i >= 0) carry += a[i--] - '0';
+            if(j >= 0) carry += b[j--] - '0';
+            ans += (carry % 2 + '0');
+            carry = carry / 2;
+        }
+        reverse(ans.begin(), ans.end());
+        return ans;
+    }
+};
+
+//java Code Below
+class Solution {
+    public String addBinary(String a, String b) {
+        int i = a.length()-1, j = b.length()-1, carry = 0;
+        StringBuilder ans = new StringBuilder();
+        while(i >= 0 || j >= 0 || carry != 0)
+        {
+            if(i >= 0) carry += a.charAt(i--) - '0';
+            if(j >= 0) carry += b.charAt(j--) - '0';
+            ans.append(carry % 2);
+            carry = carry / 2;
+        }
+        return ans.reverse().toString();
+    }
+}
+
+//Python3 Code Below
+class Solution:
+    def addBinary(self, a: str, b: str) -> str:
+        ans = []
+        i, j, carry = len(a)-1, len(b)-1, 0
+        while i>=0 or j>=0 or carry:
+            if i >= 0:
+                carry += int(a[i])
+                i -= 1
+            if j >= 0:
+                carry += int(b[j])
+                j -= 1
+            ans.append(str(carry%2))
+            carry = carry // 2
+        return ''.join(reversed(ans))
