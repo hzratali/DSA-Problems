@@ -1,0 +1,44 @@
+//gfg -- Medium
+//C++ code below
+#include<bits/stdc++.h>
+using namespace std;
+class Solution{
+public:
+    int goodStones(int n,vector<int> &arr){
+        // Code here
+        vector<int> dp(n, -1);
+        for(int i=0; i<n; i++){
+            if(dp[i] == -1) dfs(i, arr, dp);
+        }
+        int ans = 0;
+        for(int x : dp){
+            if(x == 1) ans++;
+        }
+        return ans;
+    }
+    int dfs(int i, vector<int>&arr, vector<int>&dp){
+        if(i >= arr.size() || i < 0) return 1;
+        if(dp[i] >= 1) return dp[i];
+        if(dp[i] == 0) return 2;
+        dp[i] = 0;
+        int a = i + arr[i];
+        dp[i] = dfs(a, arr, dp);
+        return dp[i];
+    }
+};
+int main(){
+    
+    int t;
+    cin>>t;
+    while(t--){
+        int n;
+        cin>>n;
+        vector<int> arr(n);
+        for(int i=0;i<n;i++){
+            cin>>arr[i];
+        }
+        Solution ob;
+        cout<<ob.goodStones(n,arr)<<endl;
+    }
+    return 0;
+}
