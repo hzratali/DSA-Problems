@@ -1,0 +1,76 @@
+//Leetcode -- 226 -- Easy
+//C++ Code Below
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+public:
+    TreeNode* invertTree(TreeNode* root) {
+        return invert(root);
+    }
+    TreeNode *invert(TreeNode* root){
+        if(root==NULL)
+            return NULL;
+        TreeNode* invertLeft = invert(root->left);
+        TreeNode* invertRight = invert(root->right);
+        
+        root->left = invertRight;
+        root->right = invertLeft;
+        return root;
+        }
+};
+
+//Java code Below
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public TreeNode invertTree(TreeNode root) {
+        return invert(root);
+    }
+    TreeNode invert(TreeNode root)
+    {
+        if(root == null) return root;
+        TreeNode invertLeft = invert(root.left);
+        TreeNode invertRight = invert(root.right);
+        root.left = invertRight;
+        root.right = invertLeft;
+        return root;
+    }
+}
+
+//Python3 Code Below
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
+        if root == None: return root
+        invertLeft = self.invertTree(root.left)
+        invertRight = self.invertTree(root.right)
+        root.left = invertRight
+        root.right = invertLeft
+        return root
