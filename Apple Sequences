@@ -1,0 +1,50 @@
+//GFG -- easy -- Ola cabs
+//C++ Code
+//{ Driver Code Starts
+//Initial Template for C++
+
+#include<bits/stdc++.h> 
+using namespace std; 
+
+// } Driver Code Ends
+//User function Template for C++
+
+class Solution{   
+public:
+    int appleSequences(int n, int m, string arr){
+        // code here 
+        int ans = 0;
+        int end = 0, start = 0, cnt = 0;
+        while(end < n)
+        {
+            if(arr[end] == 'O') cnt++;
+            while(start < n && cnt > m)
+            {
+                if(arr[start] == 'O') cnt--;
+                start++;
+            }
+            ans = max(ans, end-start+1);
+            end++;
+        }
+        return ans;
+    }
+};
+
+//{ Driver Code Starts.
+int main() 
+{ 
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int N, M;
+        cin >> N >> M;
+        string arr;
+        cin >> arr;
+        
+        Solution ob;
+        cout << ob.appleSequences(N, M, arr) << endl;
+    }
+    return 0; 
+} 
+// } Driver Code Ends
