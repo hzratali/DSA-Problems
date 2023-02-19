@@ -1,0 +1,90 @@
+//Leetcode -- Medium -- 103
+//C++ Code Below
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+public:
+    vector<vector<int>> zigzagLevelOrder(TreeNode* root) {
+        vector<vector<int>> result;
+        if(root==NULL)
+            return result;
+        queue<TreeNode*> nodesQueue;
+        nodesQueue.push(root);
+        bool leftToRight = true;
+        
+        while(!nodesQueue.empty()){
+            int size = nodesQueue.size();
+            vector<int> row(size);
+            for(int i=0; i<size; i++){
+                TreeNode* node = nodesQueue.front();
+                nodesQueue.pop();
+                
+                int index = (leftToRight)? i : (size-1-i);
+                
+                row[index] = node->val;
+                if(node->left){
+                    nodesQueue.push(node->left);
+                }
+                if(node->right){
+                    nodesQueue.push(node->right);
+                }
+            }
+            leftToRight = !leftToRight;
+            result.push_back(row);
+        }
+        return result;
+    }
+};
+
+//Java Code below
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
+        List<List<Integer>> ans = new LinkedList<>();
+        if(root == null) return ans;
+        Queue<TreeNode> q = new LinkedList<>();
+        q.add(root);
+        boolean left2right = true;
+        while(!q.isEmpty())
+        {
+            int sz = q.size();
+            int[] row = new int[sz];
+            for(int i=0; i<sz; i++)
+            {
+                TreeNode node = q.poll();
+                int index = left2right ? i : sz-1-i;
+                row[index] = node.val;
+                if(node.left != null) q.add(node.left);
+                if(node.right != null) q.add(node.right);
+            }
+            left2right = !left2right;
+            List<Integer> arr = new ArrayList<>();
+            for(int x : row) arr.add(x);
+            ans.add(arr);
+        }
+        return ans;
+    }
+}
