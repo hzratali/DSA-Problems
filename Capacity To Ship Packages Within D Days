@@ -1,0 +1,91 @@
+// Leetcode -- Medium -- 1011
+//C++ code below
+class Solution {
+public:
+    int shipWithinDays(vector<int>& weights, int days) {
+        int totalLoad = 0, maxLoad = 0;
+        for(int x : weights)
+        {
+            totalLoad += x;
+            maxLoad = max(maxLoad, x);
+        }
+        int l = maxLoad, r = totalLoad;
+        while(l < r)
+        {
+            int m = (l+r)/2;
+            if(flexible(weights, m, days)) r = m;
+            else l = m+1;
+        }
+        return l;
+    }
+    bool flexible(vector<int> &weight, int c, int days)
+    {
+        int currLoad = 0, daysNeeded = 1;
+        for(int x : weight)
+        {
+            currLoad += x;
+            if(currLoad > c)
+            {
+                daysNeeded++;
+                currLoad = x;
+            }
+        }
+        return daysNeeded <= days;
+    }
+};
+
+//Java Code Below
+class Solution {
+    public int shipWithinDays(int[] weights, int days) {
+        int maxLoad = 0, totalLoad = 0;
+        for(int x : weights)
+        {
+            totalLoad += x;
+            maxLoad = Math.max(maxLoad, x);
+        }
+        int l = maxLoad, r = totalLoad;
+        while(l < r)
+        {
+            int m = (l+r)/2;
+            if(feasible(weights, m, days)) r = m;
+            else l = m+1;
+        }
+        return l;
+    }
+    boolean feasible(int[] weight, int c, int days)
+    {
+        int currLoad = 0, daysNeeded = 1;
+        for(int x : weight)
+        {
+            currLoad += x;
+            if(currLoad > c)
+            {
+                daysNeeded++;
+                currLoad = x;
+            }
+        }
+        return daysNeeded <= days;
+    }
+}
+
+//Python3 code below
+class Solution:
+    def shipWithinDays(self, weights: List[int], days: int) -> int:
+        totalLoad, maxLoad = 0, 0
+        for x in weights:
+            totalLoad += x
+            maxLoad = max(maxLoad, x)
+        l, r = maxLoad, totalLoad
+        while l < r:
+            m = (l+r)//2
+            if self.feasible(weights, m, days) == True: r = m
+            else: l = m+1
+        return l
+    def feasible(self, weight, c, days):
+        currLoad, daysNeeded = 0, 1
+        for x in weight:
+            currLoad += x
+            if currLoad > c:
+                daysNeeded += 1
+                currLoad = x
+        return daysNeeded <= days
