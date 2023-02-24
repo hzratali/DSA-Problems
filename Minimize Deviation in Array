@@ -1,0 +1,102 @@
+//Leetcode -- Hard -- 1675
+//C++ code below
+class Solution {
+public:
+    int minimumDeviation(vector<int>& nums) {
+        int mn = INT_MAX;
+        priority_queue<int> pq;
+        for(int x : nums){
+            if(x%2 == 0){
+                pq.push(x);
+                mn = min(mn, x);
+            }
+            else{
+                pq.push(x*2);
+                mn = min(mn, x*2);
+            }
+        }
+        int ans = INT_MAX;
+        while(!pq.empty()){
+            int x = pq.top(); pq.pop();
+            ans = min(ans, x - mn);
+            if(x % 2 != 0) break;
+            mn = min(mn, x/2);
+            pq.push(x/2);
+        }
+        return ans;
+    }
+};
+
+//Java code below
+class Solution {
+    public int minimumDeviation(int[] nums) {
+        int mn = Integer.MAX_VALUE;
+        PriorityQueue<Integer> pq = new PriorityQueue<Integer>(Collections.reverseOrder());
+        for(int x : nums){
+            if(x % 2 == 0){
+                pq.add(x);
+                mn = Math.min(mn, x);
+            }
+            else{
+                pq.add(x*2);
+                mn = Math.min(mn, x*2);
+            }
+        }
+        int ans = Integer.MAX_VALUE;
+        while(!pq.isEmpty()){
+            int x = pq.poll();
+            ans = Math.min(ans, x-mn);
+            if(x % 2 != 0) break;
+            mn = Math.min(mn, x/2);
+            pq.add(x/2);
+        }
+        return ans;
+    }
+}
+//Java Code below
+class Solution {
+    public int minimumDeviation(int[] nums) {
+        int mn = Integer.MAX_VALUE;
+        PriorityQueue<Integer> pq = new PriorityQueue<Integer>();
+        for(int x : nums){
+            if(x % 2 == 0){
+                pq.offer(-x);
+                mn = Math.min(mn, x);
+            }
+            else{
+                pq.add(-x*2);
+                mn = Math.min(mn, x*2);
+            }
+        }
+        int ans = Integer.MAX_VALUE;
+        while(!pq.isEmpty()){
+            int x = -pq.poll();
+            ans = Math.min(ans, x-mn);
+            if(x % 2 != 0) break;
+            mn = Math.min(mn, x/2);
+            pq.offer(-x/2);
+        }
+        return ans;
+    }
+}
+
+//Python3 code below
+class Solution:
+    def minimumDeviation(self, nums: List[int]) -> int:
+        mn = float('inf')
+        pq = []
+        for x in nums:
+            if x%2 == 0:
+                heappush(pq, -x)
+                mn = min(mn, x)
+            else:
+                heappush(pq, -x*2)
+                mn = min(mn, x*2)
+        ans = float('inf')
+        while(pq != None):
+            x = -heappop(pq)
+            ans = min(ans, x - mn)
+            if x%2 != 0: break
+            mn = min(mn, x//2)
+            heappush(pq, -x//2)
+        return ans
