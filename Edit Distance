@@ -1,0 +1,116 @@
+//Leetcode -- Hard -- 72
+//C++ Code below
+class Solution {
+public:
+    int minDistance(string word1, string word2) {
+        int n = word1.size(), m = word2.size();
+        vector<vector<int>> dp(n, vector<int>(m, -1));
+        return f(n-1, m-1, word1, word2, dp);
+    }
+    int f(int i, int j, string s1, string s2, vector<vector<int>>&dp){
+        if(i < 0) return j+1;
+        if(j < 0) return i+1;
+        if(dp[i][j] != -1)
+            return dp[i][j];
+        if(s1[i] == s2[j]) return dp[i][j] = f(i-1, j-1, s1, s2, dp);
+        return dp[i][j] = 1 + min(f(i-1, j, s1, s2, dp), min(f(i, j-1, s1, s2, dp), f(i-1, j-1, s1, s2, dp)));
+    }
+};
+
+//C++ 
+class Solution {
+public:
+    int minDistance(string word1, string word2) {
+        int n = word1.size(), m = word2.size();
+        vector<vector<int>> dp(n+1, vector<int>(m+1, 0));
+        for(int i=0; i<n+1; i++) dp[i][0] = i;
+        for(int j=0; j<m+1; j++) dp[0][j] = j;
+        
+        for(int i=1; i<n+1; i++){
+            for(int j=1; j<m+1; j++){
+                if(word1[i-1] == word2[j-1])
+                    dp[i][j] = dp[i-1][j-1];
+                else
+                    dp[i][j] = 1 + min(dp[i-1][j], min(dp[i][j-1], dp[i-1][j-1]));
+            }
+        }
+        return dp[n][m];
+    }
+};
+
+//C++ 
+class Solution {
+public:
+    int minDistance(string word1, string word2) {
+        int n = word1.size(), m = word2.size();
+        vector<int> curr(m+1, 0), prev(m+1, 0);
+        for(int j=0; j<m+1; j++) prev[j] = j;
+        
+        for(int i=1; i<n+1; i++){
+            curr[0] = i;
+            for(int j=1; j<m+1; j++){
+                if(word1[i-1] == word2[j-1])
+                    curr[j] = prev[j-1];
+                else
+                    curr[j] = 1 + min(prev[j], min(curr[j-1], prev[j-1]));
+            }
+            prev = curr;
+        }
+        return prev[m];
+    }
+};
+
+//Java Code below
+class Solution {
+    public int minDistance(String word1, String word2) {
+        int n = word1.length(), m = word2.length();
+        int[][] dp = new int[n][m];
+        for(int[] row : dp) Arrays.fill(row, -1);
+        return f(n-1, m-1, word1, word2, dp);
+    }
+    int f(int i, int j, String s1, String s2, int[][] dp)
+    {
+        if(i < 0) return j+1;
+        if(j < 0) return i+1;
+        if(dp[i][j] != -1)
+            return dp[i][j];
+        if(s1.charAt(i) == s2.charAt(j)) return dp[i][j] = f(i-1, j-1, s1, s2, dp);
+        return dp[i][j] = 1 + Math.min(f(i-1, j, s1, s2, dp), Math.min(f(i, j-1, s1, s2, dp), f(i-1, j-1, s1, s2, dp)));
+    }
+}
+
+//Java
+class Solution {
+    public int minDistance(String word1, String word2) {
+        int n = word1.length(), m = word2.length();
+        int[][] dp = new int[n+1][m+1];
+        for(int i=0; i<n+1; i++) dp[i][0] = i;
+        for(int j=0; j<m+1; j++) dp[0][j] = j;
+        for(int i=1; i<n+1; i++){
+            for(int j=1; j<m+1; j++){
+                if(word1.charAt(i-1) == word2.charAt(j-1)){
+                    dp[i][j] = dp[i-1][j-1];
+                }
+                else{
+                    dp[i][j] = 1+Math.min(dp[i-1][j], Math.min(dp[i][j-1], dp[i-1][j-1]));
+                }
+            }
+        }
+        return dp[n][m];
+    }
+}
+
+//Python3 Code below
+class Solution:
+    def minDistance(self, word1: str, word2: str) -> int:
+        n, m = len(word1), len(word2)
+        dp = [[0] * (m + 1) for _ in range(n + 1)]
+        for i in range(1, n + 1): dp[i][0] = i
+        for j in range(1, m + 1): dp[0][j] = j
+        for i in range(1, n + 1):
+            for j in range(1, m + 1):
+                if word1[i - 1] == word2[j - 1]:
+                    dp[i][j] = dp[i - 1][j - 1]
+                else:
+                    dp[i][j] = min(dp[i - 1][j - 1], dp[i - 1][j], dp[i][j - 1]) + 1
+        return dp[n][m]
