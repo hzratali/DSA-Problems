@@ -1,0 +1,73 @@
+//GFG -- Medium
+//C++ Code Below
+//{ Driver Code Starts
+// Initial Template for C++
+
+#include <bits/stdc++.h>
+using namespace std;
+
+
+// } Driver Code Ends
+// User function Template for C++
+
+class Solution {
+  public:
+    int findNumberOfGoodComponent(int V, vector<vector<int>>& adj) {
+        // code here
+        vector<bool> vis(V+1);
+        int cnt = 0;
+        for(int i=1; i<=V; i++){
+            if(!vis[i]){
+                if(bfs(i, vis, adj)) cnt++;
+            }
+        }
+        return cnt;
+    }
+    bool bfs(int node, vector<bool> &vis, vector<vector<int>> &adj)
+    {
+        queue<int> q;
+        q.push(node);
+        vis[node] = true;
+        int nodes = 0, edges = adj[node].size();
+        bool flag = true;
+        while(!q.empty())
+        {
+            int curr = q.front(); q.pop();
+            nodes++;
+            if(adj[curr].size() != edges) flag = false;
+            for(auto it : adj[curr])
+            {
+                if(vis[it]) continue;
+                vis[it] = true;
+                q.push(it);
+            }
+        }
+        return flag && edges+1 == nodes;
+    }
+};
+
+//{ Driver Code Starts.
+
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int E, V;
+        cin >> E >> V;
+        vector<vector<int>> adj(V + 1, vector<int>());
+        for (int i = 0; i < E; i++) {
+            int u, v;
+
+            cin >> u >> v;
+
+            adj[u].push_back(v);
+            adj[v].push_back(u);
+        }
+        Solution obj;
+
+        int res = obj.findNumberOfGoodComponent(V, adj);
+        cout << res << "\n";
+    }
+    return 0;
+}
+// } Driver Code Ends
