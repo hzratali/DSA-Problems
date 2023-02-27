@@ -1,0 +1,164 @@
+//Leetcode -- Medium -- 427
+//C++ code below
+/*
+// Definition for a QuadTree node.
+class Node {
+public:
+    bool val;
+    bool isLeaf;
+    Node* topLeft;
+    Node* topRight;
+    Node* bottomLeft;
+    Node* bottomRight;
+    
+    Node() {
+        val = false;
+        isLeaf = false;
+        topLeft = NULL;
+        topRight = NULL;
+        bottomLeft = NULL;
+        bottomRight = NULL;
+    }
+    
+    Node(bool _val, bool _isLeaf) {
+        val = _val;
+        isLeaf = _isLeaf;
+        topLeft = NULL;
+        topRight = NULL;
+        bottomLeft = NULL;
+        bottomRight = NULL;
+    }
+    
+    Node(bool _val, bool _isLeaf, Node* _topLeft, Node* _topRight, Node* _bottomLeft, Node* _bottomRight) {
+        val = _val;
+        isLeaf = _isLeaf;
+        topLeft = _topLeft;
+        topRight = _topRight;
+        bottomLeft = _bottomLeft;
+        bottomRight = _bottomRight;
+    }
+};
+*/
+
+class Solution {
+public:
+    Node* construct(vector<vector<int>>& grid) {
+        return solve(0, 0, grid.size(), grid);
+    }
+    Node* solve(int i, int j, int w, vector<vector<int>>&grid)
+    {
+        if(allSame(i, j, w, grid)) return new Node(grid[i][j], true);
+        Node* node = new Node(true, false);
+        node->topLeft = solve(i, j, w/2, grid);
+        node->topRight = solve(i, j+w/2, w/2, grid);
+        node->bottomLeft = solve(i+w/2, j, w/2, grid);
+        node->bottomRight = solve(i+w/2, j+w/2, w/2, grid);
+        return node;
+    }
+    bool allSame(int i, int j, int w, vector<vector<int>>&grid)
+    {
+        for (int x = i; x < i + w; ++x)
+            for (int y = j; y < j + w; ++y)
+                if (grid[x][y] != grid[i][j]) return false;
+        return true;
+    }
+};
+
+//Java Code below
+/*
+// Definition for a QuadTree node.
+class Node {
+    public boolean val;
+    public boolean isLeaf;
+    public Node topLeft;
+    public Node topRight;
+    public Node bottomLeft;
+    public Node bottomRight;
+
+    
+    public Node() {
+        this.val = false;
+        this.isLeaf = false;
+        this.topLeft = null;
+        this.topRight = null;
+        this.bottomLeft = null;
+        this.bottomRight = null;
+    }
+    
+    public Node(boolean val, boolean isLeaf) {
+        this.val = val;
+        this.isLeaf = isLeaf;
+        this.topLeft = null;
+        this.topRight = null;
+        this.bottomLeft = null;
+        this.bottomRight = null;
+    }
+    
+    public Node(boolean val, boolean isLeaf, Node topLeft, Node topRight, Node bottomLeft, Node bottomRight) {
+        this.val = val;
+        this.isLeaf = isLeaf;
+        this.topLeft = topLeft;
+        this.topRight = topRight;
+        this.bottomLeft = bottomLeft;
+        this.bottomRight = bottomRight;
+    }
+};
+*/
+
+class Solution {
+    public Node construct(int[][] grid) {
+        return solve(0, 0, grid.length, grid);
+    }
+    Node solve(int i, int j, int w, int[][] grid)
+    {
+        if(allSame(i, j, w, grid)){
+            return new Node(grid[i][j]==1 ? true : false, true);
+        }
+        Node node = new Node(true, false);
+        node.topLeft = solve(i, j, w/2, grid);
+        node.topRight = solve(i, j+w/2, w/2, grid);
+        node.bottomLeft = solve(i+w/2, j, w/2, grid);
+        node.bottomRight = solve(i+w/2, j+w/2, w/2, grid);
+        return node;
+    }
+    boolean allSame(int i, int j, int w, int[][] grid){
+        for(int x=i; x<i+w; x++){
+            for(int y=j; y<j+w; y++){
+                if(grid[i][j] != grid[x][y]) return false;
+            }
+        }
+        return true;
+    }
+}
+
+//Python3 Code Below
+"""
+# Definition for a QuadTree node.
+class Node:
+    def __init__(self, val, isLeaf, topLeft, topRight, bottomLeft, bottomRight):
+        self.val = val
+        self.isLeaf = isLeaf
+        self.topLeft = topLeft
+        self.topRight = topRight
+        self.bottomLeft = bottomLeft
+        self.bottomRight = bottomRight
+"""
+
+class Solution:
+    def construct(self, grid: List[List[int]]) -> 'Node':
+        return self.helper(grid, 0, 0, len(grid))
+    def helper(self, grid, i, j, w):
+        if self.allSame(grid, i, j, w):
+            return Node(grid[i][j] == 1, True)
+        node = Node(True, False)
+        node.topLeft = self.helper(grid, i, j, w // 2)
+        node.topRight = self.helper(grid, i, j + w // 2, w // 2)
+        node.bottomLeft = self.helper(grid, i + w // 2, j, w // 2)
+        node.bottomRight = self.helper(grid, i + w // 2, j + w // 2, w // 2)
+        return node
+    def allSame(self, grid, i, j, w):
+        for x in range(i, i + w):
+            for y in range(j, j + w):
+                if grid[x][y] != grid[i][j]:
+                    return False
+        return True
