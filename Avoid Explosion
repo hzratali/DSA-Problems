@@ -1,0 +1,58 @@
+//GFG -- hard
+//C++ Code Below
+#include <bits/stdc++.h>
+using namespace std;
+class Solution {
+  public:
+    vector<string> avoidExplosion(vector<vector<int>> mix, int n, vector<vector<int>> danger, int m){
+        vector<int> ds(n);
+        for(int i=0; i<n; i++) ds[i] = i;
+        vector<string> ans;
+        for(int i=0; i<n; i++){
+            int x = mix[i][0] - 1, y = mix[i][1] - 1;
+            int fx = find(x, ds), fy = find(y, ds);
+            bool isSafe = true;
+            for(int j=0; j<m; j++){
+                int p = danger[j][0] - 1, q = danger[j][1] - 1;
+                int fp = find(p, ds), fq = find(q, ds);
+                if((fx == fp && fy == fq) || (fx == fq && fy == fp)){
+                    isSafe = false;
+                    break;
+                }
+            }
+            ans.push_back(isSafe ? "Yes" : "No");
+            if(isSafe) ds[fx] = fy;
+        }
+        return ans;
+    }
+    int find(int x, vector<int> &ds){
+        if(ds[x] != x){
+            ds[x] = find(ds[x], ds);
+        }
+        return ds[x];
+    }
+};
+int main() {
+    int tt;
+    cin >> tt;
+    Solution sol;
+    while (tt--) {
+        int n, m;
+        cin >> n >> m;
+        vector<vector<int>> mix(n, vector<int>(2));
+        vector<vector<int>> danger(m, vector<int>(2));
+        for (int i = 0; i < n; i++) {
+            cin >> mix[i][0] >> mix[i][1];
+        }
+
+        for (int i = 0; i < m; i++) {
+            cin >> danger[i][0] >> danger[i][1];
+        }
+
+        auto ans = sol.avoidExplosion(mix, n, danger, m);
+        for (auto &val : ans) cout << val << " ";
+        cout << "\n";
+    }
+
+    return 0;
+}
