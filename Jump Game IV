@@ -1,0 +1,94 @@
+//Leetcode -- 1345 -- hard
+//C++ Code Below
+class Solution {
+public:
+    int minJumps(vector<int>& arr) {
+        int n = arr.size();
+        unordered_map<int, vector<int>> mp;
+        for(int i=0; i<n; i++){
+            mp[arr[i]].push_back(i);
+        }
+        queue<int> q; q.push(0);
+        vector<bool> vis(n); vis[0] = true;
+        int steps = 0;
+        while(!q.empty()){
+            int sz = q.size();
+            for(int i=0; i<sz; i++){
+                int index = q.front(); q.pop();
+                if(index == n-1) return steps;
+                vector<int> &next = mp[arr[index]];
+                next.push_back(index-1); next.push_back(index+1);
+                for(int x : next){
+                    if(x >= 0 && x < n && !vis[x]){
+                        vis[x] = true;
+                        q.push(x);
+                    }
+                }
+                next.clear();
+            }
+            steps++;
+        }
+        return -1;
+    }
+};
+
+//Java Code below
+class Solution {
+    public int minJumps(int[] arr) {
+        int n = arr.length;
+        Map<Integer, List<Integer>> mp = new HashMap<>();
+        for(int i=0; i<n; i++){
+            mp.computeIfAbsent(arr[i], k -> new ArrayList<>()).add(i);
+        }
+        Queue<Integer> q = new LinkedList<>();
+        boolean[] vis = new boolean[n];
+        q.offer(0); vis[0] = true;
+        int steps = 0;
+        while(!q.isEmpty()){
+            int sz = q.size();
+            for(int i=0; i<sz; i++){
+                int index = q.poll();
+                if(index == n-1) return steps;
+                List<Integer> next = mp.get(arr[index]);
+                next.add(index-1); next.add(index+1);
+                for(int x : next){
+                    if(x >= 0 && x < n && !vis[x]){
+                        vis[x] = true;
+                        q.offer(x);
+                    }
+                }
+                next.clear();
+            }
+            steps++;
+        }
+        return -1;
+    }
+}
+
+//Python3 Code Below
+class Solution:
+    def minJumps(self, arr: List[int]) -> int:
+        n = len(arr)
+        mp = defaultdict(list)
+        for i in range(n): mp[arr[i]].append(i)
+        q = deque()
+        vis = [False] * n
+        q.append(0)
+        vis[0] = True
+        steps = 0
+        while q:
+            sz = len(q)
+            while(sz > 0):
+                index = q.popleft()
+                if index == n-1: return steps
+                nextIndex = mp[arr[index]]
+                nextIndex.append(index-1)
+                nextIndex.append(index+1)
+                for x in nextIndex:
+                    if x >= 0 and x < n and not vis[x]:
+                        vis[x] = True
+                        q.append(x)
+                nextIndex.clear()
+                sz -= 1
+            steps += 1
+        return -1
