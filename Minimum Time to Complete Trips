@@ -1,0 +1,65 @@
+//Leetcode -- Medium -- 2187
+//C++ Code Below
+class Solution {
+public:
+    long long minimumTime(vector<int>& time, int totalTrips) {
+        sort(time.begin(), time.end());
+        long long l = 0;
+        long long h = 1LL*time[time.size()-1]*totalTrips;
+        long long minTime = 1LL*time[time.size()-1]*totalTrips;
+        while(l < h){
+            long long m = (l+h)/2;
+            long long tTrips = 0;
+            for(int i=0; i<time.size(); i++){
+                tTrips += (m / time[i]);
+            }
+            if(tTrips >= totalTrips){
+                minTime = min(minTime, m);
+                h = m;
+            }
+            else l = m + 1;
+        }
+        return minTime;
+    }
+};
+
+//java code below
+class Solution {
+    public long minimumTime(int[] time, int totalTrips) {
+        Arrays.sort(time);
+        long l = 0;
+        long h = 1L*time[time.length-1]*totalTrips;
+        long minTime = 1L*time[time.length-1]*totalTrips;
+        while(l < h){
+            long m = (l+h)/2;
+            long tTrips = 0;
+            for(int i=0; i<time.length; i++){
+                tTrips += (m/time[i]);
+            }
+            if(tTrips >= totalTrips){
+                minTime = Math.min(minTime, m);
+                h = m;
+            }
+            else l = m + 1;
+        }
+        return minTime;
+    }
+}
+
+//Python3 Code below
+class Solution:
+    def minimumTime(self, time: List[int], totalTrips: int) -> int:
+        time.sort()
+        l = 0
+        h = time[len(time)-1]*totalTrips
+        minTime = time[len(time)-1]*totalTrips
+        while(l < h):
+            m = (l+h)//2
+            tTrips = 0
+            for t in time:
+                tTrips += (m // t)
+            if tTrips >= totalTrips:
+                minTime = min(minTime, m)
+                h = m
+            else: l = m+1
+        return minTime
