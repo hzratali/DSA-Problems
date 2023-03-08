@@ -1,0 +1,63 @@
+//GFG -- Hard
+//C++ Code Below
+#include<bits/stdc++.h>
+using namespace std;
+class Solution
+{
+    public:
+        long long int maximizeMinHeight(int n,int k,int w,vector <int> &a)
+        {
+            // code here
+            long long int ans = -1;
+            long long int minFlowerHeight = *min_element(a.begin(), a.end());
+            long long int maxPossibleHeight = INT_MAX/2;
+            while(minFlowerHeight <= maxPossibleHeight){
+                int guessHeight = (int)((maxPossibleHeight+minFlowerHeight)/2);
+                if(isPossible(a, k, w, guessHeight)){
+                    ans = guessHeight;
+                    minFlowerHeight = guessHeight+1;
+                }
+                else maxPossibleHeight = guessHeight - 1;
+            }
+            return ans;
+        }
+        bool isPossible(vector<int> &a, int days, int contiguous, long long int minHeight){
+            int n = a.size();
+            vector<long long int> waterSupply(n);
+            if(a[0] < minHeight){
+                waterSupply[0] = minHeight - a[0];
+                days -= (minHeight - a[0]);
+            }
+            if(days < 0) return false;
+            for(int i=1; i<n; i++){
+                waterSupply[i] = waterSupply[i-1];
+                int actualHeight = a[i];
+                if(i >= contiguous){
+                    actualHeight += (waterSupply[i] - waterSupply[i-contiguous]);
+                }
+                else actualHeight += waterSupply[i];
+                if(actualHeight < minHeight){
+                    waterSupply[i] += (minHeight - actualHeight);
+                    days -= (minHeight - actualHeight);
+                }
+                if(days < 0) return false;
+            }
+            return true;
+        }
+};
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        int n,k,w;
+        cin>>n>>k>>w;
+        vector <int> a(n);
+        for(auto &j:a)
+            cin>>j;
+        Solution s;
+        cout<<s.maximizeMinHeight(n,k,w,a)<<endl;
+    }
+    return 0;
+}
