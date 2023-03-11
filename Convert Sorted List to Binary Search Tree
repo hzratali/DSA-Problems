@@ -1,0 +1,114 @@
+//Leetcode -- Medium -- 109
+//C++ Code Below
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+public:
+    TreeNode* sortedListToBST(ListNode* head) {
+        vector<int> v;
+        while(head){
+            v.push_back(head->val);
+            head = head->next;
+        }
+        return fnc(v, 0, v.size()-1);
+    }
+    TreeNode* fnc(vector<int>&v, int l, int r){
+        if(l > r) return NULL;
+        int m = l + (r-l)/2;
+        TreeNode* node = new TreeNode(v[m]);
+        node->left = fnc(v, l, m-1);
+        node->right = fnc(v, m+1, r);
+        return node;
+    }
+};
+
+//Java code below
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public TreeNode sortedListToBST(ListNode head) {
+        List<Integer> v = new ArrayList<>();
+        while(head != null){
+            v.add(head.val);
+            head = head.next;
+        }
+        return fnc(v, 0, v.size()-1);
+    }
+    TreeNode fnc(List<Integer> v, int l, int r){
+        if(l > r) return null;
+        int m = l + (r-l)/2;
+        TreeNode node = new TreeNode(v.get(m));
+        node.left = fnc(v, l, m-1);
+        node.right = fnc(v, m+1, r);
+        return node;
+    }
+}
+
+//Python3 Code below
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def sortedListToBST(self, head: Optional[ListNode]) -> Optional[TreeNode]:
+        v = []
+        while head:
+            v.append(head.val)
+            head = head.next
+        return self.fnc(v, 0, len(v)-1)
+    def fnc(self, v, l, r):
+        if l>r: return None
+        m = l + (r-l)//2
+        node = TreeNode(v[m])
+        node.left = self.fnc(v, l, m-1)
+        node.right = self.fnc(v, m+1, r)
+        return node
