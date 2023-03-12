@@ -1,0 +1,89 @@
+//Leetcode -- Hard -- 23
+//C++ Code below
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
+class Solution {
+public:
+    struct comp{
+        bool operator()(ListNode* a, ListNode *b){
+            return a->val > b->val;
+        }
+    };
+    ListNode* mergeKLists(vector<ListNode*>& lists) {
+        priority_queue<ListNode*, vector<ListNode*>, comp> pq;
+        ListNode *dummy = new ListNode(-1);
+        ListNode *head = dummy;
+        for(ListNode *list : lists){
+            while(list != NULL){
+                pq.push(list);
+                list = list->next;
+            }
+        }
+        while(!pq.empty()){
+            dummy->next = pq.top(); pq.pop();
+            dummy = dummy->next;
+            dummy->next = NULL;
+        }
+        return head->next;
+    }
+};
+
+//java code below
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+class Solution {
+    public ListNode mergeKLists(ListNode[] lists) {
+        PriorityQueue<ListNode> pq = new PriorityQueue<ListNode>((o1, o2)->o1.val-o2.val);
+        for(ListNode list:lists) {
+            while(list!=null) {
+                pq.add(list);
+                list=list.next;
+            }
+        }
+        ListNode dummy = new ListNode(-1);
+        ListNode head = dummy;
+        while(!pq.isEmpty()){
+            dummy.next = pq.poll();
+            dummy = dummy.next;
+            dummy.next = null;
+        }
+        return head.next;
+    }
+}
+
+//python3 code below
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution:
+    def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
+        pq = []
+        for lis in lists:
+            while lis != None:
+                heapq.heappush(pq, lis.val)
+                lis = lis.next
+        dummy = ListNode(None)
+        head = dummy
+        while pq:
+            dummy.next = ListNode(heapq.heappop(pq))
+            dummy = dummy.next
+            dummy.next = None
+        return head.next
