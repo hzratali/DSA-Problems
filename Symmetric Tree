@@ -1,0 +1,86 @@
+//Leetcode -- Easy
+//C++ Code Using DFS/Recursion
+class Solution {
+public:
+    bool isSymmetric(TreeNode* root) {
+        return isMirror(root->left, root->right);
+    }
+    bool isMirror(TreeNode* p, TreeNode* q)
+    {
+        if(p == NULL || q == NULL) return p == q;
+        if(p->val != q->val) return false;
+        return isMirror(p->left, q->right) && isMirror(p->right, q->left);
+    }
+};
+//C++ Code Using BFS(queue)
+class Solution {
+public:
+    bool isSymmetric(TreeNode* root) {
+        queue<pair<TreeNode*, TreeNode*>> q;
+        q.push({root->left, root->right});
+        while(!q.empty()){
+            auto x = q.front(); q.pop();
+            if(x.first == NULL && x.second == NULL) continue;
+            if(x.first == NULL || x.second == NULL) return false;
+            if(x.first->val != x.second->val) return false;
+            q.push({x.first->left, x.second->right});
+            q.push({x.first->right, x.second->left});
+        }
+        return true;
+    }
+};
+//Java Code using DFS/recursion
+class Solution {
+    public boolean isSymmetric(TreeNode root) {
+        return isMirror(root.left, root.right);
+    }
+    boolean isMirror(TreeNode p, TreeNode q)
+    {
+        if(p == null || q == null) return p == q;
+        if(p.val != q.val) return false;
+        return isMirror(p.left, q.right) && isMirror(p.right, q.left);
+    }
+}
+//Java Code Using BFS(Queue)
+class Solution {
+    public boolean isSymmetric(TreeNode root) {
+        Queue<TreeNode> q = new LinkedList<>();
+        q.offer(root.left); q.offer(root.right);
+        while(!q.isEmpty()){
+            TreeNode a = q.poll(), b = q.poll();
+            if(a == null && b == null) continue;
+            if(a == null || b == null) return false;
+            if(a.val != b.val) return false;
+            q.offer(a.left); q.offer(b.right);
+            q.offer(a.right); q.offer(b.left);
+        }
+        return true;
+    }
+}
+//Python3 Code Using DFS/recursion
+class Solution:
+    def isSymmetric(self, root: TreeNode) -> bool:
+        if not root: return True
+        return self.isMirror(root.left, root.right)
+    def isMirror(self, p: TreeNode, q: TreeNode) -> bool:
+        if not p and not q: return True
+        if not p or not q: return False
+        if p.val != q.val: return False
+        return self.isMirror(p.left, q.right) and self.isMirror(p.right, q.left)
+//Python3 Code Using BFS
+class Solution:
+    def isSymmetric(self, root: Optional[TreeNode]) -> bool:
+        q = deque()
+        q.appendleft(root.right)
+        q.appendleft(root.left)
+        while q:
+            a = q.pop()
+            b = q.pop()
+            if a == None and b == None: continue
+            if a == None or b == None: return False
+            if a.val != b.val: return False
+            q.appendleft(a.left)
+            q.appendleft(b.right)
+            q.appendleft(a.right)
+            q.appendleft(b.left)
+        return True
