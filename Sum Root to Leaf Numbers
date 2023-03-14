@@ -1,0 +1,81 @@
+//Leetcode -- Medium -- 129
+//C++ code below
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+public:
+    int sumNumbers(TreeNode* root) {
+        return solve(root, 0);
+    }
+    int solve(TreeNode* root, int sum = 0){
+        if(!root)
+            return 0;
+        if(!root->left && !root->right){
+            sum = sum * 10 + root->val;
+            return sum;
+        }
+        int l = solve(root->left, sum * 10 + root->val);
+        int r = solve(root->right, sum * 10 + root->val);
+        return l+r;
+    }
+};
+
+//Java Code Below
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public int sumNumbers(TreeNode root) {
+        return solve(root, 0);
+    }
+    int solve(TreeNode root, int sum){
+        if(root==null) return 0;
+        if(root.left==null && root.right==null){
+            sum = sum * 10 + root.val;
+            return sum;
+        }
+        int l = solve(root.left, sum*10+root.val);
+        int r = solve(root.right, sum*10+root.val);
+        return l+r;
+    }
+}
+
+//Python3 Code Below
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def sumNumbers(self, root: Optional[TreeNode]) -> int:
+        return self.solve(root, 0)
+    def solve(self, root, sum):
+        if not root: return 0
+        if not root.left and not root.right:
+            sum = sum*10+root.val
+            return sum
+        l = self.solve(root.left, sum*10+root.val)
+        r = self.solve(root.right, sum*10+root.val)
+        return l+r
