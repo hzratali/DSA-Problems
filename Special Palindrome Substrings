@@ -1,0 +1,43 @@
+//GFG -- Medium -- MakeMyTrip
+//C++ Code Below
+#include<bits/stdc++.h>
+using namespace std;
+class Solution{
+    //Complete the function and return minimum number of operations
+    public:
+    int specialPalindrome(string s1, string s2){
+        //Code Here
+        int n = s1.size(), m = s2.size();
+        int ans = INT_MAX;
+        for(int i=0; i<=n-m; i++){
+            int costs = 0;
+            for(int k=0; k<m; k++){
+                if(s1[i+k] != s2[k]) costs++;
+            }
+            int l = 0, r = n-1;
+            while(l < r){
+                if(i<=l && l<i+m && i<=r && r<i+m && s2[l-i] != s2[r-i]) break;
+                char left = s1[l], right = s1[r];
+                if(i <= l && l < i+m) left = s2[l-i];
+                if(i <= r && r < i+m) right = s2[r-i];
+                if(left != right) costs++;
+                l++;
+                r--;
+            }
+            if(l >= r) ans = min(ans, costs);
+        }
+        return ans == INT_MAX ? -1:ans;
+    }
+};
+int main(){
+    int t;
+    cin>>t;
+    while(t--){
+        string s1,s2;
+        cin>>s1>>s2;
+        Solution obj;
+        int ans = obj.specialPalindrome(s1,s2);
+        
+        cout<<ans<<endl;
+    }
+}
