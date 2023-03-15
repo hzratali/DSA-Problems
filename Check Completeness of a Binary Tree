@@ -1,0 +1,82 @@
+//Leetcode -- 958 -- Medium
+//C++ code below
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+public:
+    bool isCompleteTree(TreeNode* root) {
+        if(root == NULL) return true;
+        queue<TreeNode*> q;
+        q.push(root);
+        while(q.front() != NULL){
+            TreeNode* node = q.front(); q.pop();
+            q.push(node->left);
+            q.push(node->right);
+        }
+        while(!q.empty() && q.front()==NULL){
+            q.pop();
+        }
+        return q.empty();
+    }
+};
+
+//Java code below
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public boolean isCompleteTree(TreeNode root) {
+        if(root == null) return true;
+        Queue<TreeNode> q = new LinkedList<>(Arrays.asList());
+        q.offer(root);
+        while(q.peek() != null){
+            TreeNode node = q.poll();
+            q.offer(node.left);
+            q.offer(node.right);
+        }
+        while(!q.isEmpty() && q.peek()==null){
+            q.poll();
+        }
+        return q.isEmpty();
+    }
+}
+
+//Python3 Code Below
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+class Solution:
+    def isCompleteTree(self, root: Optional[TreeNode]) -> bool:
+        if not root: return True
+        q = deque([root])
+        while q[0] is not None:
+            node = q.popleft()
+            q.append(node.left)
+            q.append(node.right)
+        while q and q[0] is None:
+            q.popleft()
+        return not bool(q)
