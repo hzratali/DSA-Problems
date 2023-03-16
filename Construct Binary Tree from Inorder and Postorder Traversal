@@ -1,0 +1,52 @@
+//Leetcode -- Medium -- 106
+//C++ Code below
+class Solution {
+public:
+    TreeNode* buildTree(vector<int>& inorder, vector<int>& postorder) {
+        map<int, int> mp;
+        for(int i=0; i<inorder.size(); i++) mp[inorder[i]] = i;
+        return tree(inorder, postorder, 0, inorder.size()-1, 0, postorder.size()-1, mp);
+    }
+    TreeNode* tree(vector<int>& inorder, vector<int>& postorder, int i, int n, int j, int m, map<int, int> &mp){
+        if(i > n || j > m) return NULL;
+        int rootVal = postorder[m];
+        TreeNode* root = new TreeNode(rootVal);
+        int inorderRootIndex = mp[rootVal];
+        int leftSubTreeSize = inorderRootIndex - i;
+        root->left = tree(inorder, postorder, i, inorderRootIndex-1, j, j+leftSubTreeSize-1, mp);
+        root->right = tree(inorder, postorder, inorderRootIndex+1, n, j+leftSubTreeSize, m-1, mp);
+        return root;
+    }
+};
+
+//Java Code Below
+class Solution {
+    public TreeNode buildTree(int[] inorder, int[] postorder) {
+        return tree(inorder, postorder, 0, inorder.length-1, 0, postorder.length-1);
+    }
+    TreeNode tree(int[] inorder, int[] postorder, int inStart, int inEnd, int postStart, int postEnd){
+        if(inStart > inEnd || postStart > postEnd) return null;
+        int rootVal = postorder[postEnd];
+        TreeNode root = new TreeNode(rootVal);
+        int rootIndex = 0;
+        for(int i=inStart; i<=inEnd; i++){
+            if(rootVal == inorder[i]){rootIndex = i; break;}
+        }
+        int leftSize = rootIndex - inStart;
+        int rightSize = inEnd - rootIndex;
+        root.left = tree(inorder, postorder, inStart, rootIndex-1, postStart, postStart+leftSize-1);
+        root.right = tree(inorder, postorder, rootIndex+1, inEnd, postEnd-rightSize, postEnd-1);
+        return root;
+    }
+}
+
+//Python3 Code Below
+class Solution:
+    def buildTree(self, inorder: List[int], postorder: List[int]) -> Optional[TreeNode]:
+        if not inorder: return None
+        rootVal = postorder.pop()
+        root = TreeNode(rootVal)
+        inIndex = inorder.index(rootVal)
+        root.right = self.buildTree(inorder[inIndex+1:], postorder)
+        root.left = self.buildTree(inorder[:inIndex], postorder)
+        return root
