@@ -1,0 +1,120 @@
+//Leetcode -- Medium -- 208
+//C++ Code Below
+class TrieNode{
+    public: bool isWord;
+    TrieNode* children[26];
+    TrieNode(){
+        isWord = false;
+        memset(children, 0, sizeof(children));
+    }
+};
+class Trie {
+public:
+    TrieNode* root;
+    public:
+    Trie() {
+        root = new TrieNode();
+    }
+    void insert(string word) {
+        TrieNode* node = root;
+        for(char c : word){
+            int index = c - 'a';
+            if(!node->children[index]){
+                node->children[index] = new TrieNode();
+            }
+            node = node->children[index];
+        }
+        node->isWord = true;
+    }
+    bool search(string word) {
+        TrieNode* node = root;
+        for(char c : word){
+            int index = c - 'a';
+            if(!node->children[index]) return false;
+            node = node->children[index];
+        }
+        return node->isWord;
+    }
+    bool startsWith(string prefix) {
+        TrieNode* node = root;
+        for(char c : prefix){
+            int index = c - 'a';
+            if(!node->children[index]) return false;
+            node = node->children[index];
+        }
+        return true;
+    }
+};
+
+//Java Code Below
+class TrieNode{
+    boolean isWord;
+    TrieNode[] children;
+    public TrieNode(){
+        isWord = false;
+        children = new TrieNode[26];
+    }
+}
+class Trie {
+    TrieNode root;
+    public Trie() {
+        root = new TrieNode();
+    }
+    public void insert(String word) {
+        TrieNode node = root;
+        for(char c : word.toCharArray()){
+            int index = c - 'a';
+            if(node.children[index] == null){
+                node.children[index] = new TrieNode();
+            }
+            node = node.children[index];
+        }
+        node.isWord = true;
+    }
+    public boolean search(String word) {
+        TrieNode node = root;
+        for(char c : word.toCharArray()){
+            int index = c - 'a';
+            if(node.children[index] == null) return false;
+            node = node.children[index];
+        }
+        return node.isWord;
+    }
+    public boolean startsWith(String prefix) {
+        TrieNode node = root;
+        for(char c : prefix.toCharArray()){
+            int index = c - 'a';
+            if(node.children[index] == null) return false;
+            node = node.children[index];
+        }
+        return true;
+    }
+}
+
+//Python3 Code Below
+class TrieNode:
+    def __init__(self):
+        self.children = {}
+        self.isWord = False
+class Trie:
+    def __init__(self):
+        self.root = TrieNode()
+    def insert(self, word: str) -> None:
+        node = self.root
+        for char in word:
+            if char not in node.children:
+                node.children[char] = TrieNode()
+            node = node.children[char]
+        node.isWord = True
+    def search(self, word: str) -> bool:
+        node = self.root
+        for char in word:
+            if char not in node.children: return False
+            node = node.children[char]
+        return node.isWord
+    def startsWith(self, prefix: str) -> bool:
+        node = self.root
+        for char in prefix:
+            if char not in node.children: return False
+            node = node.children[char]
+        return True
