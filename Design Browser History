@@ -1,0 +1,150 @@
+//Leetcode -- 1472 -- Medium
+//Array Approach Codes
+//C++ Code Below
+class BrowserHistory {
+public:
+    vector<string> history;
+    int curIndex;
+    BrowserHistory(string homepage) {
+        history.push_back(homepage);
+        curIndex = 0;
+    }
+    void visit(string url) {
+        history.resize(curIndex+1);
+        history.push_back(url);
+        curIndex++;
+    }
+    string back(int steps) {
+        int prevIndex = max(0, curIndex - steps);
+        curIndex = prevIndex;
+        return history[curIndex];
+    }
+    string forward(int steps) {
+        int nxtIndex = min((int)history.size()-1, curIndex+steps);
+        curIndex = nxtIndex;
+        return history[curIndex];
+    }
+};
+
+//Java code below
+class BrowserHistory {
+    List<String> history;
+    int curIndex=0, total=0;
+    public BrowserHistory(String homepage) {
+        history = new ArrayList<String>();
+        history.add(homepage);
+        total++; curIndex++;
+    }
+    public void visit(String url) {
+        if(history.size() > curIndex) history.set(curIndex, url);
+        else history.add(url);
+        curIndex++;
+        total = curIndex;
+    }
+    public String back(int steps) {
+        curIndex = Math.max(1, curIndex-steps);
+        return history.get(curIndex-1);
+    }
+    public String forward(int steps) {
+        curIndex = Math.min(total, curIndex+steps);
+        return history.get(curIndex-1);
+    }
+}
+
+//Python3 Code below
+class BrowserHistory:
+
+    def __init__(self, homepage: str):
+        self.history = [homepage]
+        self.curIndex = 0
+    def visit(self, url: str) -> None:
+        self.history = self.history[:self.curIndex+1] + [url]
+        self.curIndex += 1
+    def back(self, steps: int) -> str:
+        self.curIndex = max(0, self.curIndex-steps)
+        return self.history[self.curIndex]
+    def forward(self, steps: int) -> str:
+        self.curIndex = min(len(self.history)-1, self.curIndex+steps)
+        return self.history[self.curIndex]
+        
+//Stack Approach Codes
+//C++ Code Below
+class BrowserHistory {
+public:
+    stack<string> history;
+    stack<string> future;
+    BrowserHistory(string homepage) {
+        history.push(homepage);
+        future = stack<string>();
+    }
+    void visit(string url) {
+        history.push(url);
+        future = stack<string>();
+    }
+    string back(int steps) {
+        while(steps > 0 && history.size() > 1){
+            future.push(history.top());
+            history.pop();
+            steps--;
+        }
+        return history.top();
+    }
+    string forward(int steps) {
+        while(steps>0 && future.size() > 0){
+            history.push(future.top());
+            future.pop();
+            steps--;
+        }
+        return history.top();
+    }
+};
+
+//Java Code Below
+class BrowserHistory {
+    Stack<String> history = new Stack<String>();
+    Stack<String> future = new Stack<String>();
+    public BrowserHistory(String homepage) {
+        history.add(homepage);
+        future.clear();
+    }
+    public void visit(String url) {
+        history.add(url);
+        future.clear();
+    }
+    public String back(int steps) {
+        while(steps > 0 && history.size() > 1){
+            future.add(history.pop());
+            steps--;
+        }
+        return history.peek();
+    }
+    public String forward(int steps) {
+        while(steps > 0 && future.size() > 0){
+            history.add(future.pop());
+            steps--;
+        }
+        return history.peek();
+    }
+}
+
+//Python3 Code Below
+class BrowserHistory:
+    def __init__(self, homepage: str):
+        self.history = []
+        self.future = []
+        self.history.append(homepage)
+    def visit(self, url: str) -> None:
+        self.history.append(url)
+        self.future = []
+    def back(self, steps: int) -> str:
+        while(steps > 0 and len(self.history) > 1):
+            self.future.append(self.history[-1])
+            self.history.pop()
+            steps -= 1
+        return self.history[-1]
+    def forward(self, steps: int) -> str:
+        while(steps > 0 and len(self.future) > 0):
+            self.history.append(self.future[-1])
+            self.future.pop()
+            steps -= 1
+        return self.history[-1]
