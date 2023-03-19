@@ -1,0 +1,106 @@
+//Leetcode -- Medium -- 211
+//C++ Code Below
+class TrieNode{
+    public:
+    bool isComplateWord;
+    TrieNode* children[26];
+    TrieNode(){
+        isComplateWord = false;
+        memset(children, 0, sizeof(children));
+    }
+};
+class WordDictionary {
+public:
+    TrieNode* root;
+    WordDictionary() {
+        root = new TrieNode();
+    }
+    void addWord(string word) {
+        TrieNode* node = root;
+        for(char c : word){
+            int index = c - 'a';
+            if(node->children[index] == NULL){
+                node->children[index] = new TrieNode;
+            }
+            node = node->children[index];
+        }
+        node->isComplateWord = true;
+    }
+    bool search(string word) {
+        return searchHelper(word, root);
+    }
+    bool searchHelper(string word, TrieNode* node){
+        for(int i=0; i<word.size(); i++){
+            if(word[i] == '.'){
+                for(auto c : node->children){
+                    if(c && searchHelper(word.substr(i+1), c)) return true;
+                }
+                return false;
+            }
+            int index = word[i] - 'a';
+            if(node->children[index] == NULL) return false;
+            node = node->children[index];
+        }
+        return node->isComplateWord;
+    }
+};
+
+//Java Code Below
+class WordDictionary {
+    WordDictionary[] children;
+    boolean isCompleteWord;
+    public WordDictionary() {
+        children = new WordDictionary[26];
+        isCompleteWord = false;
+    }
+    public void addWord(String word) {
+        WordDictionary curr = this;
+        for(char c: word.toCharArray()){
+            if(curr.children[c - 'a'] == null)
+                curr.children[c - 'a'] = new WordDictionary();
+            curr = curr.children[c - 'a'];
+        }
+        curr.isCompleteWord = true;
+    }
+    public boolean search(String word) {
+        WordDictionary curr = this;
+        for(int i = 0; i < word.length(); ++i){
+            char c = word.charAt(i);
+            if(c == '.'){
+                for(WordDictionary ch: curr.children)
+                    if(ch != null && ch.search(word.substring(i+1))) return true;
+                return false;
+            }
+            if(curr.children[c - 'a'] == null) return false;
+            curr = curr.children[c - 'a'];
+        }
+        return curr != null && curr.isCompleteWord;
+    }
+}
+
+//Python3 Code Below
+class WordDictionary:
+
+    def __init__(self):
+        self.children = [None]*26
+        self.isCompleteWord = False
+    def addWord(self, word: str) -> None:
+        curr = self
+        for c in word:
+            if curr.children[ord(c) - ord('a')] == None:
+                curr.children[ord(c) - ord('a')] = WordDictionary()
+            curr = curr.children[ord(c) - ord('a')]
+        curr.isCompleteWord = True
+    def search(self, word: str) -> bool:
+        curr = self
+        for i in range(len(word)):
+            c = word[i]
+            if c == '.':
+                for ch in curr.children:
+                    if ch != None and ch.search(word[i+1:]): return True
+                return False
+            
+            if curr.children[ord(c) - ord('a')] == None: return False
+            curr = curr.children[ord(c) - ord('a')]
+        return curr != None and curr.isCompleteWord
+
