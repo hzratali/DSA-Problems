@@ -1,0 +1,83 @@
+//Leetcode -- Medium -- 2492
+//BFS Approach
+//C++ code
+class Solution {
+public:
+    int minScore(int n, vector<vector<int>>& roads) {
+        vector<vector<pair<int, int>>> grid(n+1);
+        for(auto edge : roads){
+            grid[edge[0]].push_back({edge[1], edge[2]});
+            grid[edge[1]].push_back({edge[0], edge[2]});
+        }
+        int ans = INT_MAX;
+        vector<int> vis(n+1, 0);
+        queue<int> q;
+        q.push(1); vis[1] = 1;
+        while(!q.empty()){
+            int node = q.front(); q.pop();
+            for(auto [v, dis] : grid[node]){
+                ans = min(ans, dis);
+                if(vis[v] == 0){
+                    vis[v] = 1;
+                    q.push(v);
+                }
+            }
+        }
+        return ans;
+    }
+};
+
+//Java Code Below
+class Solution {
+    public int minScore(int n, int[][] roads) {
+        List<List<Pair<Integer, Integer>>> adj = new ArrayList<>();
+        for(int i=0; i<n+1; i++){
+            adj.add(new ArrayList<Pair<Integer, Integer>>());
+        }
+        for(int[] edge : roads){
+            adj.get(edge[0]).add(new Pair<>(edge[1], edge[2]));
+            adj.get(edge[1]).add(new Pair<>(edge[0], edge[2]));
+        }
+        int ans = Integer.MAX_VALUE;
+        int[] vis = new int[n+1];
+        Arrays.fill(vis, 0);
+        Queue<Integer> q = new LinkedList<>();
+        q.add(1); vis[1] = 1;
+        while(!q.isEmpty()){
+            int node = q.poll();
+            for(Pair<Integer, Integer> pair : adj.get(node)){
+                int v = pair.getKey();
+                int dis = pair.getValue();
+                ans = Math.min(ans, dis);
+                if(vis[v] == 0){
+                    vis[v] = 1;
+                    q.add(v);
+                }
+            }
+        }
+        return ans;
+    }
+}
+
+//Python3 Code
+from queue import Queue
+from sys import maxsize
+class Solution:
+    def minScore(self, n: int, roads: List[List[int]]) -> int:
+        adj = [[] for _ in range(n+1)]
+        for edge in roads:
+            adj[edge[0]].append((edge[1], edge[2]))
+            adj[edge[1]].append((edge[0], edge[2]))
+        ans = maxsize
+        vis = [0] * (n+1)
+        q = Queue()
+        q.put(1)
+        vis[1] = 1
+        while not q.empty():
+            node = q.get()
+            for v, dis in adj[node]:
+                ans = min(ans, dis)
+                if vis[v] == 0:
+                    vis[v] = 1
+                    q.put(v)
+        return ans
