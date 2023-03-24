@@ -1,0 +1,57 @@
+//GFG -- Medium
+//C++ Code Below
+//{ Driver Code Starts
+//Initial Template for C++
+#include <bits/stdc++.h>
+using namespace std;
+
+// } Driver Code Ends
+//User function Template for C++
+class Solution {
+  public:
+    string removeReverse(string S) {
+        // code here
+        map<char, int> mp;
+        for(char c : S) mp[c]++;
+        int l = 0, r = S.size()-1;
+        bool flag = false;
+        while(l <= r){
+            if(!flag){
+                if(mp.at(S[l]) > 1){
+                    mp[S[l]]--;
+                    S[l] = '#';
+                    flag = true;
+                }
+                l++;
+            }
+            else{
+                if(mp.at(S[r]) > 1){
+                    mp[S[r]]--;
+                    S[r] = '#';
+                    flag = false;
+                }
+                r--;
+            }
+        }
+        if(flag) reverse(S.begin(), S.end());
+        string ans = "";
+        for(auto c : S){
+            if(c != '#') ans += c;
+        }
+        return ans;
+    }
+};
+
+//{ Driver Code Starts.
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        string S;
+        cin>>S;
+        Solution obj;
+        auto ans = obj.removeReverse(S);
+        cout<<ans<<endl;
+    }
+}
+// } Driver Code Ends
