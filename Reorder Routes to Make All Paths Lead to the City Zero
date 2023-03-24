@@ -1,0 +1,64 @@
+//Leetcode -- 1466 -- Medium
+//DFS Approach
+//C++ Code below
+class Solution {
+public:
+    int minReorder(int n, vector<vector<int>>& connections) {
+        vector<vector<int>> adj(n);
+        for(auto edge : connections){
+            adj[edge[0]].push_back(edge[1]);
+            adj[edge[1]].push_back(-edge[0]);
+        }
+        vector<bool> vis(n, false);
+        return dfs(adj, vis, 0);
+    }
+    int dfs(vector<vector<int>>&adj, vector<bool> &vis, int from){
+        int change = 0;
+        vis[from] = true;
+        for(auto to : adj[from]){
+            if(!vis[abs(to)]){
+                change += dfs(adj, vis, abs(to)) + (to > 0);
+            }
+        }
+        return change;
+    }
+};
+
+//Java Code below
+class Solution {
+    public int minReorder(int n, int[][] connections) {
+        List<List<Integer>> adj = new ArrayList<>();
+        for(int i = 0; i < n; ++i) 
+            adj.add(new ArrayList<>());
+        for(var c : connections) {
+            adj.get(c[0]).add(c[1]);
+            adj.get(c[1]).add(-c[0]);
+        }
+        return dfs(adj, new boolean[n], 0);
+    }
+    int dfs(List<List<Integer>> adj, boolean[] visited, int from) {
+        int change = 0;
+        visited[from] = true;
+        for (var to : adj.get(from))
+            if (!visited[Math.abs(to)])
+                change += dfs(adj, visited, Math.abs(to)) + (to > 0 ? 1 : 0);
+        return change;   
+    }
+}
+
+//Python3 Code below
+class Solution:
+    def minReorder(self, n: int, connections: List[List[int]]) -> int:
+        adj = [[] for _ in range(n)]
+        for c in connections:
+            adj[c[0]].append(c[1])
+            adj[c[1]].append(-c[0])
+        visited = [False] * n
+        return self.dfs(adj, visited, 0)
+    def dfs(self, adj, visited, from_node):
+        change = 0
+        visited[from_node] = True
+        for to_node in adj[from_node]:
+            if not visited[abs(to_node)]:
+                change += self.dfs(adj, visited, abs(to_node)) + (1 if to_node > 0 else 0)
+        return change
