@@ -1,0 +1,60 @@
+//Leetcode -- Hard -- 2360
+//C++ Code Below
+class Solution {
+public:
+    int longestCycle(vector<int>& edges) {
+        int ans = -1, time = 1;
+        vector<int> timeVisited(edges.size());
+        for(int i=0; i<edges.size(); i++){
+            if(timeVisited[i]) continue;
+            int startTime = time;
+            int cur = i;
+            while(cur != -1 && !timeVisited[cur]){
+                timeVisited[cur] = time++;
+                cur = edges[cur];
+            }
+            if(cur != -1 && timeVisited[cur] >= startTime){
+                ans = max(ans, time - timeVisited[cur]);
+            }
+        }
+        return ans;
+    }
+};
+
+//Java Code Below
+class Solution {
+    public int longestCycle(int[] edges) {
+        int ans = -1, time = 1;
+        int[] timeVisited = new int[edges.length];
+        for(int i=0; i<edges.length; i++){
+            if(timeVisited[i] > 0) continue;
+            int startTime = time;
+            int cur = i;
+            while(cur != -1 && timeVisited[cur] == 0){
+                timeVisited[cur] = time++;
+                cur = edges[cur];
+            }
+            if(cur != -1 && timeVisited[cur] >= startTime){
+                ans = Math.max(ans, time - timeVisited[cur]);
+            }
+        }
+        return ans;
+    }
+}
+
+//Python3 Code Below
+class Solution:
+    def longestCycle(self, edges: List[int]) -> int:
+        ans, time = -1, 1
+        timeVisited = [0]*len(edges)
+        for i in range(0,len(edges)):
+            if timeVisited[i]: continue;
+            startTime = time
+            cur = i
+            while cur!=-1 and not timeVisited[cur]:
+                timeVisited[cur] = time
+                time += 1
+                cur = edges[cur]
+            if cur!=-1 and timeVisited[cur] >= startTime:
+                ans = max(ans, time - timeVisited[cur])
+        return ans
