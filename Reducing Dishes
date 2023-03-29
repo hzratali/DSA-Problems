@@ -1,0 +1,40 @@
+//Leetcode -- 1402 -- hard
+//C++ Code Below
+class Solution {
+public:
+    int maxSatisfaction(vector<int>& satisfaction) {
+        sort(satisfaction.begin(), satisfaction.end(), greater<>());
+        int prefSum = 0, ans = 0;
+        for(int i=0; i<satisfaction.size(); i++){
+            prefSum += satisfaction[i];
+            if(prefSum < 0) break;
+            ans += prefSum;
+        }
+        return ans;
+    }
+};
+
+//Java Code Below
+class Solution {
+    public int maxSatisfaction(int[] satisfaction) {
+        Arrays.sort(satisfaction);
+        int ans = 0, prefSum = 0;
+        for(int i=satisfaction.length-1; i>=0; i--){
+            prefSum += satisfaction[i];
+            if(prefSum < 0) break;
+            ans += prefSum;
+        }
+        return ans;
+    }
+}
+
+//Python3 Code below
+class Solution:
+    def maxSatisfaction(self, satisfaction: List[int]) -> int:
+        satisfaction.sort(reverse = True)
+        ans, prefSum = 0, 0
+        for i in range(len(satisfaction)):
+            prefSum += satisfaction[i];
+            if prefSum < 0: break;
+            ans += prefSum
+        return ans
