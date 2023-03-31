@@ -1,0 +1,79 @@
+//Leetcode -- 1444 -- Hard
+//C++ code
+class Solution {
+public:
+    int ways(vector<string>& pizza, int k) {
+        int n = pizza.size(), m = pizza[0].size();
+        vector<vector<vector<int>>> dp(vector(k, vector(n, vector(m, -1))));
+        vector<vector<int>> preSum(n+1, vector<int>(m+1, 0));
+        for(int i=n-1; i>=0; i--){
+            for(int j=m-1; j>=0; j--){
+                preSum[i][j] = preSum[i+1][j]+preSum[i][j+1]-preSum[i+1][j+1]+(pizza[i][j] == 'A');
+            }
+        }
+        return dfs(n, m, k-1, 0, 0, dp, preSum);
+    }
+    int dfs(int n, int m, int k, int r, int c, vector<vector<vector<int>>>&dp, vector<vector<int>>&preSum){
+        if(preSum[r][c] == 0) return 0;
+        if(k == 0) return 1;
+        if(dp[k][r][c] != -1) return dp[k][r][c];
+        int ans = 0;
+        for(int nr=r+1; nr<n; nr++){
+            if(preSum[r][c] - preSum[nr][c] > 0) ans = (ans+dfs(n, m, k-1, nr, c, dp, preSum))%1000000007;
+        }
+        for(int nc=c+1; nc<m; nc++){
+            if(preSum[r][c] - preSum[r][nc] > 0) ans = (ans+dfs(n, m, k-1, r, nc, dp, preSum))%1000000007;
+        }
+        return dp[k][r][c] = ans;
+    }
+};
+
+//Java code below
+class Solution {
+    public int ways(String[] pizza, int k) {
+        int n = pizza.length, m = pizza[0].length();
+        Integer[][][] dp = new Integer[k][n][m];
+        int[][] preSum = new int[n+1][m+1];
+        for(int i=n-1; i>=0; i--){
+            for(int j=m-1; j>=0; j--){
+                preSum[i][j] = preSum[i+1][j]+preSum[i][j+1]-preSum[i+1][j+1]+(pizza[i].charAt(j)=='A' ? 1:0);
+            }
+        }
+        return dfs(n, m, k-1, 0, 0, dp, preSum);
+    }
+    int dfs(int n, int m, int k, int r, int c, Integer[][][] dp, int[][] preSum){
+        if(preSum[r][c] == 0) return 0;
+        if(k == 0) return 1;
+        if(dp[k][r][c] != null) return dp[k][r][c];
+        int ans = 0;
+        for(int nr=r+1; nr<n; nr++){
+            if(preSum[r][c] - preSum[nr][c] > 0) ans = (ans+dfs(n, m, k-1, nr, c, dp, preSum))%1000000007;
+        }
+        for(int nc=c+1; nc<m; nc++){
+            if(preSum[r][c] - preSum[r][nc] > 0) ans = (ans+dfs(n, m, k-1, r, nc, dp, preSum))%1000000007;
+        }
+        return dp[k][r][c] = ans;
+    }
+}
+
+//Python3 Code Below
+class Solution:
+    def ways(self, pizza: List[str], K: int) -> int:
+        m, n, MOD = len(pizza), len(pizza[0]), 10 ** 9 + 7
+        preSum = [[0] * (n + 1) for _ in range(m + 1)]
+        for r in range(m - 1, -1, -1):
+            for c in range(n - 1, -1, -1):
+                preSum[r][c] = preSum[r][c + 1] + preSum[r + 1][c] - preSum[r + 1][c + 1] + (pizza[r][c] == 'A')
+        @lru_cache(None)
+        def dp(k, r, c):
+            if preSum[r][c] == 0: return 0
+            if k == 0: return 1
+            ans = 0
+            for nr in range(r + 1, m):
+                if preSum[r][c] - preSum[nr][c] > 0:
+                    ans = (ans + dp(k - 1, nr, c)) % MOD                 
+            for nc in range(c + 1, n):
+                if preSum[r][c] - preSum[r][nc] > 0:
+                    ans = (ans + dp(k - 1, r, nc)) % MOD  
+            return ans
+        return dp(K - 1, 0, 0)
