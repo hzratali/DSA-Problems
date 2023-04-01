@@ -1,0 +1,61 @@
+//Leetcode -- 704 -- easy
+//C++ code
+class Solution {
+public:
+    int search(vector<int>& nums, int target) {
+        int n = nums.size()-1;
+        int left = 0, right = n;
+        while(left <= right){
+            int midPoint = left + (right - left) / 2;
+            if(nums[midPoint] == target)
+                return midPoint;
+            else if(nums[midPoint] > target)
+                right = midPoint - 1;
+            else
+                left = midPoint + 1;
+        }
+        return -1;
+    }
+};
+
+//Java Code Below
+class Solution {
+    public int search(int[] nums, int target) {
+        int l = 0, r = nums.length-1;
+        while(l<=r){
+            int m = (l+r)/2;
+            if(nums[m] == target) return m;
+            else if(nums[m] > target) r = m-1;
+            else l = m+1;
+        }
+        return -1;
+    }
+}
+
+//Python3 Code Below
+class Solution:
+    def search(self, nums: List[int], target: int) -> int:
+        l, r = 0, len(nums)-1
+        while l <= r:
+            m = (l+r)//2
+            if nums[m] == target: return m;
+            elif nums[m] > target: r = m-1
+            else: l = m+1
+        return -1
+        
+//JavaScript code
+/**
+ * @param {number[]} nums
+ * @param {number} target
+ * @return {number}
+ */
+var search = function(nums, target) {
+    let l = 0, r = nums.length-1;
+    while(l<=r){
+        let m = Math.floor((l+r)/2);
+        if(nums[m] == target) return m;
+        else if(nums[m] > target) r = m-1;
+        else l = m+1;
+    }
+    return -1;
+};
