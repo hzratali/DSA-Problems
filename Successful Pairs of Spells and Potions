@@ -1,0 +1,66 @@
+//Leetcode -- Medium -- 2300
+//C++ code below
+class Solution {
+public:
+    vector<int> successfulPairs(vector<int>& spells, vector<int>& potions, long long success) {
+        sort(potions.begin(), potions.end());
+        vector<int> ans;
+        int m = potions.size(), maxPotion = potions[m-1];
+        for(int x : spells){
+            long long minPotion = ceil((1.0*success)/x);
+            if(minPotion > maxPotion){
+                ans.push_back(0);
+                continue;
+            }
+            auto index = lower_bound(potions.begin(), potions.end(), minPotion)-potions.begin();
+            ans.push_back(m-index);
+        }
+        return ans;
+    }
+};
+
+//java code below
+class Solution {
+    public int[] successfulPairs(int[] spells, int[] potions, long success) {
+        Arrays.sort(potions);
+        int[] ans = new int[spells.length];
+        int m = potions.length;
+        int maxPotion = potions[m-1];
+        for(int i=0; i<spells.length; i++){
+            int x = spells[i];
+            long minPotion = (long)Math.ceil((1.0*success)/x);
+            if(minPotion > maxPotion){
+                ans[i] = 0;
+                continue;
+            }
+            int index = lowerBound(potions, (int)minPotion);
+            ans[i] = m- index;
+        }
+        return ans;
+    }
+    int lowerBound(int[] potions, int key){
+        int l = 0, r = potions.length;
+        while(l < r){
+            int m = (l+r)/2;
+            if(potions[m] < key) l = m+1;
+            else r = m;
+        }
+        return l;
+    }
+}
+
+//Python3 code below
+class Solution:
+    def successfulPairs(self, spells: List[int], potions: List[int], success: int) -> List[int]:
+        potions.sort()
+        ans = []
+        m = len(potions)
+        maxPotion = potions[m-1]
+        for x in spells:
+            minPotion = (success+x-1)//x
+            if(minPotion > maxPotion):
+                ans.append(0)
+                continue
+            index = bisect.bisect_left(potions, minPotion)
+            ans.append(m - index)
+        return ans
