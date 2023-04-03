@@ -1,0 +1,22 @@
+//GFG -- Easy -- Amazon
+//User function Template for C++
+
+
+class Solution
+{
+
+public:
+    int xmod11(string x)
+    {
+       // code here
+       long long even 
+       =0, odd=0;
+       for(int i=0; i<x.size(); i++){
+           if(i%2==0) odd += x[i]-'0';
+           else even += x[i] - '0';
+       }
+       long long diff = (odd - even)%11;
+       if(x.length()%2==0) return abs(diff-11)%11;
+       return diff;
+    }
+};
