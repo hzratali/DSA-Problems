@@ -1,0 +1,46 @@
+//Leetcode -- Easy -- 20
+//C++ Code
+class Solution {
+public:
+    bool isValid(string s) {
+        stack<char> st;
+        for(auto i:s)
+        {
+            if(i=='(' or i=='{' or i=='[') st.push(i);
+            else
+            {
+                if(st.empty() or (st.top()=='(' and i!=')') or (st.top()=='{' and i!='}') or (st.top()=='[' and i!=']'))
+                    return false;
+                st.pop();
+            }
+        }
+        return st.empty();
+    }
+};
+
+//Java Code Below
+class Solution {
+    public boolean isValid(String s) {
+        Stack<Character> st = new Stack<>();
+        for(char i : s.toCharArray()){
+            if(i=='(' || i=='{' || i=='[') st.push(i);
+            else{
+                if(st.isEmpty() || (st.peek()=='(' && i!=')') || (st.peek()=='{' && i!='}') || (st.peek()=='[' && i!=']'))
+                    return false;
+                st.pop();
+            }
+        }
+        return st.isEmpty();
+    }
+}
+
+//Python3 Code Below
+class Solution:
+    def isValid(self, s: str) -> bool:
+        st = []
+        for c in s:
+            if c=='(' or c=='{' or c=='[': st.append(c)
+            else:
+                if not st or (st[-1]=='(' and c!=')') or (st[-1]=='{' and c!='}') or (st[-1]=='[' and c!=']'): return False
+                st.pop()
+        return not st
