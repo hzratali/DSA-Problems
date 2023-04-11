@@ -1,0 +1,30 @@
+//GFG -- Medium
+//C++ Code below
+#include <bits/stdc++.h>
+using namespace std;
+class Solution {
+public:
+    int solve(int a, int b, int c) {
+        // code here
+        vector<int> ans = {a, b, c};
+        sort(ans.begin(), ans.end());
+        int sum2 = ans[0]+ans[1];
+        if(ans[2] < sum2*2+3) return a+b+c;
+        else return -1;
+    }
+};
+int main() {
+    int T;
+    cin >> T;
+    while (T--) {
+        int a, b, c;
+        cin >> a >> b >> c;
+
+        Solution ob;
+        int ans = ob.solve(a, b, c);
+     
+
+        cout <<  ans << "\n";
+    }
+    return 0;
+}
