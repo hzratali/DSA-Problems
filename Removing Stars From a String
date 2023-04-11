@@ -1,0 +1,59 @@
+//Leetcode -- Medium -- 2390
+//C++ Code below
+class Solution {
+public:
+    string removeStars(string s) {
+        stack<char> st;
+        for(char c : s){
+            if(c=='*' && !st.empty()) st.pop();
+            else st.push(c);
+        }
+        string ans = "";
+        while(!st.empty()){
+            ans += st.top(); st.pop();
+        }
+        reverse(ans.begin(), ans.end());
+        return ans;
+    }
+};
+
+//Java Code below
+class Solution {
+    public String removeStars(String s) {
+        Stack<Character> st = new Stack<>();
+        for(char c : s.toCharArray()){
+            if(c == '*') st.pop();
+            else st.push(c);
+        }
+        StringBuilder ans = new StringBuilder();
+        for(char c : st) ans.append(c);
+        return ans.toString();
+    }
+}
+
+//JavaScript Code Below
+/**
+ * @param {string} s
+ * @return {string}
+ */
+var removeStars = function(s) {
+    stack = []
+    for(let c of s){
+        if(c==='*' && stack.length){
+            stack.pop();
+        }
+        else{
+            stack.push(c);
+        }
+    }
+    return stack.join('');
+};
+
+//Python3 Code Below
+class Solution:
+    def removeStars(self, s: str) -> str:
+        stack = []
+        for c in s:
+            if c=='*' and stack: stack.pop()
+            else: stack.append(c)
+        return ''.join(stack)
