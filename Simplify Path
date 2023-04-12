@@ -1,0 +1,43 @@
+//Leetcode -- Medium -- 71
+//C++ Code Below
+class Solution {
+public:
+    string simplifyPath(string path) {
+        vector<string> dirOrFiles;
+        stringstream ss(path);
+        string dirOrFile;
+        while(getline(ss, dirOrFile, '/')){
+            if(!dirOrFiles.empty() && dirOrFile=="..") dirOrFiles.pop_back();
+            else if(dirOrFile != "." && dirOrFile != "" && dirOrFile != "..") dirOrFiles.push_back(dirOrFile);
+        }
+        string ans = "";
+        for(string dirOrFile : dirOrFiles) ans += "/" + dirOrFile;
+        return ans.empty() ? "/" : ans;
+    }
+};
+
+//Java Code Below
+class Solution {
+    public String simplifyPath(String path) {
+        Deque<String> dirOrFiles = new ArrayDeque<>();
+        for(String dirOrFile : path.split("/")){
+            if(!dirOrFiles.isEmpty() && dirOrFile.equals("..")) dirOrFiles.removeLast();
+            else if(!dirOrFile.equals(".") && !dirOrFile.equals("") && !dirOrFile.equals("..")) dirOrFiles.addLast(dirOrFile);
+        }
+        StringBuilder ans = new StringBuilder();
+        for(String dirOrFile : dirOrFiles){
+            ans.append("/").append(dirOrFile);
+        }
+        return ans.length()==0 ? "/" : ans.toString();
+    }
+}
+
+//Python3 Code Below
+class Solution:
+    def simplifyPath(self, path: str) -> str:
+        dirOrFiles = []
+        path = path.split("/")
+        for elem in path:
+            if dirOrFiles and elem=="..": dirOrFiles.pop()
+            elif elem not in [".", "", ".."]: dirOrFiles.append(elem)
+        return "/"+"/".join(dirOrFiles)
