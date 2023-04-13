@@ -1,0 +1,45 @@
+//Leetcode -- Medium -- 946
+//C++ Code Below
+class Solution {
+public:
+    bool validateStackSequences(vector<int>& pushed, vector<int>& popped) {
+        int n = pushed.size(), i = 0;
+        stack<int> s;
+        for(int x : pushed){
+            s.push(x);
+            while(!s.empty() && i<n && s.top()==popped[i]){
+                s.pop();
+                i++;
+            }
+        }
+        return i==n;
+    }
+};
+
+//Java Code Below
+class Solution {
+    public boolean validateStackSequences(int[] pushed, int[] popped) {
+        int n = pushed.length, i = 0;
+        Stack<Integer> s = new Stack<>();
+        for(int x : pushed){
+            s.push(x);
+            while(!s.isEmpty() && i<n && s.peek()==popped[i]){
+                s.pop();
+                i++;
+            }
+        }
+        return i==n;
+    }
+}
+
+//Python3 Code Below
+class Solution:
+    def validateStackSequences(self, pushed: List[int], popped: List[int]) -> bool:
+        s = []
+        n, i = len(pushed), 0
+        for x in pushed:
+            s.append(x)
+            while s and i<n and s[-1]==popped[i]:
+                s.pop()
+                i += 1
+        return i==n
