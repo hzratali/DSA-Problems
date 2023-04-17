@@ -1,0 +1,36 @@
+//Leetcode -- Easy -- 1431
+//C++ Code Below
+class Solution {
+public:
+    vector<bool> kidsWithCandies(vector<int>& candies, int extraCandies) {
+        int maxCandi = 0;
+        for(int x : candies) maxCandi = max(maxCandi, x);
+        vector<bool> ans;
+        for(int x : candies){
+            ans.push_back(x + extraCandies >= maxCandi);
+        }
+        return ans;
+    }
+};
+
+//Java code below
+class Solution {
+    public List<Boolean> kidsWithCandies(int[] candies, int extraCandies) {
+        int maxCandi = 0;
+        for(int x : candies) maxCandi = Math.max(maxCandi, x);
+        List<Boolean> ans = new ArrayList<>();
+        for(int x : candies){
+            ans.add(x + extraCandies >= maxCandi);
+        }
+        return ans;
+    }
+}
+
+//Python3 Code Below
+class Solution:
+    def kidsWithCandies(self, candies: List[int], extraCandies: int) -> List[bool]:
+        maxCandi = max(candies)
+        ans = []
+        for i in range(len(candies)):
+            ans.append(candies[i]+extraCandies >= maxCandi)
+        return ans
