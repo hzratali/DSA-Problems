@@ -1,0 +1,44 @@
+//Leetcode -- 1768 -- Easy
+//C++ Code Below
+class Solution {
+public:
+    string mergeAlternately(string word1, string word2) {
+        int n = word1.size(), m = word2.size();
+        string ans = "";
+        int i = 0, j = 0;
+        while(i < n || j < m){
+            if(i < n) ans.push_back(word1[i++]);
+            if(j < m) ans.push_back(word2[j++]);
+        }
+        return ans;
+    }
+};
+
+//Java Code Below
+class Solution {
+    public String mergeAlternately(String word1, String word2) {
+        int n = word1.length(), m = word2.length();
+        StringBuilder ans = new StringBuilder();
+        int i = 0, j = 0;
+        while(i < n || j < m){
+            if(i < n) ans.append(word1.charAt(i++));
+            if(j < m) ans.append(word2.charAt(j++));
+        }
+        return ans.toString();
+    }
+}
+
+//Python3 Code Below
+class Solution:
+    def mergeAlternately(self, word1: str, word2: str) -> str:
+        n, m = len(word1), len(word2)
+        ans = []
+        i, j = 0, 0
+        while i<n or j<m:
+            if i<n:
+                ans += word1[i]
+                i += 1
+            if j<m:
+                ans += word2[j]
+                j += 1
+        return "".join(ans)
