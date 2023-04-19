@@ -1,0 +1,38 @@
+//GFG -- EAsy
+//C++ Code
+#include <bits/stdc++.h>
+using namespace std;
+class Solution{
+    public:
+    bool wifiRange(int N, string S, int X){
+        // code here
+        vector<int> vis(N, 0);
+        queue<int> q;
+        for(int i=0; i<N; i++){
+            if(S[i] == '1') q.push(i);
+        }
+        while(!q.empty()){
+            int val = q.front(); q.pop();
+            for(int i=-X; i<=X; i++){
+                if(i+val < 0) continue;
+                if(i+val > N) break;
+                if(!vis[i+val]) vis[i+val] = 1;
+            }
+        }
+        for(int i=0; i<N; i++){
+            if(vis[i] == 0) return false;
+        }
+        return true;
+    }
+};
+int main(){
+    int T;
+    cin >> T;
+    while(T--){
+        int N, X;
+        string S;
+        cin >> N >> X >> S;
+        Solution obj;
+        cout << obj.wifiRange(N, S, X) << "\n";
+    }
+}
