@@ -1,0 +1,54 @@
+//Leetcode -- Medium -- 516
+//Most Optimize Code
+//C++ Code Below
+class Solution {
+public:
+    int longestPalindromeSubseq(string s) {
+        int n = s.size();
+        vector<int> dp(n), dpPrev(n);
+        for(int i=n-1; i>=0; i--){
+            dp[i] = 1;
+            for(int j=i+1; j<n; j++){
+                if(s[i] == s[j]) dp[j] = dpPrev[j-1]+2;
+                else dp[j] = max(dpPrev[j], dp[j-1]);
+            }
+            dpPrev = dp;
+        }
+        return dp[n-1];
+    }
+};
+
+//Java Code Below
+class Solution {
+    public int longestPalindromeSubseq(String s) {
+        int n = s.length();
+        int[] dp = new int[n];
+        int[] dpPrev = new int[n];
+        for(int i=n-1; i>=0; i--){
+            dp[i] = 1;
+            for(int j=i+1; j<n; j++){
+                if(s.charAt(i) == s.charAt(j)) dp[j] = dpPrev[j-1]+2;
+                else dp[j] = Math.max(dpPrev[j], dp[j-1]);
+            }
+            dpPrev = dp.clone();
+        }
+        return dp[n-1];
+    }
+}
+
+//Python3 Code Below
+class Solution:
+    def longestPalindromeSubseq(self, s: str) -> int:
+        n = len(s)
+        dp = [0] * n
+        dpPrev = [0] * n
+        for i in range(n - 1, -1, -1):
+            dp[i] = 1
+            for j in range(i + 1, n):
+                if s[i] == s[j]:
+                    dp[j] = dpPrev[j - 1] + 2
+                else:
+                    dp[j] = max(dpPrev[j], dp[j - 1])
+            dpPrev = dp[:]
+
+        return dp[n - 1]
