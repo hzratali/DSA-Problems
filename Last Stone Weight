@@ -1,0 +1,48 @@
+//Leetcode -- 1046 -- Easy
+//C++ Code Below
+class Solution {
+public:
+    int lastStoneWeight(vector<int>& stones) {
+        if(stones.size() == 1) return stones[0];
+        priority_queue<int> pq;
+        for(int x : stones) pq.push(x);
+        while(!pq.empty()){
+            if(pq.size() == 1) return pq.top();
+            int f = pq.top(); pq.pop();
+            int s = pq.top(); pq.pop();
+            if(f == s) continue;
+            pq.push(f-s);
+        }
+        return 0;
+    }
+};
+
+//Java Code Below
+class Solution {
+    public int lastStoneWeight(int[] stones) {
+        if(stones.length == 1) return stones[0];
+        PriorityQueue<Integer> pq = new PriorityQueue<Integer>(Collections.reverseOrder());
+        for(int x : stones) pq.add(x);
+        while(!pq.isEmpty()){
+            if(pq.size() == 1) return pq.peek();
+            int f = pq.poll();
+            int s = pq.poll();
+            if(f == s) continue;
+            pq.add(f-s);
+        }
+        return 0;
+    }
+}
+
+//Python3 Code Below
+class Solution:
+    def lastStoneWeight(self, stones: List[int]) -> int:
+        pq = [-x for x in stones]
+        heapq.heapify(pq)
+        while len(pq)>0:
+            if len(pq) == 1: return -pq[0]
+            f = -heapq.heappop(pq)
+            s = -heapq.heappop(pq)
+            if f == s: continue
+            heapq.heappush(pq, -(f-s))
+        return 0
