@@ -1,0 +1,58 @@
+//GFG -- Hard
+//C++ Code Below
+#include <bits/stdc++.h>
+using namespace std;
+class Solution{
+public:
+    vector<int> temp;
+    int mod = 1e9+7;
+    int goodSubsets(vector<int> &arr, int n){
+        // Code here
+        vector<int> freq(31);
+        for(auto x : arr) freq[x]++;
+        vector<int> options;
+        for(int i=1; i<=30; i++){
+            int num = i;
+            bool ok = true;
+            for(int j=2; j*j<=i; j++){
+                if(num%(j*j) == 0){
+                    ok = false;
+                    break;
+                }
+            }
+            if(ok) options.push_back(num);
+        }
+        return helper(0, options, 1, freq) - 1 - freq[1];
+    }
+    long long helper(int i, vector<int>&options, long long prod, vector<int>&freq){
+        int n = options.size();
+        if(i == n) return 1;
+        long long option = options[i];
+        long long g = __gcd(prod, option);
+        long long pick = 0;
+        if(g == 1 && freq[option]){
+            temp.push_back(option);
+            pick = freq[option] * helper(i+1, options, prod*options[i], freq);
+            pick %= mod;
+            temp.pop_back();
+        }
+        long long notPick = helper(i+1, options, prod, freq);
+        return (pick+notPick)%mod;
+    }
+};
+int main(){
+    
+    int t;
+    cin>>t;
+    while(t--){
+        int n;
+        cin>>n;
+        vector<int> a(n);
+        for(int i=0;i<n;i++){
+            cin>>a[i];
+        }
+        Solution ob;
+        cout<<ob.goodSubsets(a, n)<<endl;
+    }
+    return 0;
+}
