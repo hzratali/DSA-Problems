@@ -1,0 +1,83 @@
+//Leetcode -- Easy -- 258
+//C++ Code Below
+class Solution {
+public:
+    int addDigits(int num) {
+        while(num >= 10){
+            int n = 0;
+            while(num > 0){
+                n += num%10;
+                num /= 10;
+            }
+            num = n;
+        }
+        return num;
+    }
+};
+//2nd one
+class Solution {
+public:
+    int addDigits(int num) {
+        int n = 0;
+        while(num > 0){
+            n += num%10;
+            num /= 10;
+            if(num==0 && n > 9){
+                num = n;
+                n = 0;
+            }
+        }
+        return n;
+    }
+};
+
+//3rd One
+class Solution {
+public:
+    int addDigits(int num) {
+        if(num == 0) return 0;
+        if(num % 9 == 0) return 9;
+        return num % 9;
+    }
+};
+
+//Java Code Below
+class Solution {
+    public int addDigits(int num) {
+        while(num >= 10){
+            int n = 0;
+            while(num > 0){
+                n += num%10;
+                num /= 10;
+            }
+            num = n;
+        }
+        return num;
+    }
+}
+//2nd one
+class Solution {
+    public int addDigits(int num) {
+        if(num == 0) return 0;
+        if(num % 9 == 0) return 9;
+        return num % 9;
+    }
+}
+
+//Python3 Code Below
+class Solution:
+    def addDigits(self, num: int) -> int:
+        while(num >= 10):
+            n = 0
+            while(num > 0):
+                n += num%10
+                num //= 10
+            num = n
+        return num
+        
+//2nd one
+class Solution:
+    def addDigits(self, num: int) -> int:
+        if num == 0: return 0
+        if num % 9 == 0: return 9
+        return num % 9
