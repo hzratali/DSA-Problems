@@ -1,0 +1,29 @@
+//Leetcode -- 319 -- Medium
+//C++ Code Below
+class Solution {
+public:
+    int bulbSwitch(int n) {
+        return sqrt(n);
+    }
+};
+
+//Java Code Below
+class Solution {
+    public int bulbSwitch(int n) {
+        return (int)Math.sqrt(n);
+    }
+}
+
+//Python3 Code Below
+class Solution:
+    def bulbSwitch(self, n: int) -> int:
+        return int(sqrt(n))
+        
+//JavaScript Code below
+/**
+ * @param {number} n
+ * @return {number}
+ */
+var bulbSwitch = function(n) {
+    return Math.floor(Math.sqrt(n));
+};
