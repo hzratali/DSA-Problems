@@ -1,0 +1,40 @@
+//Leetcode -- 1822 -- Easy
+//C++ Code below
+class Solution {
+public:
+    int arraySign(vector<int>& nums) {
+        int cnt0=0, cntN=0;
+        for(int x : nums){
+            if(x==0) cnt0++;
+            else if(x<0) cntN++;
+        }
+        if(cnt0) return 0;
+        else if(cntN%2) return -1;
+        else return 1;
+    }
+};
+
+//Java code below
+class Solution {
+    public int arraySign(int[] nums) {
+        int cnt0=0, cntN=0;
+        for(int x : nums){
+            if(x==0) cnt0++;
+            else if(x<0) cntN++;
+        }
+        if(cnt0>0) return 0;
+        else if(cntN%2==1) return -1;
+        else return 1;
+    }
+}
+
+//Python3 Code Below
+class Solution:
+    def arraySign(self, nums: List[int]) -> int:
+        cnt0, cntN = 0, 0
+        for x in nums:
+            if x==0: cnt0 += 1
+            elif x<0: cntN += 1
+        if cnt0 > 0: return 0
+        elif cntN%2==1: return -1
+        else: return 1
