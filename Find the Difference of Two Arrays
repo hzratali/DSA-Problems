@@ -1,0 +1,48 @@
+//Leetcode -- Easy -- 2215
+//C++ Code Below
+class Solution {
+public:
+    vector<vector<int>> findDifference(vector<int>& nums1, vector<int>& nums2) {
+        vector<vector<int>> ans(2);
+        set<int> s1(nums1.begin(), nums1.end());
+        set<int> s2(nums2.begin(), nums2.end());
+        for(int x : s1){
+            if(s2.find(x)==s2.end()) ans[0].push_back(x);
+        }
+        for(int x : s2){
+            if(s1.find(x)==s1.end()) ans[1].push_back(x);
+        }
+        return ans;
+    }
+};
+
+//Java Code Below
+class Solution {
+    public List<List<Integer>> findDifference(int[] nums1, int[] nums2) {
+        List<List<Integer>> ans = new ArrayList<>();
+        for(int i=0; i<2; i++) ans.add(new ArrayList<>());
+        HashSet<Integer> s1 = new HashSet<>();
+        for(int x : nums1) s1.add(x);
+        HashSet<Integer> s2 = new HashSet<>();
+        for(int x : nums2) s2.add(x);
+        for(int x : s1){
+            if(!s2.contains(x)) ans.get(0).add(x);
+        }
+        for(int x : s2){
+            if(!s1.contains(x)) ans.get(1).add(x);
+        }
+        return ans;
+    }
+}
+
+//Python3 Codde Below
+class Solution:
+    def findDifference(self, nums1: List[int], nums2: List[int]) -> List[List[int]]:
+        ans = [[], []]
+        s1 = set(nums1)
+        s2 = set(nums2)
+        for x in s1:
+            if x not in s2: ans[0].append(x)
+        for x in s2:
+            if x not in s1: ans[1].append(x)
+        return ans
