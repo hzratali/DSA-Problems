@@ -1,0 +1,46 @@
+//Leetcode -- 1498 -- Medium
+//C++ Code Below
+class Solution {
+public:
+    int numSubseq(vector<int>& nums, int target) {
+        int ans = 0, l = 0, r = nums.size()-1, mod = 1000000007;
+        vector<int> pre = {1};
+        for(int i=1; i<=nums.size(); i++) pre.push_back((pre.back()<<1)%mod);
+        sort(nums.begin(), nums.end());
+        while(l <= r){
+            if(nums[l]+nums[r] > target) r--;
+            else ans = (ans + pre[r-l++]) % mod;
+        }
+        return ans;
+    }
+};
+
+//Java Code Below
+class Solution {
+    public int numSubseq(int[] nums, int target) {
+        int ans = 0, l = 0, r = nums.length-1, mod = 1000000007;
+        List<Integer> pre = new ArrayList<>();
+        pre.add(1);
+        for(int i=1; i<=nums.length; i++) pre.add((pre.get(i-1)<<1)%mod);
+        Arrays.sort(nums);
+        while(l <= r){
+            if(nums[l]+nums[r] > target) r--;
+            else ans = (ans + pre.get(r-l++)) % mod;
+        }
+        return ans;
+    }
+}
+
+//Python3 Code Below
+class Solution:
+    def numSubseq(self, nums: List[int], target: int) -> int:
+        ans, l, r, mod = 0, 0, len(nums)-1, 1000000007
+        pre = [1]
+        for i in range(1, len(nums)+1): pre.append((pre[i-1]<<1)%mod)
+        nums.sort()
+        while(l <= r):
+            if(nums[l]+nums[r] > target): r -= 1
+            else:
+                ans = (ans + pre[r-l]) % mod
+                l += 1
+        return ans
