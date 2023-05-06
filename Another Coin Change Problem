@@ -1,0 +1,41 @@
+//GFG -- Medium
+//Not and not pick approach using memoization
+class Solution {
+  public:
+    bool makeChanges(int N, int K, int target, vector<int> &coins) {
+        // code here
+        vector<vector<int>> dp(K+1, vector<int>(target+1, -1));
+        return solve(N, K, target, coins, dp);
+    }
+    bool solve(int n, int k, int target, vector<int> &coins, vector<vector<int>> &dp){
+        if(k==0 and target==0) return true;
+        if(dp[k][target] != -1) return dp[k][target];
+        bool ans = false;
+        for(int i=0; i<n; i++){
+            if(target >= coins[i] and k-1 >= 0){
+                ans |= solve(n, k-1, target-coins[i], coins, dp);
+            }
+        }
+        return dp[k][target] = ans;
+    }
+};
+
+//Tabolation method
+class Solution {
+  public:
+    bool makeChanges(int N, int K, int target, vector<int> &coins) {
+        // code here
+        bool dp[K+1][target+1];
+        memset(dp, false, sizeof(dp));
+        dp[0][0] = true;
+        for(int i=1; i<K+1; i++){
+            for(int j=1; j<target+1; j++){
+                for(int k=0; k<N; k++){
+                    if(j<coins[k]) continue;
+                    dp[i][j] |= dp[i-1][j-coins[k]];
+                }
+            }
+        }
+        return dp[K][target];
+    }
+};
