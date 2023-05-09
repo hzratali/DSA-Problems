@@ -1,0 +1,32 @@
+//GFG -- Hard -- Swiggy
+//C++ Code Below
+#include <bits/stdc++.h>
+using namespace std;
+class Solution {
+  public:
+    long mod = 1000000007;
+    map<long, long> F;
+    int countStrings(long long int N) {
+        // Code here
+        F[0] = 1;
+        F[1] = 1;
+        return fib(N+1);
+    }
+    long long fib(long long n)
+    {
+        if(F.count(n)) return F[n];
+        long k = n/2;
+        if(n%2 == 0) return F[n] = (fib(k) * fib(k) + fib(k-1) * fib(k-1)) % mod;
+        return F[n] = (fib(k) * fib(k+1) + fib(k-1) * fib(k)) % mod;
+    }
+};
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        long long int N;
+        cin >> N;
+        Solution obj;
+        cout << obj.countStrings(N) << endl;
+    }
+}
