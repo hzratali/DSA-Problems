@@ -1,0 +1,92 @@
+//Leetcode -- 1035 -- Medium
+//Recursive + Memo Approach
+//C++ Code Below
+class Solution {
+public:
+    int maxUncrossedLines(vector<int>& nums1, vector<int>& nums2) {
+        vector<vector<int>> dp(nums1.size(), vector<int>(nums2.size(), -1));
+        return solve(0, 0, nums1, nums2, dp);
+    }
+    int solve(int i, int j, vector<int>&nums1, vector<int>&nums2, vector<vector<int>>&dp){
+        if(i==nums1.size() || j==nums2.size()) return 0;
+        if(dp[i][j] != -1) return dp[i][j];
+        int cnt = 0;
+        if(nums1[i] == nums2[j]) cnt = 1 + solve(i+1, j+1, nums1, nums2, dp);
+        else cnt += max(solve(i+1, j, nums1, nums2, dp), solve(i, j+1, nums1, nums2, dp));
+        return dp[i][j] = cnt;
+    }
+};
+
+//java Code Below
+class Solution {
+    public int maxUncrossedLines(int[] nums1, int[] nums2) {
+        int[][] dp = new int[nums1.length][nums2.length];
+        for(int[] row : dp) Arrays.fill(row, -1);
+        return solve(0, 0, nums1, nums2, dp);
+    }
+    int solve(int i, int j, int[] nums1, int[] nums2, int[][] dp){
+        if(i==nums1.length || j==nums2.length) return 0;
+        if(dp[i][j] != -1) return dp[i][j];
+        int cnt = 0;
+        if(nums1[i] == nums2[j]) cnt = 1 + solve(i+1, j+1, nums1, nums2, dp);
+        else cnt += Math.max(solve(i+1, j, nums1, nums2, dp), solve(i, j+1, nums1, nums2, dp));
+        return dp[i][j] = cnt;
+    }
+}
+
+//Python3 Code Below
+class Solution:
+    def maxUncrossedLines(self, nums1: List[int], nums2: List[int]) -> int:
+        dp = [[-1]*len(nums2) for _ in range(len(nums1))]
+        return self.solve(0, 0, nums1, nums2, dp)
+    def solve(self, i, j, nums1, nums2, dp):
+        if(i==len(nums1) or j==len(nums2)): return 0
+        if(dp[i][j] != -1): return dp[i][j]
+        cnt = 0
+        if(nums1[i] == nums2[j]): cnt = 1 + self.solve(i+1, j+1, nums1, nums2, dp)
+        else: cnt += max(self.solve(i+1, j, nums1, nums2, dp), self.solve(i, j+1, nums1, nums2, dp))
+        dp[i][j] = cnt
+        return cnt
+        
+//Tabolation Approach
+//C++ Code below
+class Solution {
+public:
+    int maxUncrossedLines(vector<int>& nums1, vector<int>& nums2) {
+        int n = nums1.size(), m = nums2.size();
+        vector<vector<int>> dp(n+1, vector<int>(m+1, 0));
+        for(int i=1; i<=n; i++){
+            for(int j=1; j<=m; j++){
+                if(nums1[i-1] == nums2[j-1]) dp[i][j] = 1+dp[i-1][j-1];
+                else dp[i][j] = max(dp[i-1][j], dp[i][j-1]);
+            }
+        }
+        return dp[n][m];
+    }
+};
+
+//Java code Below
+class Solution {
+    public int maxUncrossedLines(int[] nums1, int[] nums2) {
+        int n = nums1.length, m = nums2.length;
+        int[][] dp = new int[n+1][m+1];
+        for(int i=1; i<=n; i++){
+            for(int j=1; j<=m; j++){
+                if(nums1[i-1] == nums2[j-1]) dp[i][j] = 1+dp[i-1][j-1];
+                else dp[i][j] = Math.max(dp[i-1][j], dp[i][j-1]);
+            }
+        }
+        return dp[n][m];
+    }
+}
+
+//Python3 Code Below
+class Solution:
+    def maxUncrossedLines(self, nums1: List[int], nums2: List[int]) -> int:
+        n, m = len(nums1), len(nums2)
+        dp = [[0]*(m+1) for _ in range(n+1)]
+        for i in range(1, n+1):
+            for j in range(1, m+1):
+                if(nums1[i-1] == nums2[j-1]): dp[i][j] = 1+dp[i-1][j-1]
+                else: dp[i][j] = max(dp[i-1][j], dp[i][j-1])
+        return dp[n][m];
