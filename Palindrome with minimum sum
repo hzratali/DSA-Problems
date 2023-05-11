@@ -1,0 +1,38 @@
+//GFG -- Medium
+//C++ COde Below
+#include <bits/stdc++.h>
+using namespace std;
+class Solution {
+  public:
+    int minimumSum(string s) {
+        // code here
+        int ans = 0, n = s.size();
+        char cur = '?';
+        for(int i=0; i<n/2; i++){
+            if((s[i] != '?' && s[n-i-1] != '?') && s[i] != s[n-i-1]) return -1;
+            if(s[i] == '?' && s[n-i-1] != '?') s[i] = s[n-i-1];
+            if(s[i] != '?'){
+                if(cur == '?') cur = s[i];
+                else{
+                    ans += abs(s[i] - cur);
+                    cur = s[i];
+                }
+            }
+        }
+        return ans*2;
+    }
+};
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        string s;
+        cin >> s;
+
+        Solution ob;
+        int ans = ob.minimumSum(s);
+        cout << ans;
+        cout << "\n";
+    }
+    return 0;
+}
