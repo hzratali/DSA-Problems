@@ -1,0 +1,45 @@
+//Leetcode --2140 -- Medium
+//C++ Code below
+#define ll long long
+class Solution {
+public:
+    long long mostPoints(vector<vector<int>>& questions) {
+        vector<ll> dp(questions.size(), -1);
+        return solve(0, questions, dp);
+    }
+    ll solve(int index, vector<vector<int>>&questions, vector<ll> &dp){
+        if(index >= questions.size()) return 0;
+        if(dp[index] != -1) return dp[index];
+        ll takeIt = questions[index][0] + solve(index+questions[index][1]+1, questions, dp);
+        ll leaveIt = solve(index+1, questions, dp);
+        return dp[index] = max(takeIt, leaveIt);
+    }
+};
+
+//Java Code Below
+class Solution {
+    public long mostPoints(int[][] questions) {
+        long[] dp = new long[questions.length];
+        return solve(0, questions, dp);
+    }
+    long solve(int index, int[][] questions, long[] dp){
+        if(index >= questions.length) return 0;
+        if(dp[index] != 0) return dp[index];
+        long takeIt = questions[index][0] + solve(index+questions[index][1]+1, questions, dp);
+        long leaveIt = solve(index+1, questions, dp);
+        return dp[index] = Math.max(takeIt, leaveIt);
+    }
+}
+
+//Python3 Code Below
+class Solution:
+    def mostPoints(self, questions: List[List[int]]) -> int:
+        dp = [0]*len(questions)
+        return self.solve(0, questions, dp)
+    def solve(self, index, questions, dp):
+        if index >= len(questions): return 0
+        if dp[index] != 0: return dp[index]
+        takeIt = questions[index][0] + self.solve(index+questions[index][1]+1, questions, dp);
+        leaveIt = self.solve(index+1, questions, dp)
+        dp[index] = max(takeIt, leaveIt)
+        return dp[index]
