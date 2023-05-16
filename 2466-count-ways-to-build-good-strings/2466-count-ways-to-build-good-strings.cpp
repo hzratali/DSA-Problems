@@ -1,20 +1,19 @@
 class Solution {
 public:
-    int mod = 1000000007;
     int countGoodStrings(int low, int high, int zero, int one) {
-        vector<int> dp(high+1, -1);
+        vector<int> dp(high+1);
+        dp[0] = 1;
+        int mod = 1000000007;
+        for(int i=1; i<=high; i++){
+            if(i >= zero) dp[i] += dp[i-zero];
+            if(i >= one) dp[i] += dp[i-one];
+            dp[i] %= mod;
+        }
         int ans = 0;
         for(int i=low; i<=high; i++){
-            ans = ((ans%mod) + (solve(i, zero, one, dp)%mod))%mod;
+            ans += dp[i];
+            ans %= mod;
         }
         return ans;
-    }
-    int solve(int ind, int zero, int one, vector<int>&dp){
-        if(ind == 0) return 1;
-        if(ind < 0) return 0;
-        if(dp[ind] != -1) return dp[ind]%mod;
-        int forZero = solve(ind-zero, zero, one, dp);
-        int forOne = solve(ind-one, zero, one, dp);
-        return dp[ind] = (forZero+forOne)%mod;
     }
 };
