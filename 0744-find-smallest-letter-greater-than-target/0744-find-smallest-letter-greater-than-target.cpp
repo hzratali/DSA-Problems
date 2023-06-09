@@ -1,9 +1,12 @@
 class Solution {
 public:
     char nextGreatestLetter(vector<char>& letters, char target) {
-        for(char x : letters){
-            if(x > target) return x;
+        int l = 0, r = letters.size()-1, m;
+        while(l <= r){
+            m = (l+r)/2;
+            if(letters[m] <= target) l = m+1;
+            else r = m-1;
         }
-        return letters[0];
+        return l == letters.size() ? letters[0] : letters[l];
     }
 };
