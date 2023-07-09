@@ -12,17 +12,16 @@ class Solution
     int missingNumber(int arr[], int n) 
     { 
         // Your code here
-        sort(arr, arr+n);
-        int i = 0;
-        for(i=0; i<n; i++){
-            if(arr[i] > 0) break;
+        for(int i=0; i<n; i++){
+            if(arr[i]>0 && arr[i]<=n && arr[arr[i]-1]!=arr[i]){
+                swap(arr[i], arr[arr[i]-1]);
+                i--;
+            }
         }
-        int k = 1;
-        for(int j=i; j<n; j++){
-            if(arr[j] == k) k++;
-            else if(arr[j] > k) break;
+        for(int i=0; i<n; i++){
+            if(arr[i] != i+1) return i+1;
         }
-        return k;
+        return n+1;
     } 
 };
 
