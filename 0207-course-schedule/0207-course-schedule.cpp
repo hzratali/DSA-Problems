@@ -1,26 +1,37 @@
 class Solution {
 public:
-    bool canFinish(int numCourses, vector<vector<int>>& prerequisites){
-        vector<int> inDeg(numCourses);
+    bool canFinish(int numCourses, vector<vector<int>>& prerequisites) {
         vector<vector<int>> adj(numCourses);
         for(auto x : prerequisites){
             adj[x[1]].push_back(x[0]);
-            inDeg[x[0]]++;
         }
-        queue<int> q;
-        //Push ll the nodes with indegree zero in the queue
-        for(int i=0; i<numCourses; i++){
-            if(inDeg[i] == 0) q.push(i);
-        }
-        int vis = 0;
-        while(!q.empty()){
-            int node = q.front(); q.pop();
-            vis++;
-            for(auto x : adj[node]){
-                inDeg[x]--;
-                if(inDeg[x] == 0) q.push(x);
+        vector<bool> visit(numCourses);
+        vector<bool> inStack(numCourses);
+        for(int i = 0; i < numCourses; i++){
+            if(dfs(i, adj, visit, inStack)){
+                return false;
             }
         }
-        return vis == numCourses;
+        return true;
+    }
+    bool dfs(int node, vector<vector<int>>& adj, vector<bool>& visit, vector<bool>& inStack) {
+        // If the node is already in the stack, we have a cycle.
+        if (inStack[node]) {
+            return true;
+        }
+        if (visit[node]) {
+            return false;
+        }
+        // Mark the current node as visited and part of current recursion stack.
+        visit[node] = true;
+        inStack[node] = true;
+        for(auto neighbor : adj[node]){
+            if(dfs(neighbor, adj, visit, inStack)){
+                return true;
+            }
+        }
+        // Remove the node from the stack.
+        inStack[node] = false;
+        return false;
     }
 };
