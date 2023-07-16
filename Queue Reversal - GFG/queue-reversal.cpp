@@ -14,14 +14,16 @@ class Solution
     queue<int> rev(queue<int> q)
     {
         // add code here.
-        vector<int> v;
+        stack<int> s;
         while(!q.empty()){
-            v.push_back(q.front());
+            s.push(q.front());
             q.pop();
         }
-        queue<int> ans;
-        for(int i=v.size()-1; i>=0; i--) ans.push(v[i]);
-        return ans;
+        while(!s.empty()){
+            q.push(s.top());
+            s.pop();
+        }
+        return q;
     }
 };
 
