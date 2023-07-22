@@ -15,7 +15,7 @@ public:
             return mp[key];
         double probability = 0;
         for(int i=0; i<8; i++)
-            probability += f(n,moves-1, r+dir[i][0], c+dir[i][1])/8.0 ;
+            probability += f(n,moves-1, r+dir[i][0], c+dir[i][1])/8.0;
         mp[key] = probability;
         return mp[key];
     }
