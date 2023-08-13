@@ -10,9 +10,13 @@ class Solution {
     int nthFibonacci(int n){
         // code here
         int mod = 1e9+7;
-        vector<int> dp(n, 1);
-        for(int i=2; i<n; i++) dp[i] = (dp[i-1]+dp[i-2])%mod;
-        return dp[n-1];
+        int a = 1, b=0, c=0;
+        while(n--){
+            c = (a+b)%mod;
+            a = b;
+            b = c;
+        }
+        return c;
     }
 };
 
