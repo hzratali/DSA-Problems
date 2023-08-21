@@ -9,24 +9,23 @@ class Solution {
 public:
     int Count(vector<vector<int> >& matrix) {
         // Code here
-        int n = matrix.size(), m = matrix[0].size(), cnt = 0;
+        int n = matrix.size(), m = matrix[0].size(), count = 0;
+        int dx[] = {-1, -1, 0, 1, 1, 1, 0, -1};
+        int dy[] = {0, -1, -1, -1, 0, 1, 1, 1};
         for(int i=0; i<n; i++){
             for(int j=0;j<m; j++){
-                int c = 0;
+                int cnt = 0;
                 if(matrix[i][j] == 1){
-                    if(i-1 >= 0 && matrix[i-1][j]==0) c++;
-                    if(j-1 >= 0 && matrix[i][j-1]==0) c++;
-                    if(i+1 < n && matrix[i+1][j]==0) c++;
-                    if(j+1 < m && matrix[i][j+1]==0) c++;
-                    if(i+1 < n && j+1 < m && matrix[i+1][j+1]==0) c++;
-                    if(i+1 < n && j-1 >= 0 && matrix[i+1][j-1]==0) c++;
-                    if(i-1 >= 0 && j+1 < m && matrix[i-1][j+1]==0) c++;
-                    if(i-1 >= 0 && j-1 >= 0 && matrix[i-1][j-1]==0) c++;
+                    for(int k=0; k<8; k++){
+                        int r = i+dx[k];
+                        int c = j+dy[k];
+                        if(r>=0 && r<n && c>=0 && c<m && matrix[r][c]==0) cnt++;
+                    }
                 }
-                if(c > 0 && c%2==0) cnt++;
+                if(cnt > 0 && cnt%2==0) count++;
             }
         }
-        return cnt;
+        return count;
     }
 };
 
