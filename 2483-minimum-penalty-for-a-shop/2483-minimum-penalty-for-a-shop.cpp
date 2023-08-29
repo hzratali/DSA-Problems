@@ -1,8 +1,8 @@
 class Solution {
 public:
     int bestClosingTime(string customers) {
-        int currPenalty = count(customers.begin(), customers.end(), 'Y');
-        int minPenalty = currPenalty, earliestHour = 0;
+        // int currPenalty = count(customers.begin(), customers.end(), 'Y');
+        int minPenalty = 0, currPenalty = 0, earliestHour = 0;
         for(int i=0; i<customers.size(); i++){
             char c = customers[i];
             if(c == 'Y') currPenalty--;
