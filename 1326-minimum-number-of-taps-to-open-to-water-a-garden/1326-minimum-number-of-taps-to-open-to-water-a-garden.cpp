@@ -1,21 +1,34 @@
 class Solution {
 public:
     int minTaps(int n, vector<int>& ranges) {
-        // Create a vector to store the minimum number of taps needed for each position
-        vector<int> dp(n+1, 1e9);
-        // Initialize the starting position of the garden
-        dp[0] = 0;
-        for(int i=0; i<=n; i++){
-            // Calculate the leftmost position reachable by the current tap
-            int tapStart = max(0, i-ranges[i]);
-            // Calculate the rightmost position reachable by the current tap
-            int tapEnd = min(n, i+ranges[i]);
-            for(int j=tapStart; j<=tapEnd; j++){
-                // Update with the minimum number of taps
-                dp[tapEnd] = min(dp[tapEnd], dp[j]+1);
-            }
+        // Create a vector to track the maximum reach for each position
+        vector<int> maxReach(n+1);
+        // Calculate the maximum reach for each tap
+        for(int i=0; i<ranges.size(); i++){
+            // Calculate the leftmost position the tap can reach
+            int start = max(0, i-ranges[i]);
+            // Calculate the rightmost position the tap can reach
+            int end = min(n, i+ranges[i]);
+            maxReach[start] = max(maxReach[start], end);
         }
-        if(dp[n] == 1e9) return -1;
-        return dp[n];
+        // Number of taps used
+        int taps = 0;
+        // Current rightmost position reached
+        int currEnd = 0;
+        // Next rightmost position that can be reached
+        int nextEnd = 0;
+        for(int i=0; i<=n; i++){
+            // Current position cannot be reached
+            if(i > nextEnd) return -1;
+            // Increment taps when moving to a new tap
+            if(i > currEnd){
+                taps++;
+                // Move to the rightmost position that can be reached
+                currEnd = nextEnd;
+            }
+            // Update the next rightmost position that can be reached
+            nextEnd = max(nextEnd, maxReach[i]);
+        }
+        return taps;
     }
 };
