@@ -12,41 +12,13 @@ public:
     vector<vector<char>> fill(int n, int m, vector<vector<char>> mat)
     {
         // code here
-        queue<pair<int, int>> q;
         for(int i=0; i<n; i++){
-            if(mat[i][0] == 'O'){
-                mat[i][0] = '1';
-                q.push({i, 0});
-            }
-            if(mat[i][m-1] == 'O'){
-                mat[i][m-1] = '1';
-                q.push({i, m-1});
-            }
+            if(mat[i][0]=='O') dfs(i, 0, n, m, mat);
+            if(mat[i][m-1] == 'O') dfs(i, m-1, n, m, mat);
         }
-        for(int i=1; i<m-1; i++){
-            if(mat[0][i] == 'O'){
-                mat[0][i] = '1';
-                q.push({0, i});
-            }
-            if(mat[n-1][i] == 'O'){
-                mat[n-1][i] = '1';
-                q.push({n-1, i});
-            }
-        }
-        int dx[4] = {-1, 1, 0, 0};
-        int dy[4] = {0, 0, -1, 1};
-        while(!q.empty()){
-            auto node = q.front(); q.pop();
-            int row = node.first;
-            int col = node.second;
-            mat[row][col] = '1';
-            for(int k=0; k<4; k++){
-                int r = row+dx[k];
-                int c = col+dy[k];
-                if(r>=0 && r<n && c>=0 && c<m && mat[r][c]=='O'){
-                    q.push({r, c});
-                }
-            }
+        for(int i=0; i<m; i++){
+            if(mat[0][i]=='O') dfs(0, i, n, m, mat);
+            if(mat[n-1][i]=='O') dfs(n-1, i, n, m, mat);
         }
         for(int i=0; i<n; i++){
             for(int j=0; j<m; j++){
@@ -55,6 +27,18 @@ public:
             }
         }
         return mat;
+    }
+    int dx[4] = {1, -1, 0, 0};
+    int dy[4] = {0, 0, 1, -1};
+    void dfs(int i, int j, int &n, int &m, vector<vector<char>> &mat){
+        mat[i][j] = '1';
+        for(int k=0; k<4; k++){
+            int r = i+dx[k];
+            int c = j+dy[k];
+            if(r>=0 && r<n && c>=0 && c<m && mat[r][c]=='O'){
+                dfs(r, c, n, m, mat);
+            }
+        }
     }
 };
 
