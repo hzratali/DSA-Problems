@@ -21,14 +21,16 @@ public:
         vector<ListNode*> ans;
         curr = head;
         for(int i=0; i<k; i++){
-            ListNode *root = new ListNode(0);
-            ListNode *temp = root;
-            for(int j=0; j<width+(i<rem ? 1 : 0); j++){
-                temp->next = new ListNode(curr->val);
-                temp = temp->next;
+            ListNode *root = curr;
+            for(int j=0; j<width+(i<rem ? 1 : 0)-1; j++){
                 if(curr) curr = curr->next;
             }
-            ans.push_back(root->next);
+            if(curr){
+                ListNode *prev = curr;
+                curr = curr->next;
+                prev->next = NULL;
+            }
+            ans.push_back(root);
         }
         return ans;
     }
