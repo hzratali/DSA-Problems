@@ -97,18 +97,17 @@ struct Node {
 class Solution
 {
     public:
-    priority_queue<int> pq;
+    vector<int> v;
     int kthLargest(Node *root, int K)
     {
         //Your code here
         f(root);
-        for(int i=0; i<K-1; i++) pq.pop();
-        return pq.top();
+        return v[v.size()-K];
     }
     void f(Node *root){
         if(root == NULL) return;
-        pq.push(root->data);
         f(root->left);
+        v.push_back(root->data);
         f(root->right);
     }
 };
