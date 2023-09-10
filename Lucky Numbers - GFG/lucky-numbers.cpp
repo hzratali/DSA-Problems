@@ -14,12 +14,15 @@ using namespace std;
 
 class Solution{
 public:
-    int counter = 1;
     bool isLucky(int n) {
         // code here
-        counter++;
-        if(n < counter) return true;
-        return (n%counter) && isLucky(n-(n/counter));
+        int counter = 2;
+        while(counter <= n){
+            if(n%counter==0) return false;
+            n = n - n/counter;
+            counter++;
+        }
+        return true;
     }
 };
 
