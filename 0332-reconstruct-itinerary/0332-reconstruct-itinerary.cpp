@@ -7,7 +7,6 @@ public:
             mp[x[0]].push(x[1]);
         }
         dfs("JFK");
-        reverse(ans.begin(), ans.end());
         return ans;
     }
     void dfs(string s){
@@ -16,6 +15,6 @@ public:
             string to = x.top(); x.pop();
             dfs(to);
         }
-        ans.push_back(s);
+        ans.insert(ans.begin(), s);
     }
 };
