@@ -1,19 +1,27 @@
 class Solution {
 public:
+    int dis(vector<int> &a, vector<int>&b){
+        return abs(a[0]-b[0])+abs(a[1]-b[1]);
+    }
     int minCostConnectPoints(vector<vector<int>>& ps) {
-        int n = ps.size(), res = 0, i = 0, connected = 0;
-        vector<bool> visited(n);
-        priority_queue<pair<int, int>> pq;
-        while(++connected < n){
-            visited[i] = true;
-            for(int j = 0; j < n; ++j)
-                if(!visited[j])
-                    pq.push({-(abs(ps[i][0] - ps[j][0]) + abs(ps[i][1] - ps[j][1])), j});
-            while(visited[pq.top().second]) pq.pop();
-            res -= pq.top().first;
-            i = pq.top().second;
-            pq.pop();
+        int n = ps.size();
+        vector<int> vis(n, 0), minCost(n, INT_MAX);
+        minCost[0] = 0;
+        int curr = 0, ans = 0;
+        while(curr >= 0){
+            vis[curr] = 1;
+            int currMin = INT_MAX, nxtPoint=-1;
+            for(int i=0; i<n; i++){
+                if(curr==i || vis[i]) continue;
+                minCost[i] = min(dis(ps[curr], ps[i]), minCost[i]);
+                if(currMin > minCost[i]){
+                    currMin = minCost[i];
+                    nxtPoint = i;
+                }
+            }
+            ans += (currMin==INT_MAX ? 0 : currMin);
+            curr = nxtPoint;
         }
-        return res;
+        return ans;
     }
 };
