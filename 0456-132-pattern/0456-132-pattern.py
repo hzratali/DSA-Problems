@@ -1,14 +1,10 @@
-class Solution {
-    public boolean find132pattern(int[] nums) {
-        Stack<Integer> s = new Stack<>();
-        int third  = Integer.MIN_VALUE;
-        for(int i=nums.length-1; i>=0; i--){
-            if(third > nums[i]) return true;
-            while(!s.isEmpty() && s.peek() < nums[i]){
-                third = s.pop();
-            }
-            s.push(nums[i]);
-        }
-        return false;
-    }
-}
+class Solution:
+    def find132pattern(self, nums: List[int]) -> bool:
+        s, third = [], float('-inf')
+        for i in range(len(nums)-1, -1, -1):
+            if nums[i] < third: return True
+            while s and nums[i] > s[-1]:
+                third = s[-1]
+                s.pop()
+            s.append(nums[i])
+        return False
