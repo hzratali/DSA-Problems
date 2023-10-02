@@ -1,12 +1,9 @@
-class Solution {
-    public boolean winnerOfGame(String colors) {
-        int a=0, b=0;
-        for(int i=1; i<colors.length()-1; i++){
-            if(colors.charAt(i-1)==colors.charAt(i) && colors.charAt(i)==colors.charAt(i+1)){
-                if(colors.charAt(i) == 'A') a++;
-                else b++;
-            }
-        }
-        return a > b;
-    }
-}
+class Solution:
+    def winnerOfGame(self, colors: str) -> bool:
+        a, b = 0, 0
+        for i in range(1, len(colors)-1):
+            if colors[i-1]==colors[i] and colors[i]==colors[i+1]:
+                if colors[i] == 'A':
+                    a+=1
+                else: b+=1
+        return a>b
