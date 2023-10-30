@@ -5,7 +5,15 @@ public:
         return arr;
     }
     static int comp(int a, int b){
-        if(__builtin_popcount(a) == __builtin_popcount(b)) return a < b;
-        return __builtin_popcount(a) < __builtin_popcount(b);
+        if(findWeight(a) == findWeight(b)) return a < b;
+        return findWeight(a) < findWeight(b);
+    }
+    static int findWeight(int num){
+        int weight = 0;
+        while(num  > 0){
+            weight++;
+            num &= (num-1);
+        }
+        return weight;
     }
 };
