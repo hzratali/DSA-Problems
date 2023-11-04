@@ -1,8 +1,8 @@
-class Solution {
-    public int getLastMoment(int n, int[] left, int[] right) {
-        int ans = 0;
-        for(int x : left) ans = Math.max(ans, x);
-        for(int x : right) ans = Math.max(ans, n-x);
-        return ans;
-    }
-}
+class Solution:
+    def getLastMoment(self, n: int, left: List[int], right: List[int]) -> int:
+        ans = 0
+        for x in left:
+            ans = max(ans, x)
+        for x in right:
+            ans = max(ans, n-x)
+        return ans
