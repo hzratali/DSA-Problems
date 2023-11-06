@@ -1,13 +1,19 @@
 class SeatManager {
 public:
+    int marker;
     priority_queue<int, vector<int>, greater<int>> availableSeats;
     SeatManager(int n) {
-        for(int seatNum=1; seatNum<=n; seatNum++) availableSeats.push(seatNum);
+        marker = 1;
     }
     
     int reserve() {
-        int seatNumber = availableSeats.top();
-        availableSeats.pop();
+        if(!availableSeats.empty()){
+            int seatNumber = availableSeats.top();
+            availableSeats.pop();
+            return seatNumber;
+        }
+        int seatNumber = marker;
+        marker++;
         return seatNumber;
     }
     
