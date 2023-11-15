@@ -1,10 +1,7 @@
-class Solution {
-    public int maximumElementAfterDecrementingAndRearranging(int[] arr) {
-        Arrays.sort(arr);
-        int ans = 1;
-        for(int i=1; i<arr.length; i++){
-            if(arr[i] >= ans+1) ans++;
-        }
-        return ans;
-    }
-}
+class Solution:
+    def maximumElementAfterDecrementingAndRearranging(self, arr: List[int]) -> int:
+        arr.sort()
+        ans = 1
+        for i in range(1, len(arr)):
+            if arr[i] >= ans+1: ans += 1
+        return ans
