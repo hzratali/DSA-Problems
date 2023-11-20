@@ -1,20 +1,18 @@
 class Solution {
 public:
     int garbageCollection(vector<string>& garbage, vector<int>& travel) {
-        vector<int> preSum(travel.size()+1, 0);
-        preSum[1] = travel[0];
-        for(int i=1; i<travel.size(); i++) preSum[i+1] = preSum[i] + travel[i];
-        unordered_map<char, int> garbageLastPos, garbageCnt;
+        for(int i=1; i<travel.size(); i++) travel[i] = travel[i-1] + travel[i];
+        unordered_map<char, int> garbageLastPos;
+        int ans = 0;
         for(int i=0; i<garbage.size(); i++){
             for(char c : garbage[i]){
                 garbageLastPos[c] = i;
-                garbageCnt[c]++;
             }
+            ans += garbage[i].size();
         }
-        char garbageTypes[3] = {'M', 'P', 'G'};
-        int ans = 0;
+        string garbageTypes = "MPG";
         for(char c : garbageTypes){
-            if(garbageCnt[c]) ans += preSum[garbageLastPos[c]] + garbageCnt[c];
+            ans += (garbageLastPos[c] == 0 ? 0 : travel[garbageLastPos[c]-1]);
         }
         return ans;
     }
