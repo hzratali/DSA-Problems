@@ -1,21 +1,17 @@
-class Solution {
-    public int countNicePairs(int[] nums) {
-        int[] arr = new int[nums.length];
-        for(int i=0; i<nums.length; i++) arr[i] = nums[i] - rev(nums[i]);
-        Map<Integer, Integer> mp = new HashMap();
-        int ans = 0, mod = (int)1e9+7;
-        for(int x : arr){
-            ans = (ans + mp.getOrDefault(x, 0)) % mod;
-            mp.put(x, mp.getOrDefault(x, 0)+1);
-        }
-        return ans;
-    }
-    int rev(int num){
-        int res = 0;
-        while(num > 0){
-            res = res * 10 + num % 10;
-            num /= 10;
-        }
-        return res;
-    }
-}
+class Solution:
+    def countNicePairs(self, nums: List[int]) -> int:
+        def rev(num):
+            res = 0
+            while num:
+                res = res * 10 + num % 10
+                num //= 10
+            return res
+        arr = []
+        for i in range(len(nums)):
+            arr.append(nums[i]-rev(nums[i]))
+        mp = defaultdict(int)
+        ans, mod = 0, 10**9+7
+        for x in arr:
+            ans = (ans + mp[x]) % mod
+            mp[x] += 1
+        return ans
