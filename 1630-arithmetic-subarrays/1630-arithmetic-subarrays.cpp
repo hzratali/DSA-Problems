@@ -3,25 +3,26 @@ public:
     vector<bool> checkArithmeticSubarrays(vector<int>& nums, vector<int>& l, vector<int>& r) {
         vector<bool> ans;
         for(int i=0; i<l.size(); i++){
-            vector<int> v;
-            for(int j=l[i]; j<=r[i]; j++){
-                v.push_back(nums[j]);
-            }
-            if(v.size() < 2){
-                ans.push_back(false);
-                continue;
-            }
-            sort(v.begin(), v.end());
-            int diff = v[1] - v[0];
-            bool isArith = true;
-            for(int j=2; j<v.size(); j++){
-                if(diff != v[j]-v[j-1]){
-                    isArith = false;
-                    break;
-                }
-            }
-            ans.push_back(isArith);
+            vector<int> arr(begin(nums)+l[i], begin(nums)+r[i]+1);
+            ans.push_back(check(arr));
         }
         return ans;
+    }
+    bool check(vector<int> arr){
+        int mx = INT_MIN, mn = INT_MAX;
+        unordered_set<int> s;
+        for(int x : arr){
+            mx = max(mx, x);
+            mn = min(mn, x);
+            s.insert(x);
+        }
+        if((mx-mn) % (arr.size()-1) != 0) return false;
+        int diff = (mx - mn) / (arr.size()-1);
+        int curr = mn+diff;
+        while(curr < mx){
+            if(s.find(curr) == s.end()) return false;
+            curr += diff;
+        }
+        return true;
     }
 };
