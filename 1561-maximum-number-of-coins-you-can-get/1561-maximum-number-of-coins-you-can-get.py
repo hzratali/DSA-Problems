@@ -1,8 +1,7 @@
-class Solution {
-    public int maxCoins(int[] piles) {
-        Arrays.sort(piles);
-        int ans = 0;
-        for(int i=piles.length/3; i<piles.length; i+=2) ans += piles[i];
-        return ans;
-    }
-}
+class Solution:
+    def maxCoins(self, piles: List[int]) -> int:
+        piles.sort()
+        ans = 0
+        for i in range(len(piles)//3, len(piles), 2):
+            ans += piles[i]
+        return ans
