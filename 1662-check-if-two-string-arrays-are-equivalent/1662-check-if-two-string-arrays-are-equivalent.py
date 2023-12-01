@@ -1,18 +1,15 @@
-class Solution {
-    public boolean arrayStringsAreEqual(String[] word1, String[] word2) {
-        int n = word1.length, m = word2.length;
-        int i=0, j=0, x=0, y=0;
-        while(i<n && j<m){
-            if(word1[i].charAt(x++) != word2[j].charAt(y++)) return false;
-            if(word1[i].length() == x){
-                i++;
-                x=0;
-            }
-            if(word2[j].length() == y){
-                j++;
-                y= 0;
-            }
-        }
-        return i==n && j==m;
-    }
-}
+class Solution:
+    def arrayStringsAreEqual(self, word1: List[str], word2: List[str]) -> bool:
+        n, m = len(word1), len(word2)
+        i, j, x, y = 0, 0, 0, 0
+        while i<n and j<m:
+            if word1[i][x] != word2[j][y]: return False
+            x += 1
+            y += 1
+            if len(word1[i]) == x:
+                i+=1
+                x=0
+            if len(word2[j])== y:
+                j+=1
+                y=0
+        return i==n and j==m
