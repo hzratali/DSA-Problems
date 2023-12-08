@@ -1,22 +1,26 @@
 /**
  * Definition for a binary tree node.
- * struct TreeNode {
+ * public class TreeNode {
  *     int val;
- *     TreeNode *left;
- *     TreeNode *right;
- *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
- *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
- *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
- * };
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
  */
 class Solution {
-public:
-    string tree2str(TreeNode* root) {
-        if(root == NULL) return "";
-        string ans = to_string(root->val);
-        if(root->left) ans += "(" + tree2str(root->left) + ")";
-        else if(root->right) ans += "()";
-        if(root->right) ans += "(" + tree2str(root->right) + ")";
-        return ans;
+    public String tree2str(TreeNode root) {
+        if(root == null) return "";
+        StringBuilder ans = new StringBuilder();
+        ans.append(root.val);
+        if(root.left!=null) ans.append("(").append(tree2str(root.left)).append(")");
+        else if(root.right != null) ans.append("()");
+        if(root.right!=null) ans.append("(").append(tree2str(root.right)).append(")");
+        return ans.toString();
     }
-};
+}
