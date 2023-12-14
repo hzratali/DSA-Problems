@@ -1,20 +1,13 @@
-class Solution {
-public:
-    vector<vector<int>> onesMinusZeros(vector<vector<int>>& grid) {
-        int n = grid.size(), m = grid[0].size();
-        vector<int> onesRow(n, 0), onesCol(m, 0);
-        for(int i=0; i<n; i++){
-            for(int j=0; j<m; j++){
-                onesRow[i] += grid[i][j];
-                onesCol[j] += grid[i][j];
-            }
-        }
-        vector<vector<int>> diff(n, vector<int>(m, 0));
-        for(int i=0; i<n; i++){
-            for(int j=0; j<m; j++){
-                diff[i][j] = onesRow[i] + onesCol[j] - (m-onesRow[i] + n-onesCol[j]);
-            }
-        }
-        return diff;
-    }
-};
+class Solution:
+    def onesMinusZeros(self, grid: List[List[int]]) -> List[List[int]]:
+        n, m = len(grid), len(grid[0])
+        onesRow, onesCol = [0]*n, [0]*m
+        for i in range(n):
+            for j in range(m):
+                onesRow[i] += grid[i][j]
+                onesCol[j] += grid[i][j]
+        ans = [[0]*m for _ in range(n)]
+        for i in range(n):
+            for j in range(m):
+                ans[i][j] = 2*onesRow[i] + 2*onesCol[j] - (n + m)
+        return ans
