@@ -1,11 +1,9 @@
-class Solution {
-    public String destCity(List<List<String>> paths) {
-        HashSet<String> s = new HashSet();
-        for(int i=0; i<paths.size(); i++) s.add(paths.get(i).get(0));
-        for(int i=0; i<paths.size(); i++){
-            String candi = paths.get(i).get(1);
-            if(!s.contains(candi)) return candi;
-        }
-        return "";
-    }
-}
+class Solution:
+    def destCity(self, paths: List[List[str]]) -> str:
+        s = set()
+        for i in range(len(paths)):
+            s.add(paths[i][0])
+        for i in range(len(paths)):
+            candi = paths[i][1]
+            if candi not in s: return candi
+        return ""
