@@ -1,13 +1,9 @@
-class Solution {
-    public int buyChoco(int[] prices, int money) {
-        int f = Integer.MAX_VALUE, s = Integer.MAX_VALUE;
-        for(int x : prices){
-            if(x < f){
-                s = f;
-                f = x;
-            }
-            else s = Math.min(s, x);
-        }
-        return s+f<=money ? money-f-s : money;
-    }
-}
+class Solution:
+    def buyChoco(self, prices: List[int], money: int) -> int:
+        f, s = float(inf), float(inf)
+        for x in prices:
+            if x < f:
+                s = f
+                f = x
+            else: s = min(s, x)
+        return money-s-f if s+f <= money else money
