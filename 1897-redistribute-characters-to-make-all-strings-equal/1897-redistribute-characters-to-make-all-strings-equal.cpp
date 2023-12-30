@@ -1,12 +1,12 @@
 class Solution {
 public:
     bool makeEqual(vector<string>& words) {
-        unordered_map<char, int> cnt;
+        vector<int> cnt(26, 0);
         for(string word : words){
-            for(char c : word) cnt[c]++;
+            for(char c : word) cnt[c-'a']++;
         }
         int n = words.size();
-        for(auto &[key, val] : cnt){
+        for(int val : cnt){
             if(val % n != 0) return false;
         }
         return true;
