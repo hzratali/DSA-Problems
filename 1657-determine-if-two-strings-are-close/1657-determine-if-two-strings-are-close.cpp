@@ -1,17 +1,12 @@
-class Solution {
-public:
-    bool closeStrings(string word1, string word2){
-        vector<int> cnt1(26, 0), cnt2(26, 0);
-        for(char c : word1) cnt1[c-'a']++;
-        for(char c : word2) cnt2[c-'a']++;
-        for(int i=0; i<26; i++){
-            if((cnt1[i]==0 && cnt2[i]!=0) || (cnt1[i]!=0 && cnt2[i]==0)) return false;
-        }
-        sort(cnt1.begin(), cnt1.end());
-        sort(cnt2.begin(), cnt2.end());
-        for(int i=0; i<26; i++){
-            if(cnt1[i] != cnt2[i]) return false;
-        }
-        return true;
-    }
-};
+class Solution:
+    def closeStrings(self, word1: str, word2: str) -> bool:
+        cnt1, cnt2 = [0]*26, [0]*26
+        for c in word1:
+            cnt1[ord(c)-ord('a')]+=1
+        for c in word2:
+            cnt2[ord(c)-ord('a')]+=1
+        for i in range(26):
+            if (cnt1[i]==0 and cnt2[i]!=0) or (cnt1[i]!=0 and cnt2[i]==0): return False
+        cnt1.sort()
+        cnt2.sort()
+        return cnt1==cnt2
