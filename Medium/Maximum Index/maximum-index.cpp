@@ -1,56 +1,54 @@
 //{ Driver Code Starts
-#include <bits/stdc++.h>
-
+#include<bits/stdc++.h>
 using namespace std;
+
 
 // } Driver Code Ends
 class Solution{
-public:
-    int maxIndexDiff(int arr[], int n) {
-        // code here
-        int *left = new int[n];
-        int *right = new int[n];
-        left[0] = arr[0];
-        int maxi = -1;
-        for(int i = 1; i<n;i++ ){
-            left[i] = min(arr[i] , left[i-1]);
-        }
-        right[n-1] = arr[n-1];
-        for(int i = n-2; i >=0 ; i--) {
-            right[i] =  max(arr[i] , right[i+1]);
-        }
+    public:
         
-        int i = 0 , j = 0;
-        while(j < n && i < n ) {
-            if(left[i] <= right[j]) {
-                maxi = max(maxi , j-i);
-                j++;
-            }
+    // A[]: input array
+    // N: size of array
+    // Function to find the maximum index difference.
+    int maxIndexDiff(int a[], int n) 
+    { 
+        // Your code here
+        int i=0, j=n-1, mx = INT_MIN;
+        while(i < n){
+            if(a[i] > a[j]) j--;
             else{
-                i++;
+                mx = max(mx, j-i);
+                j = n-1;
+                i += 1;
             }
         }
-        return maxi;
+        return mx;
     }
 };
 
-
 //{ Driver Code Starts.
-
-int main() {
-    int t;
-    cin >> t;
-    while (t--) {
-        int n, i;
-        cin >> n;
-        int a[n];
-        for (i = 0; i < n; i++) {
-            cin >> a[i];
-        }
+  
+/* Driver program to test above functions */
+int main() 
+{
+    int T;
+    //testcases
+    cin>>T;
+    while(T--){
+        int num;
+        //size of array
+        cin>>num;
+        int arr[num];
+        
+        //inserting elements
+        for (int i = 0; i<num; i++)
+            cin>>arr[i];
         Solution ob;
-        auto ans = ob.maxIndexDiff(a, n);
-        cout << ans << "\n";
+        
+        //calling maxIndexDiff() function
+        cout<<ob.maxIndexDiff(arr, num)<<endl;    
+        
     }
     return 0;
-}
+} 
 // } Driver Code Ends
