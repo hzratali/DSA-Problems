@@ -18,13 +18,20 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 |  |
 | ------- |
 | [0409-longest-palindrome](https://github.com/ha-rahman/DSA-Problems/tree/master/0409-longest-palindrome) |
+| [0876-hand-of-straights](https://github.com/ha-rahman/DSA-Problems/tree/master/0876-hand-of-straights) |
 | [2572-append-characters-to-string-to-make-subsequence](https://github.com/ha-rahman/DSA-Problems/tree/master/2572-append-characters-to-string-to-make-subsequence) |
 # Hash Table
 |  |
 | ------- |
 | [0409-longest-palindrome](https://github.com/ha-rahman/DSA-Problems/tree/master/0409-longest-palindrome) |
+| [0876-hand-of-straights](https://github.com/ha-rahman/DSA-Problems/tree/master/0876-hand-of-straights) |
 | [1044-find-common-characters](https://github.com/ha-rahman/DSA-Problems/tree/master/1044-find-common-characters) |
 # Array
 |  |
 | ------- |
+| [0876-hand-of-straights](https://github.com/ha-rahman/DSA-Problems/tree/master/0876-hand-of-straights) |
 | [1044-find-common-characters](https://github.com/ha-rahman/DSA-Problems/tree/master/1044-find-common-characters) |
+# Sorting
+|  |
+| ------- |
+| [0876-hand-of-straights](https://github.com/ha-rahman/DSA-Problems/tree/master/0876-hand-of-straights) |
