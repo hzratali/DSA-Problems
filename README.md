@@ -5,6 +5,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 # Two Pointers
 |  |
 | ------- |
+| [0075-sort-colors](https://github.com/ha-rahman/DSA-Problems/tree/master/0075-sort-colors) |
 | [0344-reverse-string](https://github.com/ha-rahman/DSA-Problems/tree/master/0344-reverse-string) |
 | [2572-append-characters-to-string-to-make-subsequence](https://github.com/ha-rahman/DSA-Problems/tree/master/2572-append-characters-to-string-to-make-subsequence) |
 # String
@@ -30,6 +31,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 # Array
 |  |
 | ------- |
+| [0075-sort-colors](https://github.com/ha-rahman/DSA-Problems/tree/master/0075-sort-colors) |
 | [0876-hand-of-straights](https://github.com/ha-rahman/DSA-Problems/tree/master/0876-hand-of-straights) |
 | [1044-find-common-characters](https://github.com/ha-rahman/DSA-Problems/tree/master/1044-find-common-characters) |
 | [1137-height-checker](https://github.com/ha-rahman/DSA-Problems/tree/master/1137-height-checker) |
@@ -37,6 +39,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 # Sorting
 |  |
 | ------- |
+| [0075-sort-colors](https://github.com/ha-rahman/DSA-Problems/tree/master/0075-sort-colors) |
 | [0876-hand-of-straights](https://github.com/ha-rahman/DSA-Problems/tree/master/0876-hand-of-straights) |
 | [1137-height-checker](https://github.com/ha-rahman/DSA-Problems/tree/master/1137-height-checker) |
 | [1217-relative-sort-array](https://github.com/ha-rahman/DSA-Problems/tree/master/1217-relative-sort-array) |
