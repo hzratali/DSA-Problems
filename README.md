@@ -20,6 +20,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | ------- |
 | [0409-longest-palindrome](https://github.com/ha-rahman/DSA-Problems/tree/master/0409-longest-palindrome) |
 | [0876-hand-of-straights](https://github.com/ha-rahman/DSA-Problems/tree/master/0876-hand-of-straights) |
+| [0982-minimum-increment-to-make-array-unique](https://github.com/ha-rahman/DSA-Problems/tree/master/0982-minimum-increment-to-make-array-unique) |
 | [2148-minimum-number-of-moves-to-seat-everyone](https://github.com/ha-rahman/DSA-Problems/tree/master/2148-minimum-number-of-moves-to-seat-everyone) |
 | [2572-append-characters-to-string-to-make-subsequence](https://github.com/ha-rahman/DSA-Problems/tree/master/2572-append-characters-to-string-to-make-subsequence) |
 # Hash Table
@@ -34,6 +35,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | ------- |
 | [0075-sort-colors](https://github.com/ha-rahman/DSA-Problems/tree/master/0075-sort-colors) |
 | [0876-hand-of-straights](https://github.com/ha-rahman/DSA-Problems/tree/master/0876-hand-of-straights) |
+| [0982-minimum-increment-to-make-array-unique](https://github.com/ha-rahman/DSA-Problems/tree/master/0982-minimum-increment-to-make-array-unique) |
 | [1044-find-common-characters](https://github.com/ha-rahman/DSA-Problems/tree/master/1044-find-common-characters) |
 | [1137-height-checker](https://github.com/ha-rahman/DSA-Problems/tree/master/1137-height-checker) |
 | [1217-relative-sort-array](https://github.com/ha-rahman/DSA-Problems/tree/master/1217-relative-sort-array) |
@@ -43,11 +45,13 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | ------- |
 | [0075-sort-colors](https://github.com/ha-rahman/DSA-Problems/tree/master/0075-sort-colors) |
 | [0876-hand-of-straights](https://github.com/ha-rahman/DSA-Problems/tree/master/0876-hand-of-straights) |
+| [0982-minimum-increment-to-make-array-unique](https://github.com/ha-rahman/DSA-Problems/tree/master/0982-minimum-increment-to-make-array-unique) |
 | [1137-height-checker](https://github.com/ha-rahman/DSA-Problems/tree/master/1137-height-checker) |
 | [1217-relative-sort-array](https://github.com/ha-rahman/DSA-Problems/tree/master/1217-relative-sort-array) |
 | [2148-minimum-number-of-moves-to-seat-everyone](https://github.com/ha-rahman/DSA-Problems/tree/master/2148-minimum-number-of-moves-to-seat-everyone) |
 # Counting Sort
 |  |
 | ------- |
+| [0982-minimum-increment-to-make-array-unique](https://github.com/ha-rahman/DSA-Problems/tree/master/0982-minimum-increment-to-make-array-unique) |
 | [1137-height-checker](https://github.com/ha-rahman/DSA-Problems/tree/master/1137-height-checker) |
 | [1217-relative-sort-array](https://github.com/ha-rahman/DSA-Problems/tree/master/1217-relative-sort-array) |
