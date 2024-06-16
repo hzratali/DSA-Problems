@@ -18,6 +18,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 # Greedy
 |  |
 | ------- |
+| [0330-patching-array](https://github.com/ha-rahman/DSA-Problems/tree/master/0330-patching-array) |
 | [0409-longest-palindrome](https://github.com/ha-rahman/DSA-Problems/tree/master/0409-longest-palindrome) |
 | [0502-ipo](https://github.com/ha-rahman/DSA-Problems/tree/master/0502-ipo) |
 | [0876-hand-of-straights](https://github.com/ha-rahman/DSA-Problems/tree/master/0876-hand-of-straights) |
@@ -35,6 +36,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 |  |
 | ------- |
 | [0075-sort-colors](https://github.com/ha-rahman/DSA-Problems/tree/master/0075-sort-colors) |
+| [0330-patching-array](https://github.com/ha-rahman/DSA-Problems/tree/master/0330-patching-array) |
 | [0502-ipo](https://github.com/ha-rahman/DSA-Problems/tree/master/0502-ipo) |
 | [0876-hand-of-straights](https://github.com/ha-rahman/DSA-Problems/tree/master/0876-hand-of-straights) |
 | [0982-minimum-increment-to-make-array-unique](https://github.com/ha-rahman/DSA-Problems/tree/master/0982-minimum-increment-to-make-array-unique) |
