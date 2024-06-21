@@ -42,6 +42,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [0982-minimum-increment-to-make-array-unique](https://github.com/ha-rahman/DSA-Problems/tree/master/0982-minimum-increment-to-make-array-unique) |
 | [1044-find-common-characters](https://github.com/ha-rahman/DSA-Problems/tree/master/1044-find-common-characters) |
 | [1137-height-checker](https://github.com/ha-rahman/DSA-Problems/tree/master/1137-height-checker) |
+| [1138-grumpy-bookstore-owner](https://github.com/ha-rahman/DSA-Problems/tree/master/1138-grumpy-bookstore-owner) |
 | [1217-relative-sort-array](https://github.com/ha-rahman/DSA-Problems/tree/master/1217-relative-sort-array) |
 | [1605-minimum-number-of-days-to-make-m-bouquets](https://github.com/ha-rahman/DSA-Problems/tree/master/1605-minimum-number-of-days-to-make-m-bouquets) |
 | [2148-minimum-number-of-moves-to-seat-everyone](https://github.com/ha-rahman/DSA-Problems/tree/master/2148-minimum-number-of-moves-to-seat-everyone) |
@@ -69,3 +70,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 |  |
 | ------- |
 | [1605-minimum-number-of-days-to-make-m-bouquets](https://github.com/ha-rahman/DSA-Problems/tree/master/1605-minimum-number-of-days-to-make-m-bouquets) |
+# Sliding Window
+|  |
+| ------- |
+| [1138-grumpy-bookstore-owner](https://github.com/ha-rahman/DSA-Problems/tree/master/1138-grumpy-bookstore-owner) |
