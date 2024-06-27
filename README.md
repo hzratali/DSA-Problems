@@ -114,3 +114,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 |  |
 | ------- |
 | [1285-balance-a-binary-search-tree](https://github.com/ha-rahman/DSA-Problems/tree/master/1285-balance-a-binary-search-tree) |
+# Graph
+|  |
+| ------- |
+| [1916-find-center-of-star-graph](https://github.com/ha-rahman/DSA-Problems/tree/master/1916-find-center-of-star-graph) |
