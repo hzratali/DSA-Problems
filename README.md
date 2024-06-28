@@ -118,3 +118,22 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 |  |
 | ------- |
 | [1916-find-center-of-star-graph](https://github.com/ha-rahman/DSA-Problems/tree/master/1916-find-center-of-star-graph) |
+<!---LeetCode Topics Start-->
+# LeetCode Topics
+## Greedy
+|  |
+| ------- |
+| [2379-maximum-total-importance-of-roads](https://github.com/ha-rahman/DSA-Problems/tree/master/2379-maximum-total-importance-of-roads) |
+## Graph
+|  |
+| ------- |
+| [2379-maximum-total-importance-of-roads](https://github.com/ha-rahman/DSA-Problems/tree/master/2379-maximum-total-importance-of-roads) |
+## Sorting
+|  |
+| ------- |
+| [2379-maximum-total-importance-of-roads](https://github.com/ha-rahman/DSA-Problems/tree/master/2379-maximum-total-importance-of-roads) |
+## Heap (Priority Queue)
+|  |
+| ------- |
+| [2379-maximum-total-importance-of-roads](https://github.com/ha-rahman/DSA-Problems/tree/master/2379-maximum-total-importance-of-roads) |
+<!---LeetCode Topics End-->
