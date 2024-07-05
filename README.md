@@ -175,6 +175,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 ## Linked List
 |  |
 | ------- |
+| [2182-find-the-minimum-and-maximum-number-of-nodes-between-critical-points](https://github.com/ha-rahman/DSA-Problems/tree/master/2182-find-the-minimum-and-maximum-number-of-nodes-between-critical-points) |
 | [2299-merge-nodes-in-between-zeros](https://github.com/ha-rahman/DSA-Problems/tree/master/2299-merge-nodes-in-between-zeros) |
 ## Simulation
 |  |
