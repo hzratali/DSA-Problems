@@ -162,6 +162,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [0088-merge-sorted-array](https://github.com/ha-rahman/DSA-Problems/tree/master/0088-merge-sorted-array) |
 | [0350-intersection-of-two-arrays-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/0350-intersection-of-two-arrays-ii) |
 | [1293-three-consecutive-odds](https://github.com/ha-rahman/DSA-Problems/tree/master/1293-three-consecutive-odds) |
+| [1803-average-waiting-time](https://github.com/ha-rahman/DSA-Problems/tree/master/1803-average-waiting-time) |
 ## Hash Table
 |  |
 | ------- |
@@ -184,6 +185,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 |  |
 | ------- |
 | [1642-water-bottles](https://github.com/ha-rahman/DSA-Problems/tree/master/1642-water-bottles) |
+| [1803-average-waiting-time](https://github.com/ha-rahman/DSA-Problems/tree/master/1803-average-waiting-time) |
 | [2299-merge-nodes-in-between-zeros](https://github.com/ha-rahman/DSA-Problems/tree/master/2299-merge-nodes-in-between-zeros) |
 ## Math
 |  |
