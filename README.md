@@ -133,6 +133,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 ## Sorting
 |  |
 | ------- |
+| [0088-merge-sorted-array](https://github.com/ha-rahman/DSA-Problems/tree/master/0088-merge-sorted-array) |
 | [0350-intersection-of-two-arrays-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/0350-intersection-of-two-arrays-ii) |
 | [2379-maximum-total-importance-of-roads](https://github.com/ha-rahman/DSA-Problems/tree/master/2379-maximum-total-importance-of-roads) |
 ## Heap (Priority Queue)
@@ -158,6 +159,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 ## Array
 |  |
 | ------- |
+| [0088-merge-sorted-array](https://github.com/ha-rahman/DSA-Problems/tree/master/0088-merge-sorted-array) |
 | [0350-intersection-of-two-arrays-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/0350-intersection-of-two-arrays-ii) |
 | [1293-three-consecutive-odds](https://github.com/ha-rahman/DSA-Problems/tree/master/1293-three-consecutive-odds) |
 ## Hash Table
@@ -167,6 +169,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 ## Two Pointers
 |  |
 | ------- |
+| [0088-merge-sorted-array](https://github.com/ha-rahman/DSA-Problems/tree/master/0088-merge-sorted-array) |
 | [0350-intersection-of-two-arrays-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/0350-intersection-of-two-arrays-ii) |
 ## Binary Search
 |  |
