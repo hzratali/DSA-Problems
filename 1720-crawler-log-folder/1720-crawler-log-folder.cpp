@@ -1,11 +1,13 @@
 class Solution {
 public:
     int minOperations(vector<string>& logs) {
-        int folderDepth = 0;
+        stack<string> folderStack;
         for(auto x : logs){
-            if(x == "../") folderDepth = max(0, folderDepth-1);
-            else if(x != "./") folderDepth++;
+            if(x == "../"){
+                if(!folderStack.empty()) folderStack.pop();
+            }
+            else if(x != "./") folderStack.push(x);
         }
-        return folderDepth;
+        return folderStack.size();
     }
 };
