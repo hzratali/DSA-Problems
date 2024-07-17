@@ -12,33 +12,29 @@
 class Solution {
 public:
     vector<TreeNode*> delNodes(TreeNode* root, vector<int>& to_delete) {
-        unordered_set<int> toDeleteSet(to_delete.begin(), to_delete.end());
+        if(!root) return {};
+        unordered_set<int> toDelSet(to_delete.begin(), to_delete.end());
         vector<TreeNode*> forest;
-        root = processNode(root, toDeleteSet, forest);
-        // If the root is not deleted, add it to the forest
-        if (root) forest.push_back(root);
-        return forest;
-    }
-
-private:
-    TreeNode* processNode(TreeNode* node, unordered_set<int>& toDeleteSet, vector<TreeNode*>& forest) {
-        if (!node) return nullptr;
-
-        node->left = processNode(node->left, toDeleteSet, forest);
-        node->right = processNode(node->right, toDeleteSet, forest);
-        // Node Evaluation: Check if the current node needs to be deleted
-        if (toDeleteSet.find(node->val) != toDeleteSet.end()) {
-            // If the node has left or right children, add them to the forest
-            if (node->left) {
-                forest.push_back(node->left);
+        queue<TreeNode*> q;
+        q.push(root);
+        while(!q.empty()){
+            TreeNode *curr = q.front();
+            q.pop();
+            if(curr->left){
+                q.push(curr->left);
+                if(toDelSet.find(curr->left->val) != toDelSet.end()) curr->left = NULL;
             }
-            if (node->right) {
-                forest.push_back(node->right);
+            if(curr->right){
+                q.push(curr->right);
+                if(toDelSet.find(curr->right->val) != toDelSet.end()) curr->right = NULL;
             }
-            // Delete the current node and return null to its parent
-            delete node;
-            return nullptr;
+            if(toDelSet.find(curr->val) != toDelSet.end()){
+                if(curr->left) forest.push_back(curr->left);
+                if(curr->right) forest.push_back(curr->right);
+            }
         }
-        return node;
+        if(toDelSet.find(root->val) == toDelSet.end()) forest.push_back(root);
+
+        return forest;
     }
 };
