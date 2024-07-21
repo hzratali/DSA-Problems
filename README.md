@@ -131,6 +131,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [1431-all-ancestors-of-a-node-in-a-directed-acyclic-graph](https://github.com/ha-rahman/DSA-Problems/tree/master/1431-all-ancestors-of-a-node-in-a-directed-acyclic-graph) |
 | [1701-remove-max-number-of-edges-to-keep-graph-fully-traversable](https://github.com/ha-rahman/DSA-Problems/tree/master/1701-remove-max-number-of-edges-to-keep-graph-fully-traversable) |
 | [2379-maximum-total-importance-of-roads](https://github.com/ha-rahman/DSA-Problems/tree/master/2379-maximum-total-importance-of-roads) |
+| [2472-build-a-matrix-with-conditions](https://github.com/ha-rahman/DSA-Problems/tree/master/2472-build-a-matrix-with-conditions) |
 ## Sorting
 |  |
 | ------- |
@@ -157,6 +158,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 |  |
 | ------- |
 | [1431-all-ancestors-of-a-node-in-a-directed-acyclic-graph](https://github.com/ha-rahman/DSA-Problems/tree/master/1431-all-ancestors-of-a-node-in-a-directed-acyclic-graph) |
+| [2472-build-a-matrix-with-conditions](https://github.com/ha-rahman/DSA-Problems/tree/master/2472-build-a-matrix-with-conditions) |
 ## Union Find
 |  |
 | ------- |
@@ -171,6 +173,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [1720-crawler-log-folder](https://github.com/ha-rahman/DSA-Problems/tree/master/1720-crawler-log-folder) |
 | [1803-average-waiting-time](https://github.com/ha-rahman/DSA-Problems/tree/master/1803-average-waiting-time) |
 | [2306-create-binary-tree-from-descriptions](https://github.com/ha-rahman/DSA-Problems/tree/master/2306-create-binary-tree-from-descriptions) |
+| [2472-build-a-matrix-with-conditions](https://github.com/ha-rahman/DSA-Problems/tree/master/2472-build-a-matrix-with-conditions) |
 | [2846-robot-collisions](https://github.com/ha-rahman/DSA-Problems/tree/master/2846-robot-collisions) |
 ## Hash Table
 |  |
@@ -232,4 +235,8 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [1207-delete-nodes-and-return-forest](https://github.com/ha-rahman/DSA-Problems/tree/master/1207-delete-nodes-and-return-forest) |
 | [2217-step-by-step-directions-from-a-binary-tree-node-to-another](https://github.com/ha-rahman/DSA-Problems/tree/master/2217-step-by-step-directions-from-a-binary-tree-node-to-another) |
 | [2306-create-binary-tree-from-descriptions](https://github.com/ha-rahman/DSA-Problems/tree/master/2306-create-binary-tree-from-descriptions) |
+## Matrix
+|  |
+| ------- |
+| [2472-build-a-matrix-with-conditions](https://github.com/ha-rahman/DSA-Problems/tree/master/2472-build-a-matrix-with-conditions) |
 <!---LeetCode Topics End-->
