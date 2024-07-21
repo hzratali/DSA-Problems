@@ -17,43 +17,27 @@ public:
     }
     vector<int> topoSort(vector<vector<int>>&edges, int n){
         vector<vector<int>> adj(n+1);
-        vector<int> order;
-        //0:not visited, 1: visiting, 2: visited
-        vector<int> visited(n+1, 0);
-        bool hasCycle = false;
+        vector<int> deg(n+1),order;
         //Build adjacency list
         for(auto &x : edges){
             adj[x[0]].push_back(x[1]);
+            deg[x[1]]++;
         }
-        //Perform DFS for each node
+        queue<int> q;
         for(int i=1; i<=n; i++){
-            if(visited[i]==0){
-                dfs(i, adj, visited,order, hasCycle);
-                //Return empty if cycle detected
-                if(hasCycle) return {};
+            if(deg[i] == 0) q.push(i);
+        }
+        while(!q.empty()){
+            int f = q.front();
+            q.pop();
+            order.push_back(f);
+            n--;
+            for(auto x : adj[f]){
+                if(--deg[x] == 0) q.push(x);
             }
         }
-        //Reverse to get the correct order
-        reverse(order.begin(), order.end());
+        //If we have not visited all the integer, return empty array
+        if(n != 0) return {};
         return order;
-    }
-    void dfs(int node, vector<vector<int>>&adj, vector<int>&visited, vector<int>&order, bool &hasCycle){
-        visited[node] = 1;   // Mark node as visiting
-        for(int nei : adj[node]){
-            if(visited[nei] == 0){
-                dfs(nei, adj, visited, order, hasCycle);
-                //Early exit if a cycle is detected
-                if(hasCycle) return;
-            }
-            else if(visited[nei] == 1){
-                //Cycle detected
-                hasCycle = true;
-                return;
-            }
-        }
-        // Mark node as visited
-        visited[node] = 2;
-        //Add node to the order
-        order.push_back(node);
     }
 };
