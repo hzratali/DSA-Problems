@@ -138,6 +138,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [0088-merge-sorted-array](https://github.com/ha-rahman/DSA-Problems/tree/master/0088-merge-sorted-array) |
 | [0350-intersection-of-two-arrays-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/0350-intersection-of-two-arrays-ii) |
 | [0726-number-of-atoms](https://github.com/ha-rahman/DSA-Problems/tree/master/0726-number-of-atoms) |
+| [1333-sort-the-jumbled-numbers](https://github.com/ha-rahman/DSA-Problems/tree/master/1333-sort-the-jumbled-numbers) |
 | [1741-sort-array-by-increasing-frequency](https://github.com/ha-rahman/DSA-Problems/tree/master/1741-sort-array-by-increasing-frequency) |
 | [2379-maximum-total-importance-of-roads](https://github.com/ha-rahman/DSA-Problems/tree/master/2379-maximum-total-importance-of-roads) |
 | [2846-robot-collisions](https://github.com/ha-rahman/DSA-Problems/tree/master/2846-robot-collisions) |
@@ -171,6 +172,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [0350-intersection-of-two-arrays-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/0350-intersection-of-two-arrays-ii) |
 | [1207-delete-nodes-and-return-forest](https://github.com/ha-rahman/DSA-Problems/tree/master/1207-delete-nodes-and-return-forest) |
 | [1293-three-consecutive-odds](https://github.com/ha-rahman/DSA-Problems/tree/master/1293-three-consecutive-odds) |
+| [1333-sort-the-jumbled-numbers](https://github.com/ha-rahman/DSA-Problems/tree/master/1333-sort-the-jumbled-numbers) |
 | [1720-crawler-log-folder](https://github.com/ha-rahman/DSA-Problems/tree/master/1720-crawler-log-folder) |
 | [1741-sort-array-by-increasing-frequency](https://github.com/ha-rahman/DSA-Problems/tree/master/1741-sort-array-by-increasing-frequency) |
 | [1803-average-waiting-time](https://github.com/ha-rahman/DSA-Problems/tree/master/1803-average-waiting-time) |
