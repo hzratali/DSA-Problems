@@ -177,6 +177,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [0088-merge-sorted-array](https://github.com/ha-rahman/DSA-Problems/tree/master/0088-merge-sorted-array) |
 | [0350-intersection-of-two-arrays-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/0350-intersection-of-two-arrays-ii) |
 | [0948-sort-an-array](https://github.com/ha-rahman/DSA-Problems/tree/master/0948-sort-an-array) |
+| [1196-filling-bookcase-shelves](https://github.com/ha-rahman/DSA-Problems/tree/master/1196-filling-bookcase-shelves) |
 | [1207-delete-nodes-and-return-forest](https://github.com/ha-rahman/DSA-Problems/tree/master/1207-delete-nodes-and-return-forest) |
 | [1293-three-consecutive-odds](https://github.com/ha-rahman/DSA-Problems/tree/master/1293-three-consecutive-odds) |
 | [1333-sort-the-jumbled-numbers](https://github.com/ha-rahman/DSA-Problems/tree/master/1333-sort-the-jumbled-numbers) |
@@ -279,6 +280,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 ## Dynamic Programming
 |  |
 | ------- |
+| [1196-filling-bookcase-shelves](https://github.com/ha-rahman/DSA-Problems/tree/master/1196-filling-bookcase-shelves) |
 | [1456-find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance](https://github.com/ha-rahman/DSA-Problems/tree/master/1456-find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance) |
 | [1511-count-number-of-teams](https://github.com/ha-rahman/DSA-Problems/tree/master/1511-count-number-of-teams) |
 | [1756-minimum-deletions-to-make-string-balanced](https://github.com/ha-rahman/DSA-Problems/tree/master/1756-minimum-deletions-to-make-string-balanced) |
