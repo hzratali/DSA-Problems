@@ -144,6 +144,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [0948-sort-an-array](https://github.com/ha-rahman/DSA-Problems/tree/master/0948-sort-an-array) |
 | [1333-sort-the-jumbled-numbers](https://github.com/ha-rahman/DSA-Problems/tree/master/1333-sort-the-jumbled-numbers) |
 | [1556-make-two-arrays-equal-by-reversing-subarrays](https://github.com/ha-rahman/DSA-Problems/tree/master/1556-make-two-arrays-equal-by-reversing-subarrays) |
+| [1615-range-sum-of-sorted-subarray-sums](https://github.com/ha-rahman/DSA-Problems/tree/master/1615-range-sum-of-sorted-subarray-sums) |
 | [1741-sort-array-by-increasing-frequency](https://github.com/ha-rahman/DSA-Problems/tree/master/1741-sort-array-by-increasing-frequency) |
 | [2379-maximum-total-importance-of-roads](https://github.com/ha-rahman/DSA-Problems/tree/master/2379-maximum-total-importance-of-roads) |
 | [2846-robot-collisions](https://github.com/ha-rahman/DSA-Problems/tree/master/2846-robot-collisions) |
@@ -184,6 +185,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [1333-sort-the-jumbled-numbers](https://github.com/ha-rahman/DSA-Problems/tree/master/1333-sort-the-jumbled-numbers) |
 | [1511-count-number-of-teams](https://github.com/ha-rahman/DSA-Problems/tree/master/1511-count-number-of-teams) |
 | [1556-make-two-arrays-equal-by-reversing-subarrays](https://github.com/ha-rahman/DSA-Problems/tree/master/1556-make-two-arrays-equal-by-reversing-subarrays) |
+| [1615-range-sum-of-sorted-subarray-sums](https://github.com/ha-rahman/DSA-Problems/tree/master/1615-range-sum-of-sorted-subarray-sums) |
 | [1720-crawler-log-folder](https://github.com/ha-rahman/DSA-Problems/tree/master/1720-crawler-log-folder) |
 | [1741-sort-array-by-increasing-frequency](https://github.com/ha-rahman/DSA-Problems/tree/master/1741-sort-array-by-increasing-frequency) |
 | [1803-average-waiting-time](https://github.com/ha-rahman/DSA-Problems/tree/master/1803-average-waiting-time) |
@@ -207,10 +209,12 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | ------- |
 | [0088-merge-sorted-array](https://github.com/ha-rahman/DSA-Problems/tree/master/0088-merge-sorted-array) |
 | [0350-intersection-of-two-arrays-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/0350-intersection-of-two-arrays-ii) |
+| [1615-range-sum-of-sorted-subarray-sums](https://github.com/ha-rahman/DSA-Problems/tree/master/1615-range-sum-of-sorted-subarray-sums) |
 ## Binary Search
 |  |
 | ------- |
 | [0350-intersection-of-two-arrays-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/0350-intersection-of-two-arrays-ii) |
+| [1615-range-sum-of-sorted-subarray-sums](https://github.com/ha-rahman/DSA-Problems/tree/master/1615-range-sum-of-sorted-subarray-sums) |
 ## Linked List
 |  |
 | ------- |
