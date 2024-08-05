@@ -1,21 +1,35 @@
 class Solution {
 public:
     string kthDistinct(vector<string>& arr, int k) {
-        int n = arr.size();
-        vector<string> distinctString;
-        for(int i=0; i<n; i++){
-            string curr = arr[i];
-            bool isDist = true;
-            for(int j=0; j<n; j++){
-                if(i==j) continue;
-                if(arr[j] == curr){
-                    isDist = false;
-                    break;
-                }
+        unordered_set<string> distinctStrings;
+        unordered_set<string> duplicateStrings;
+        // First pass: Identify distinct and duplicate strings
+        for (auto& str : arr) {
+            // If the string is already in duplicateStrings, skip further
+            // processing
+            if (duplicateStrings.count(str)) {
+                continue;
             }
-            if(isDist) distinctString.push_back(curr);
+            // If the string is in distinctStrings, it means we have seen it
+            // before, so move it to duplicateStrings
+            if (distinctStrings.count(str)) {
+                distinctStrings.erase(str);
+                duplicateStrings.insert(str);
+            } else {
+                distinctStrings.insert(str);
+            }
         }
-        if(distinctString.size() < k) return "";
-        return distinctString[k-1];
+        // Second pass: Find the k-th distinct string
+        for (auto& str : arr) {
+            if (!duplicateStrings.count(str)) {
+                // Decrement k for each distinct string encountered
+                k--;
+            }
+            // When k reaches 0, we have found the k-th distinct string
+            if (k == 0) {
+                return str;
+            }
+        }
+        return "";
     }
 };
