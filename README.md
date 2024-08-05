@@ -189,6 +189,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [1720-crawler-log-folder](https://github.com/ha-rahman/DSA-Problems/tree/master/1720-crawler-log-folder) |
 | [1741-sort-array-by-increasing-frequency](https://github.com/ha-rahman/DSA-Problems/tree/master/1741-sort-array-by-increasing-frequency) |
 | [1803-average-waiting-time](https://github.com/ha-rahman/DSA-Problems/tree/master/1803-average-waiting-time) |
+| [2163-kth-distinct-string-in-an-array](https://github.com/ha-rahman/DSA-Problems/tree/master/2163-kth-distinct-string-in-an-array) |
 | [2255-minimum-swaps-to-group-all-1s-together-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/2255-minimum-swaps-to-group-all-1s-together-ii) |
 | [2306-create-binary-tree-from-descriptions](https://github.com/ha-rahman/DSA-Problems/tree/master/2306-create-binary-tree-from-descriptions) |
 | [2472-build-a-matrix-with-conditions](https://github.com/ha-rahman/DSA-Problems/tree/master/2472-build-a-matrix-with-conditions) |
@@ -203,6 +204,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [1207-delete-nodes-and-return-forest](https://github.com/ha-rahman/DSA-Problems/tree/master/1207-delete-nodes-and-return-forest) |
 | [1556-make-two-arrays-equal-by-reversing-subarrays](https://github.com/ha-rahman/DSA-Problems/tree/master/1556-make-two-arrays-equal-by-reversing-subarrays) |
 | [1741-sort-array-by-increasing-frequency](https://github.com/ha-rahman/DSA-Problems/tree/master/1741-sort-array-by-increasing-frequency) |
+| [2163-kth-distinct-string-in-an-array](https://github.com/ha-rahman/DSA-Problems/tree/master/2163-kth-distinct-string-in-an-array) |
 | [2306-create-binary-tree-from-descriptions](https://github.com/ha-rahman/DSA-Problems/tree/master/2306-create-binary-tree-from-descriptions) |
 ## Two Pointers
 |  |
@@ -239,6 +241,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [1720-crawler-log-folder](https://github.com/ha-rahman/DSA-Problems/tree/master/1720-crawler-log-folder) |
 | [1756-minimum-deletions-to-make-string-balanced](https://github.com/ha-rahman/DSA-Problems/tree/master/1756-minimum-deletions-to-make-string-balanced) |
 | [1818-maximum-score-from-removing-substrings](https://github.com/ha-rahman/DSA-Problems/tree/master/1818-maximum-score-from-removing-substrings) |
+| [2163-kth-distinct-string-in-an-array](https://github.com/ha-rahman/DSA-Problems/tree/master/2163-kth-distinct-string-in-an-array) |
 | [2217-step-by-step-directions-from-a-binary-tree-node-to-another](https://github.com/ha-rahman/DSA-Problems/tree/master/2217-step-by-step-directions-from-a-binary-tree-node-to-another) |
 | [2727-number-of-senior-citizens](https://github.com/ha-rahman/DSA-Problems/tree/master/2727-number-of-senior-citizens) |
 | [3235-minimum-cost-to-convert-string-i](https://github.com/ha-rahman/DSA-Problems/tree/master/3235-minimum-cost-to-convert-string-i) |
@@ -287,6 +290,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 |  |
 | ------- |
 | [0948-sort-an-array](https://github.com/ha-rahman/DSA-Problems/tree/master/0948-sort-an-array) |
+| [2163-kth-distinct-string-in-an-array](https://github.com/ha-rahman/DSA-Problems/tree/master/2163-kth-distinct-string-in-an-array) |
 ## Dynamic Programming
 |  |
 | ------- |
