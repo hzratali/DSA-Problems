@@ -1,14 +1,15 @@
 class Solution {
 public:
     int minimumPushes(string word) {
-        vector<int> freq(26, 0);
-        for(char c : word) freq[c-'a']++;
-        //Sort freq in desending order
-        sort(freq.rbegin(), freq.rend());
-        int cnt = 0;
-        for(int i=0; i<26; i++){
-            if(freq[i] == 0) break;
-            cnt += (i/8+1) * freq[i];
+        unordered_map<char, int> freqMp;
+        for(char &c : word) freqMp[c]++;
+        priority_queue<int> freqQueue;
+        for(auto x : freqMp) freqQueue.push(x.second);
+        int cnt = 0, i = 0;
+        while(!freqQueue.empty()){
+            cnt += (1 + (i/8)) * freqQueue.top();
+            freqQueue.pop();
+            i++;
         }
         return cnt;
     }
