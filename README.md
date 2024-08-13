@@ -184,6 +184,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 ## Array
 |  |
 | ------- |
+| [0040-combination-sum-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/0040-combination-sum-ii) |
 | [0088-merge-sorted-array](https://github.com/ha-rahman/DSA-Problems/tree/master/0088-merge-sorted-array) |
 | [0350-intersection-of-two-arrays-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/0350-intersection-of-two-arrays-ii) |
 | [0870-magic-squares-in-grid](https://github.com/ha-rahman/DSA-Problems/tree/master/0870-magic-squares-in-grid) |
@@ -359,4 +360,8 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 |  |
 | ------- |
 | [0789-kth-largest-element-in-a-stream](https://github.com/ha-rahman/DSA-Problems/tree/master/0789-kth-largest-element-in-a-stream) |
+## Backtracking
+|  |
+| ------- |
+| [0040-combination-sum-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/0040-combination-sum-ii) |
 <!---LeetCode Topics End-->
