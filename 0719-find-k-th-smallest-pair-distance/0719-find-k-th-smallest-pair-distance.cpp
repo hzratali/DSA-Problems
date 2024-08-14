@@ -1,19 +1,23 @@
 class Solution {
 public:
     int smallestDistancePair(vector<int>& nums, int k) {
+        sort(nums.begin(), nums.end());
         int n = nums.size();
-        int mxElement = *max_element(nums.begin(), nums.end());
-        vector<int> bucket(mxElement+1, 0);
-        for(int i=0; i<n; i++){
-            for(int j=i+1; j<n; j++){
-                int dis = abs(nums[i]-nums[j]);
-                bucket[dis]++;
-            }
+        int l=0, r=nums[n-1] - nums[0];
+        while(l < r){
+            int m = (l+r)/2;
+            int cnt = countPairWithDistance(nums, m);
+            if(cnt < k) l = m + 1;
+            else r = m;
         }
-        for(int dist=0; dist<=mxElement; dist++){
-            k -= bucket[dist];
-            if(k <= 0) return dist;
+        return l;
+    }
+    int countPairWithDistance(vector<int>&nums, int mxDist){
+        int cnt = 0, n = nums.size(), l = 0;
+        for(int r=0; r<n; r++){
+            while(nums[r]-nums[l] > mxDist) l++;
+            cnt += r-l;
         }
-        return -1;
+        return cnt;
     }
 };
