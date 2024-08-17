@@ -2,20 +2,20 @@ class Solution {
 public:
     long long maxPoints(vector<vector<int>>& points) {
         int n = points.size(), m = points[0].size();
-        vector<long long> prevRow(m);
-        for(int i=0; i<m; i++) prevRow[i] = points[0][i];
-        for(int i=0; i<n-1; i++){
-            vector<long long> leftMax(m);
-            vector<long long> rightMax(m);
-            vector<long long> currRow(m);
-            //Calculate left-right max
-            leftMax[0] = prevRow[0];
-            for(int j=1; j<m; j++) leftMax[j] = max(leftMax[j-1]-1, prevRow[j]);
-            //Calculate right-left max
-            rightMax[m-1] = prevRow[m-1];
-            for(int j=m-2; j>=0; j--) rightMax[j] = max(rightMax[j+1]-1, prevRow[j]);
-            //Calculate curr row's max
-            for(int j=0; j<m; j++) currRow[j] = points[i+1][j] + max(leftMax[j], rightMax[j]);
+        vector<long long> prevRow(m), currRow(m);
+        for(auto row : points){
+            long long runningMax = 0;
+            //Left-Right pass
+            for(int i=0; i<m; i++){
+                runningMax = max(runningMax-1, prevRow[i]);
+                currRow[i] = runningMax;
+            }
+            runningMax = 0;
+            //Right-Left pass
+            for(int i=m-1; i>=0; i--){
+                runningMax = max(runningMax-1, prevRow[i]);
+                currRow[i] = max(currRow[i], runningMax) + row[i];
+            }
             //Update prevRow for the next iteration
             prevRow = currRow;
         }
