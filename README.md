@@ -262,6 +262,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | ------- |
 | [0264-ugly-number-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/0264-ugly-number-ii) |
 | [0273-integer-to-english-words](https://github.com/ha-rahman/DSA-Problems/tree/master/0273-integer-to-english-words) |
+| [0650-2-keys-keyboard](https://github.com/ha-rahman/DSA-Problems/tree/master/0650-2-keys-keyboard) |
 | [0870-magic-squares-in-grid](https://github.com/ha-rahman/DSA-Problems/tree/master/0870-magic-squares-in-grid) |
 | [1642-water-bottles](https://github.com/ha-rahman/DSA-Problems/tree/master/1642-water-bottles) |
 ## String
@@ -335,6 +336,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 |  |
 | ------- |
 | [0264-ugly-number-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/0264-ugly-number-ii) |
+| [0650-2-keys-keyboard](https://github.com/ha-rahman/DSA-Problems/tree/master/0650-2-keys-keyboard) |
 | [1196-filling-bookcase-shelves](https://github.com/ha-rahman/DSA-Problems/tree/master/1196-filling-bookcase-shelves) |
 | [1456-find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance](https://github.com/ha-rahman/DSA-Problems/tree/master/1456-find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance) |
 | [1511-count-number-of-teams](https://github.com/ha-rahman/DSA-Problems/tree/master/1511-count-number-of-teams) |
