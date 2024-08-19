@@ -1,13 +1,16 @@
 class Solution {
 public:
     int minSteps(int n) {
-        vector<int> dp(n+1, 1000);
-        dp[1] = 0;
-        for(int i=2; i<=n; i++){
-            for(int j=1; j<=i/2; j++){
-                if(i%j == 0) dp[i] = min(dp[i], dp[j]+i/j);
+        int ans = 0, d = 2;
+        while(n > 1){
+            // d is prime factor, keep dividing
+            // n by d untill is no longer divisible
+            while(n%d == 0){
+                ans += d;
+                n /= d;
             }
+            d++;
         }
-        return dp[n];
+        return ans;
     }
 };
