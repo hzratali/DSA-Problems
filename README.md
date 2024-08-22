@@ -393,4 +393,8 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 |  |
 | ------- |
 | [1240-stone-game-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/1240-stone-game-ii) |
+## Bit Manipulation
+|  |
+| ------- |
+| [0476-number-complement](https://github.com/ha-rahman/DSA-Problems/tree/master/0476-number-complement) |
 <!---LeetCode Topics End-->
