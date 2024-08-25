@@ -1,25 +1,45 @@
-/**
- * Definition for a binary tree node.
- * struct TreeNode {
- *     int val;
- *     TreeNode *left;
- *     TreeNode *right;
- *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
- *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
- *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
- * };
- */
+// C++ implementation
 class Solution {
 public:
     vector<int> postorderTraversal(TreeNode* root) {
-        vector<int> ans;
-        f(root, ans);
-        return ans;
-    }
-    void f(TreeNode *root, vector<int> &ans){
-        if(!root) return;
-        f(root->left, ans);
-        f(root->right, ans);
-        ans.push_back(root->val);
+        vector<int> result;
+
+        // If the root is null, return an empty list
+        if (!root) {
+            return result;
+        }
+
+        // Stack to manage the traversal
+        stack<TreeNode*> mainStack;
+        // Stack to manage the path
+        stack<TreeNode*> pathStack;
+
+        // Start with the root node
+        mainStack.push(root);
+
+        // Process nodes until the main stack is empty
+        while (!mainStack.empty()) {
+            root = mainStack.top();
+
+            // If the node is in the path stack and it's the top, add its value
+            if (!pathStack.empty() && pathStack.top() == root) {
+                result.push_back(root->val);
+                mainStack.pop();
+                pathStack.pop();
+            } else {
+                // Push the current node to the path stack
+                pathStack.push(root);
+                // Push right child if it exists
+                if (root->right) {
+                    mainStack.push(root->right);
+                }
+                // Push left child if it exists
+                if (root->left) {
+                    mainStack.push(root->left);
+                }
+            }
+        }
+
+        return result;
     }
 };
