@@ -171,6 +171,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [1207-delete-nodes-and-return-forest](https://github.com/ha-rahman/DSA-Problems/tree/master/1207-delete-nodes-and-return-forest) |
 | [1431-all-ancestors-of-a-node-in-a-directed-acyclic-graph](https://github.com/ha-rahman/DSA-Problems/tree/master/1431-all-ancestors-of-a-node-in-a-directed-acyclic-graph) |
 | [1691-minimum-number-of-days-to-disconnect-island](https://github.com/ha-rahman/DSA-Problems/tree/master/1691-minimum-number-of-days-to-disconnect-island) |
+| [2035-count-sub-islands](https://github.com/ha-rahman/DSA-Problems/tree/master/2035-count-sub-islands) |
 | [2217-step-by-step-directions-from-a-binary-tree-node-to-another](https://github.com/ha-rahman/DSA-Problems/tree/master/2217-step-by-step-directions-from-a-binary-tree-node-to-another) |
 ## Breadth-First Search
 |  |
@@ -178,6 +179,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [0999-regions-cut-by-slashes](https://github.com/ha-rahman/DSA-Problems/tree/master/0999-regions-cut-by-slashes) |
 | [1431-all-ancestors-of-a-node-in-a-directed-acyclic-graph](https://github.com/ha-rahman/DSA-Problems/tree/master/1431-all-ancestors-of-a-node-in-a-directed-acyclic-graph) |
 | [1691-minimum-number-of-days-to-disconnect-island](https://github.com/ha-rahman/DSA-Problems/tree/master/1691-minimum-number-of-days-to-disconnect-island) |
+| [2035-count-sub-islands](https://github.com/ha-rahman/DSA-Problems/tree/master/2035-count-sub-islands) |
 | [2171-second-minimum-time-to-reach-destination](https://github.com/ha-rahman/DSA-Problems/tree/master/2171-second-minimum-time-to-reach-destination) |
 ## Topological Sort
 |  |
@@ -189,6 +191,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | ------- |
 | [0999-regions-cut-by-slashes](https://github.com/ha-rahman/DSA-Problems/tree/master/0999-regions-cut-by-slashes) |
 | [1701-remove-max-number-of-edges-to-keep-graph-fully-traversable](https://github.com/ha-rahman/DSA-Problems/tree/master/1701-remove-max-number-of-edges-to-keep-graph-fully-traversable) |
+| [2035-count-sub-islands](https://github.com/ha-rahman/DSA-Problems/tree/master/2035-count-sub-islands) |
 ## Array
 |  |
 | ------- |
@@ -215,6 +218,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [1720-crawler-log-folder](https://github.com/ha-rahman/DSA-Problems/tree/master/1720-crawler-log-folder) |
 | [1741-sort-array-by-increasing-frequency](https://github.com/ha-rahman/DSA-Problems/tree/master/1741-sort-array-by-increasing-frequency) |
 | [1803-average-waiting-time](https://github.com/ha-rahman/DSA-Problems/tree/master/1803-average-waiting-time) |
+| [2035-count-sub-islands](https://github.com/ha-rahman/DSA-Problems/tree/master/2035-count-sub-islands) |
 | [2067-maximum-number-of-points-with-cost](https://github.com/ha-rahman/DSA-Problems/tree/master/2067-maximum-number-of-points-with-cost) |
 | [2163-kth-distinct-string-in-an-array](https://github.com/ha-rahman/DSA-Problems/tree/master/2163-kth-distinct-string-in-an-array) |
 | [2255-minimum-swaps-to-group-all-1s-together-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/2255-minimum-swaps-to-group-all-1s-together-ii) |
@@ -327,6 +331,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [0921-spiral-matrix-iii](https://github.com/ha-rahman/DSA-Problems/tree/master/0921-spiral-matrix-iii) |
 | [0999-regions-cut-by-slashes](https://github.com/ha-rahman/DSA-Problems/tree/master/0999-regions-cut-by-slashes) |
 | [1691-minimum-number-of-days-to-disconnect-island](https://github.com/ha-rahman/DSA-Problems/tree/master/1691-minimum-number-of-days-to-disconnect-island) |
+| [2035-count-sub-islands](https://github.com/ha-rahman/DSA-Problems/tree/master/2035-count-sub-islands) |
 | [2472-build-a-matrix-with-conditions](https://github.com/ha-rahman/DSA-Problems/tree/master/2472-build-a-matrix-with-conditions) |
 ## Divide and Conquer
 |  |
