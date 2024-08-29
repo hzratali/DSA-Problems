@@ -131,6 +131,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 ## Graph
 |  |
 | ------- |
+| [0984-most-stones-removed-with-same-row-or-column](https://github.com/ha-rahman/DSA-Problems/tree/master/0984-most-stones-removed-with-same-row-or-column) |
 | [1325-path-with-maximum-probability](https://github.com/ha-rahman/DSA-Problems/tree/master/1325-path-with-maximum-probability) |
 | [1431-all-ancestors-of-a-node-in-a-directed-acyclic-graph](https://github.com/ha-rahman/DSA-Problems/tree/master/1431-all-ancestors-of-a-node-in-a-directed-acyclic-graph) |
 | [1456-find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance](https://github.com/ha-rahman/DSA-Problems/tree/master/1456-find-the-city-with-the-smallest-number-of-neighbors-at-a-threshold-distance) |
@@ -167,6 +168,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | ------- |
 | [0145-binary-tree-postorder-traversal](https://github.com/ha-rahman/DSA-Problems/tree/master/0145-binary-tree-postorder-traversal) |
 | [0776-n-ary-tree-postorder-traversal](https://github.com/ha-rahman/DSA-Problems/tree/master/0776-n-ary-tree-postorder-traversal) |
+| [0984-most-stones-removed-with-same-row-or-column](https://github.com/ha-rahman/DSA-Problems/tree/master/0984-most-stones-removed-with-same-row-or-column) |
 | [0999-regions-cut-by-slashes](https://github.com/ha-rahman/DSA-Problems/tree/master/0999-regions-cut-by-slashes) |
 | [1207-delete-nodes-and-return-forest](https://github.com/ha-rahman/DSA-Problems/tree/master/1207-delete-nodes-and-return-forest) |
 | [1431-all-ancestors-of-a-node-in-a-directed-acyclic-graph](https://github.com/ha-rahman/DSA-Problems/tree/master/1431-all-ancestors-of-a-node-in-a-directed-acyclic-graph) |
@@ -189,6 +191,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 ## Union Find
 |  |
 | ------- |
+| [0984-most-stones-removed-with-same-row-or-column](https://github.com/ha-rahman/DSA-Problems/tree/master/0984-most-stones-removed-with-same-row-or-column) |
 | [0999-regions-cut-by-slashes](https://github.com/ha-rahman/DSA-Problems/tree/master/0999-regions-cut-by-slashes) |
 | [1701-remove-max-number-of-edges-to-keep-graph-fully-traversable](https://github.com/ha-rahman/DSA-Problems/tree/master/1701-remove-max-number-of-edges-to-keep-graph-fully-traversable) |
 | [2035-count-sub-islands](https://github.com/ha-rahman/DSA-Problems/tree/master/2035-count-sub-islands) |
@@ -234,6 +237,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [0350-intersection-of-two-arrays-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/0350-intersection-of-two-arrays-ii) |
 | [0726-number-of-atoms](https://github.com/ha-rahman/DSA-Problems/tree/master/0726-number-of-atoms) |
 | [0870-magic-squares-in-grid](https://github.com/ha-rahman/DSA-Problems/tree/master/0870-magic-squares-in-grid) |
+| [0984-most-stones-removed-with-same-row-or-column](https://github.com/ha-rahman/DSA-Problems/tree/master/0984-most-stones-removed-with-same-row-or-column) |
 | [0999-regions-cut-by-slashes](https://github.com/ha-rahman/DSA-Problems/tree/master/0999-regions-cut-by-slashes) |
 | [1207-delete-nodes-and-return-forest](https://github.com/ha-rahman/DSA-Problems/tree/master/1207-delete-nodes-and-return-forest) |
 | [1556-make-two-arrays-equal-by-reversing-subarrays](https://github.com/ha-rahman/DSA-Problems/tree/master/1556-make-two-arrays-equal-by-reversing-subarrays) |
