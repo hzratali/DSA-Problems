@@ -225,6 +225,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [1803-average-waiting-time](https://github.com/ha-rahman/DSA-Problems/tree/master/1803-average-waiting-time) |
 | [2035-count-sub-islands](https://github.com/ha-rahman/DSA-Problems/tree/master/2035-count-sub-islands) |
 | [2067-maximum-number-of-points-with-cost](https://github.com/ha-rahman/DSA-Problems/tree/master/2067-maximum-number-of-points-with-cost) |
+| [2132-convert-1d-array-into-2d-array](https://github.com/ha-rahman/DSA-Problems/tree/master/2132-convert-1d-array-into-2d-array) |
 | [2163-kth-distinct-string-in-an-array](https://github.com/ha-rahman/DSA-Problems/tree/master/2163-kth-distinct-string-in-an-array) |
 | [2255-minimum-swaps-to-group-all-1s-together-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/2255-minimum-swaps-to-group-all-1s-together-ii) |
 | [2306-create-binary-tree-from-descriptions](https://github.com/ha-rahman/DSA-Problems/tree/master/2306-create-binary-tree-from-descriptions) |
@@ -272,6 +273,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [0921-spiral-matrix-iii](https://github.com/ha-rahman/DSA-Problems/tree/master/0921-spiral-matrix-iii) |
 | [1642-water-bottles](https://github.com/ha-rahman/DSA-Problems/tree/master/1642-water-bottles) |
 | [1803-average-waiting-time](https://github.com/ha-rahman/DSA-Problems/tree/master/1803-average-waiting-time) |
+| [2132-convert-1d-array-into-2d-array](https://github.com/ha-rahman/DSA-Problems/tree/master/2132-convert-1d-array-into-2d-array) |
 | [2299-merge-nodes-in-between-zeros](https://github.com/ha-rahman/DSA-Problems/tree/master/2299-merge-nodes-in-between-zeros) |
 | [2846-robot-collisions](https://github.com/ha-rahman/DSA-Problems/tree/master/2846-robot-collisions) |
 ## Math
@@ -338,6 +340,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [0999-regions-cut-by-slashes](https://github.com/ha-rahman/DSA-Problems/tree/master/0999-regions-cut-by-slashes) |
 | [1691-minimum-number-of-days-to-disconnect-island](https://github.com/ha-rahman/DSA-Problems/tree/master/1691-minimum-number-of-days-to-disconnect-island) |
 | [2035-count-sub-islands](https://github.com/ha-rahman/DSA-Problems/tree/master/2035-count-sub-islands) |
+| [2132-convert-1d-array-into-2d-array](https://github.com/ha-rahman/DSA-Problems/tree/master/2132-convert-1d-array-into-2d-array) |
 | [2472-build-a-matrix-with-conditions](https://github.com/ha-rahman/DSA-Problems/tree/master/2472-build-a-matrix-with-conditions) |
 ## Divide and Conquer
 |  |
