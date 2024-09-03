@@ -1,13 +1,22 @@
 class Solution {
 public:
     int getLucky(string s, int k) {
-        string str = "";
-        for(char c : s) str += to_string(c-'a'+1);
-        while(k-- > 0){
-            int digitSum = 0;
-            for(char digit : str) digitSum += digit-'0';
-            str = to_string(digitSum);
+        int num = 0;
+        for(char c : s){
+            int pos = c-'a'+1;
+            while(pos > 0){
+                num += pos%10;
+                pos /= 10;
+            }
         }
-        return stoi(str);
+        for(int i=1; i<k; i++){
+            int digitSum = 0;
+            while(num > 0){
+                digitSum += num%10;
+                num /= 10;
+            }
+            num = digitSum;
+        }
+        return num;
     }
 };
