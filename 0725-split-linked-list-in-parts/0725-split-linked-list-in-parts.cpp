@@ -17,12 +17,12 @@ public:
             curr = curr->next;
             n++;
         }
-        int width = n/k, rem = n%k;
         vector<ListNode*> ans;
+        int width = n/k, remain = n%k;
         curr = head;
         for(int i=0; i<k; i++){
             ListNode *root = curr;
-            for(int j=0; j<width+(i<rem ? 1 : 0)-1; j++){
+            for(int j=0; j<width+(i<remain ? 1 : 0)-1; j++){
                 if(curr) curr = curr->next;
             }
             if(curr){
