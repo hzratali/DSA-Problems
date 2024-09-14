@@ -238,6 +238,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [2306-create-binary-tree-from-descriptions](https://github.com/ha-rahman/DSA-Problems/tree/master/2306-create-binary-tree-from-descriptions) |
 | [2411-spiral-matrix-iv](https://github.com/ha-rahman/DSA-Problems/tree/master/2411-spiral-matrix-iv) |
 | [2472-build-a-matrix-with-conditions](https://github.com/ha-rahman/DSA-Problems/tree/master/2472-build-a-matrix-with-conditions) |
+| [2503-longest-subarray-with-maximum-bitwise-and](https://github.com/ha-rahman/DSA-Problems/tree/master/2503-longest-subarray-with-maximum-bitwise-and) |
 | [2727-number-of-senior-citizens](https://github.com/ha-rahman/DSA-Problems/tree/master/2727-number-of-senior-citizens) |
 | [2846-robot-collisions](https://github.com/ha-rahman/DSA-Problems/tree/master/2846-robot-collisions) |
 | [3235-minimum-cost-to-convert-string-i](https://github.com/ha-rahman/DSA-Problems/tree/master/3235-minimum-cost-to-convert-string-i) |
@@ -464,8 +465,13 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [1435-xor-queries-of-a-subarray](https://github.com/ha-rahman/DSA-Problems/tree/master/1435-xor-queries-of-a-subarray) |
 | [1786-count-the-number-of-consistent-strings](https://github.com/ha-rahman/DSA-Problems/tree/master/1786-count-the-number-of-consistent-strings) |
 | [2323-minimum-bit-flips-to-convert-number](https://github.com/ha-rahman/DSA-Problems/tree/master/2323-minimum-bit-flips-to-convert-number) |
+| [2503-longest-subarray-with-maximum-bitwise-and](https://github.com/ha-rahman/DSA-Problems/tree/master/2503-longest-subarray-with-maximum-bitwise-and) |
 ## Number Theory
 |  |
 | ------- |
 | [2903-insert-greatest-common-divisors-in-linked-list](https://github.com/ha-rahman/DSA-Problems/tree/master/2903-insert-greatest-common-divisors-in-linked-list) |
+## Brainteaser
+|  |
+| ------- |
+| [2503-longest-subarray-with-maximum-bitwise-and](https://github.com/ha-rahman/DSA-Problems/tree/master/2503-longest-subarray-with-maximum-bitwise-and) |
 <!---LeetCode Topics End-->
