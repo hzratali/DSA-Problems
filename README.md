@@ -146,6 +146,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | ------- |
 | [0088-merge-sorted-array](https://github.com/ha-rahman/DSA-Problems/tree/master/0088-merge-sorted-array) |
 | [0350-intersection-of-two-arrays-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/0350-intersection-of-two-arrays-ii) |
+| [0539-minimum-time-difference](https://github.com/ha-rahman/DSA-Problems/tree/master/0539-minimum-time-difference) |
 | [0719-find-k-th-smallest-pair-distance](https://github.com/ha-rahman/DSA-Problems/tree/master/0719-find-k-th-smallest-pair-distance) |
 | [0726-number-of-atoms](https://github.com/ha-rahman/DSA-Problems/tree/master/0726-number-of-atoms) |
 | [0948-sort-an-array](https://github.com/ha-rahman/DSA-Problems/tree/master/0948-sort-an-array) |
@@ -205,6 +206,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [0040-combination-sum-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/0040-combination-sum-ii) |
 | [0088-merge-sorted-array](https://github.com/ha-rahman/DSA-Problems/tree/master/0088-merge-sorted-array) |
 | [0350-intersection-of-two-arrays-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/0350-intersection-of-two-arrays-ii) |
+| [0539-minimum-time-difference](https://github.com/ha-rahman/DSA-Problems/tree/master/0539-minimum-time-difference) |
 | [0624-maximum-distance-in-arrays](https://github.com/ha-rahman/DSA-Problems/tree/master/0624-maximum-distance-in-arrays) |
 | [0719-find-k-th-smallest-pair-distance](https://github.com/ha-rahman/DSA-Problems/tree/master/0719-find-k-th-smallest-pair-distance) |
 | [0870-magic-squares-in-grid](https://github.com/ha-rahman/DSA-Problems/tree/master/0870-magic-squares-in-grid) |
@@ -306,6 +308,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | ------- |
 | [0264-ugly-number-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/0264-ugly-number-ii) |
 | [0273-integer-to-english-words](https://github.com/ha-rahman/DSA-Problems/tree/master/0273-integer-to-english-words) |
+| [0539-minimum-time-difference](https://github.com/ha-rahman/DSA-Problems/tree/master/0539-minimum-time-difference) |
 | [0564-find-the-closest-palindrome](https://github.com/ha-rahman/DSA-Problems/tree/master/0564-find-the-closest-palindrome) |
 | [0592-fraction-addition-and-subtraction](https://github.com/ha-rahman/DSA-Problems/tree/master/0592-fraction-addition-and-subtraction) |
 | [0650-2-keys-keyboard](https://github.com/ha-rahman/DSA-Problems/tree/master/0650-2-keys-keyboard) |
@@ -318,6 +321,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 |  |
 | ------- |
 | [0273-integer-to-english-words](https://github.com/ha-rahman/DSA-Problems/tree/master/0273-integer-to-english-words) |
+| [0539-minimum-time-difference](https://github.com/ha-rahman/DSA-Problems/tree/master/0539-minimum-time-difference) |
 | [0564-find-the-closest-palindrome](https://github.com/ha-rahman/DSA-Problems/tree/master/0564-find-the-closest-palindrome) |
 | [0592-fraction-addition-and-subtraction](https://github.com/ha-rahman/DSA-Problems/tree/master/0592-fraction-addition-and-subtraction) |
 | [0664-strange-printer](https://github.com/ha-rahman/DSA-Problems/tree/master/0664-strange-printer) |
