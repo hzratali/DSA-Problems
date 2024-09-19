@@ -310,6 +310,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 ## Math
 |  |
 | ------- |
+| [0241-different-ways-to-add-parentheses](https://github.com/ha-rahman/DSA-Problems/tree/master/0241-different-ways-to-add-parentheses) |
 | [0264-ugly-number-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/0264-ugly-number-ii) |
 | [0273-integer-to-english-words](https://github.com/ha-rahman/DSA-Problems/tree/master/0273-integer-to-english-words) |
 | [0539-minimum-time-difference](https://github.com/ha-rahman/DSA-Problems/tree/master/0539-minimum-time-difference) |
@@ -325,6 +326,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 |  |
 | ------- |
 | [0179-largest-number](https://github.com/ha-rahman/DSA-Problems/tree/master/0179-largest-number) |
+| [0241-different-ways-to-add-parentheses](https://github.com/ha-rahman/DSA-Problems/tree/master/0241-different-ways-to-add-parentheses) |
 | [0273-integer-to-english-words](https://github.com/ha-rahman/DSA-Problems/tree/master/0273-integer-to-english-words) |
 | [0539-minimum-time-difference](https://github.com/ha-rahman/DSA-Problems/tree/master/0539-minimum-time-difference) |
 | [0564-find-the-closest-palindrome](https://github.com/ha-rahman/DSA-Problems/tree/master/0564-find-the-closest-palindrome) |
@@ -412,6 +414,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 ## Dynamic Programming
 |  |
 | ------- |
+| [0241-different-ways-to-add-parentheses](https://github.com/ha-rahman/DSA-Problems/tree/master/0241-different-ways-to-add-parentheses) |
 | [0264-ugly-number-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/0264-ugly-number-ii) |
 | [0650-2-keys-keyboard](https://github.com/ha-rahman/DSA-Problems/tree/master/0650-2-keys-keyboard) |
 | [0664-strange-printer](https://github.com/ha-rahman/DSA-Problems/tree/master/0664-strange-printer) |
@@ -440,6 +443,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 ## Recursion
 |  |
 | ------- |
+| [0241-different-ways-to-add-parentheses](https://github.com/ha-rahman/DSA-Problems/tree/master/0241-different-ways-to-add-parentheses) |
 | [0273-integer-to-english-words](https://github.com/ha-rahman/DSA-Problems/tree/master/0273-integer-to-english-words) |
 ## Strongly Connected Component
 |  |
@@ -489,4 +493,8 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 |  |
 | ------- |
 | [2503-longest-subarray-with-maximum-bitwise-and](https://github.com/ha-rahman/DSA-Problems/tree/master/2503-longest-subarray-with-maximum-bitwise-and) |
+## Memoization
+|  |
+| ------- |
+| [0241-different-ways-to-add-parentheses](https://github.com/ha-rahman/DSA-Problems/tree/master/0241-different-ways-to-add-parentheses) |
 <!---LeetCode Topics End-->
