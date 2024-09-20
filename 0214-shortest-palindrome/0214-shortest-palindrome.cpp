@@ -1,16 +1,19 @@
 class Solution {
 public:
     string shortestPalindrome(string s) {
-        string revStr = s;
-        reverse(revStr.begin(), revStr.end());
-        // Find the longest palindromic prefix by comparing substrings
-        for(int i=0; i<s.size(); i++){
-            if(!memcmp(s.c_str(), revStr.c_str() + i, s.size() - i)){
-                // Append the necessary part from the reversed string to make it a palindrome
-                return revStr.substr(0, i)+s;
-            }
+        int length = s.length();
+        if (length == 0) return s;
+        // Find the longest palindromic prefix
+        int left = 0;
+        for(int right = length - 1; right >= 0; right--) {
+            if(s[right] == s[left]) left++;
         }
-        // Fallback case, append the whole reversed string to the original string
-        return revStr+s;
+        // If the whole string is a palindrome, return the original string
+        if (left == length) return s;
+        // Extract the suffix that is not part of the palindromic prefix
+        string nonPalindromeSuffix = s.substr(left);
+        string reverseSuffix = string(nonPalindromeSuffix.rbegin(), nonPalindromeSuffix.rend());
+        // Form the shortest palindrome by prepending the reversed suffix
+        return reverseSuffix + shortestPalindrome(s.substr(0, left)) + nonPalindromeSuffix;
     }
 };
