@@ -246,6 +246,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [2472-build-a-matrix-with-conditions](https://github.com/ha-rahman/DSA-Problems/tree/master/2472-build-a-matrix-with-conditions) |
 | [2503-longest-subarray-with-maximum-bitwise-and](https://github.com/ha-rahman/DSA-Problems/tree/master/2503-longest-subarray-with-maximum-bitwise-and) |
 | [2727-number-of-senior-citizens](https://github.com/ha-rahman/DSA-Problems/tree/master/2727-number-of-senior-citizens) |
+| [2755-extra-characters-in-a-string](https://github.com/ha-rahman/DSA-Problems/tree/master/2755-extra-characters-in-a-string) |
 | [2846-robot-collisions](https://github.com/ha-rahman/DSA-Problems/tree/master/2846-robot-collisions) |
 | [3235-minimum-cost-to-convert-string-i](https://github.com/ha-rahman/DSA-Problems/tree/master/3235-minimum-cost-to-convert-string-i) |
 | [3501-delete-nodes-from-linked-list-present-in-array](https://github.com/ha-rahman/DSA-Problems/tree/master/3501-delete-nodes-from-linked-list-present-in-array) |
@@ -267,6 +268,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [1786-count-the-number-of-consistent-strings](https://github.com/ha-rahman/DSA-Problems/tree/master/1786-count-the-number-of-consistent-strings) |
 | [2163-kth-distinct-string-in-an-array](https://github.com/ha-rahman/DSA-Problems/tree/master/2163-kth-distinct-string-in-an-array) |
 | [2306-create-binary-tree-from-descriptions](https://github.com/ha-rahman/DSA-Problems/tree/master/2306-create-binary-tree-from-descriptions) |
+| [2755-extra-characters-in-a-string](https://github.com/ha-rahman/DSA-Problems/tree/master/2755-extra-characters-in-a-string) |
 | [3276-minimum-number-of-pushes-to-type-word-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/3276-minimum-number-of-pushes-to-type-word-ii) |
 | [3501-delete-nodes-from-linked-list-present-in-array](https://github.com/ha-rahman/DSA-Problems/tree/master/3501-delete-nodes-from-linked-list-present-in-array) |
 ## Two Pointers
@@ -346,6 +348,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [2163-kth-distinct-string-in-an-array](https://github.com/ha-rahman/DSA-Problems/tree/master/2163-kth-distinct-string-in-an-array) |
 | [2217-step-by-step-directions-from-a-binary-tree-node-to-another](https://github.com/ha-rahman/DSA-Problems/tree/master/2217-step-by-step-directions-from-a-binary-tree-node-to-another) |
 | [2727-number-of-senior-citizens](https://github.com/ha-rahman/DSA-Problems/tree/master/2727-number-of-senior-citizens) |
+| [2755-extra-characters-in-a-string](https://github.com/ha-rahman/DSA-Problems/tree/master/2755-extra-characters-in-a-string) |
 | [3235-minimum-cost-to-convert-string-i](https://github.com/ha-rahman/DSA-Problems/tree/master/3235-minimum-cost-to-convert-string-i) |
 | [3276-minimum-number-of-pushes-to-type-word-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/3276-minimum-number-of-pushes-to-type-word-ii) |
 ## Stack
@@ -426,6 +429,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [1511-count-number-of-teams](https://github.com/ha-rahman/DSA-Problems/tree/master/1511-count-number-of-teams) |
 | [1756-minimum-deletions-to-make-string-balanced](https://github.com/ha-rahman/DSA-Problems/tree/master/1756-minimum-deletions-to-make-string-balanced) |
 | [2067-maximum-number-of-points-with-cost](https://github.com/ha-rahman/DSA-Problems/tree/master/2067-maximum-number-of-points-with-cost) |
+| [2755-extra-characters-in-a-string](https://github.com/ha-rahman/DSA-Problems/tree/master/2755-extra-characters-in-a-string) |
 ## Shortest Path
 |  |
 | ------- |
@@ -516,4 +520,5 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | ------- |
 | [0386-lexicographical-numbers](https://github.com/ha-rahman/DSA-Problems/tree/master/0386-lexicographical-numbers) |
 | [0440-k-th-smallest-in-lexicographical-order](https://github.com/ha-rahman/DSA-Problems/tree/master/0440-k-th-smallest-in-lexicographical-order) |
+| [2755-extra-characters-in-a-string](https://github.com/ha-rahman/DSA-Problems/tree/master/2755-extra-characters-in-a-string) |
 <!---LeetCode Topics End-->
