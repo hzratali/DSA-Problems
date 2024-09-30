@@ -99,16 +99,16 @@ class Solution {
     vector<int> merge(Node *root1, Node *root2) {
         // Your code here
         vector<int> ans;
-        inorder(root1, ans);
-        inorder(root2, ans);
+        f(root1, ans);
+        f(root2, ans);
         sort(ans.begin(), ans.end());
         return ans;
     }
-    void inorder(Node *root, vector<int>&ans){
-        if(root == NULL) return;
-        inorder(root->left, ans);
+    void f(Node *root, vector<int>&ans){
+        if(root==NULL) return;
         ans.push_back(root->data);
-        inorder(root->right, ans);
+        f(root->left, ans);
+        f(root->right, ans);
     }
 };
 
