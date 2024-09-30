@@ -1,26 +1,31 @@
 class CustomStack {
 private:
-    list<int> st;
-    int mxSize;
+    vector<int> stArray, incrArray;
+    int topIndex;
 public:
     CustomStack(int maxSize) {
-        this->mxSize = maxSize;
+        stArray.resize(maxSize);
+        incrArray.resize(maxSize);
+        topIndex = -1;
     }
     
     void push(int x) {
-        if(st.size() < mxSize) st.push_back(x);
+        if(topIndex < (int)(stArray.size())-1) stArray[++topIndex] = x;
     }
     
     int pop() {
-        if(st.empty()) return -1;
-        int topElement = st.back();
-        st.pop_back();
-        return topElement;
+        if(topIndex < 0) return -1;
+        int ans = stArray[topIndex] + incrArray[topIndex];
+        if(topIndex > 0) incrArray[topIndex-1] += incrArray[topIndex];
+        incrArray[topIndex--] = 0;
+        return ans;
     }
     
     void increment(int k, int val) {
-        auto it = st.begin();
-        for(int i=0; i<k && it!=st.end(); i++, it++) *it += val;
+        if(topIndex >= 0){
+            int incrIndex = min(topIndex, k-1);
+            incrArray[incrIndex] += val;
+        }
     }
 };
 
