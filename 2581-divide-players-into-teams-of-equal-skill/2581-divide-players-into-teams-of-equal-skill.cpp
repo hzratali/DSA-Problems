@@ -1,15 +1,26 @@
 class Solution {
 public:
     long long dividePlayers(vector<int>& skill) {
-        sort(skill.begin(), skill.end());
-        int n = skill.size();
-        long long totalChemistry = 0;
-        int targetTeamSkill = skill[0] + skill[n-1];
-        for(int i=0; i<n/2; i++){
-            int currTeamSkill = skill[i] + skill[n-i-1];
-            if(currTeamSkill != targetTeamSkill) return -1;
-            totalChemistry += (long long)skill[i]*(long long)skill[n-i-1];
+        int n = skill.size(), totalSkill = 0;
+        vector<int> skillFreq(1001,0);
+        // Calculate total skill and skill frequency
+        for(int x : skill){
+            totalSkill += x;
+            skillFreq[x]++;
         }
-        return totalChemistry;
+        // Check if total skill can be evenly distributed among teams
+        if(totalSkill%(n/2) != 0) return -1;
+        int targetTeamSkill = totalSkill/(n/2);
+        long long totalChemistry = 0;
+        // Calculate total chemistry while verifying valid team formations
+        for(int x : skill){
+            int partnerSkill = targetTeamSkill - x;
+            // Check if a valid partner exists
+            if(skillFreq[partnerSkill] == 0) return -1;
+            totalChemistry += (long long)x * (long long)partnerSkill;
+            skillFreq[partnerSkill]--;
+        }
+        // Return half of totalChemistry as each pair is counted twice
+        return totalChemistry/2;
     }
 };
