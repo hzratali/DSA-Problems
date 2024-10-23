@@ -12,37 +12,28 @@
 class Solution {
 public:
     TreeNode* replaceValueInTree(TreeNode* root) {
-        vector<int> levelSum;
+        int prevLevelSum = root->val;
         queue<TreeNode*> q;
         q.push(root);
         while(!q.empty()){
-            int n = q.size(), sum = 0;
-            for(int i=0; i<n; i++){
-                TreeNode *node = q.front(); q.pop();
-                sum += node->val;
-                if(node->left) q.push(node->left);
-                if(node->right) q.push(node->right);
-            }
-            levelSum.push_back(sum);
-        }
-        q.push(root);
-        int levelIndex = 1;
-        root->val = 0;
-        while(!q.empty()){
-            int levelSize = q.size(), siblingSum = 0;
+            int levelSize = q.size(), currSum = 0;
             for(int i=0; i<levelSize; i++){
                 TreeNode *node = q.front(); q.pop();
-                siblingSum = (node->left ? node->left->val : 0) + (node->right ? node->right->val : 0);
+                node->val = prevLevelSum - node->val;
+                int siblingSum = (node->left ? node->left->val : 0) + (node->right ? node->right->val : 0);
+
                 if(node->left){
-                    node->left->val = levelSum[levelIndex] - siblingSum;
+                    currSum += node->left->val;
+                    node->left->val = siblingSum;
                     q.push(node->left);
                 }
                 if(node->right){
-                    node->right->val = levelSum[levelIndex] - siblingSum;
+                    currSum += node->right->val;
+                    node->right->val = siblingSum;
                     q.push(node->right);
                 }
             }
-            levelIndex++;
+            prevLevelSum = currSum;
         }
         return root;
     }
