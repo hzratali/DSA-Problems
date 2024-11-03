@@ -393,6 +393,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [0592-fraction-addition-and-subtraction](https://github.com/ha-rahman/DSA-Problems/tree/master/0592-fraction-addition-and-subtraction) |
 | [0664-strange-printer](https://github.com/ha-rahman/DSA-Problems/tree/master/0664-strange-printer) |
 | [0726-number-of-atoms](https://github.com/ha-rahman/DSA-Problems/tree/master/0726-number-of-atoms) |
+| [0812-rotate-string](https://github.com/ha-rahman/DSA-Problems/tree/master/0812-rotate-string) |
 | [0920-uncommon-words-from-two-sentences](https://github.com/ha-rahman/DSA-Problems/tree/master/0920-uncommon-words-from-two-sentences) |
 | [0957-minimum-add-to-make-parentheses-valid](https://github.com/ha-rahman/DSA-Problems/tree/master/0957-minimum-add-to-make-parentheses-valid) |
 | [1197-parsing-a-boolean-expression](https://github.com/ha-rahman/DSA-Problems/tree/master/1197-parsing-a-boolean-expression) |
@@ -612,6 +613,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 |  |
 | ------- |
 | [0214-shortest-palindrome](https://github.com/ha-rahman/DSA-Problems/tree/master/0214-shortest-palindrome) |
+| [0812-rotate-string](https://github.com/ha-rahman/DSA-Problems/tree/master/0812-rotate-string) |
 ## Hash Function
 |  |
 | ------- |
