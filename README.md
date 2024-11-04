@@ -420,6 +420,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [3235-minimum-cost-to-convert-string-i](https://github.com/ha-rahman/DSA-Problems/tree/master/3235-minimum-cost-to-convert-string-i) |
 | [3276-minimum-number-of-pushes-to-type-word-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/3276-minimum-number-of-pushes-to-type-word-ii) |
 | [3329-find-the-length-of-the-longest-common-prefix](https://github.com/ha-rahman/DSA-Problems/tree/master/3329-find-the-length-of-the-longest-common-prefix) |
+| [3451-string-compression-iii](https://github.com/ha-rahman/DSA-Problems/tree/master/3451-string-compression-iii) |
 ## Stack
 |  |
 | ------- |
