@@ -1,43 +1,53 @@
 class Solution {
 public:
     int minimumSubarrayLength(vector<int>& nums, int k) {
-        int l = 1, r = nums.size(), mnLen = -1;
-        while(l <= r){
-            int m = (l+r)/2;
-            if(isValidSubArray(nums, k, m)){
-                mnLen = m;
-                r = m-1;
+        int minLength = INT_MAX;
+        int windowStart = 0;
+        int windowEnd = 0;
+        vector<int> bitCounts(32,
+                              0);  // Tracks count of set bits at each position
+
+        // Expand window until end of array
+        while (windowEnd < nums.size()) {
+            // Add current number to window
+            updateBitCounts(bitCounts, nums[windowEnd], 1);
+
+            // Contract window while OR value is valid
+            while (windowStart <= windowEnd &&
+                   convertBitCountsToNumber(bitCounts) >= k) {
+                // Update minimum length found so far
+                minLength = min(minLength, windowEnd - windowStart + 1);
+
+                // Remove leftmost number and shrink window
+                updateBitCounts(bitCounts, nums[windowStart], -1);
+                windowStart++;
             }
-            else l = m+1;
+
+            windowEnd++;
         }
-        return mnLen;
+
+        return minLength == INT_MAX ? -1 : minLength;
     }
-    bool isValidSubArray(vector<int>&nums, int targetSum, int windowSize){
-        int arrLen = nums.size();
-        vector<int> bitCnt(32, 0);
-        for(int r=0; r<arrLen; r++){
-            updateBitCnt(bitCnt, nums[r], 1);
-            if(r >= windowSize) updateBitCnt(bitCnt, nums[r - windowSize], -1);
-            if(r >= windowSize-1 && convertBitCountsToNumber(bitCnt) >= targetSum) return true;
-        }
-        return false;
-    }
-    void updateBitCnt(vector<int>& bitCounts, int number, int delta) {
+
+private:
+    // Updates bit count array when adding/removing a number from window
+    void updateBitCounts(vector<int>& bitCounts, int number, int delta) {
         for (int bitPosition = 0; bitPosition < 32; bitPosition++) {
             // Check if bit is set at current position
-            if (((number >> bitPosition) & 1) != 0) {
+            if ((number >> bitPosition) & 1) {
                 bitCounts[bitPosition] += delta;
             }
         }
     }
+
     // Converts bit count array back to number using OR operation
-    int convertBitCountsToNumber(vector<int>& bitCounts) {
-        int number = 0;
+    int convertBitCountsToNumber(const vector<int>& bitCounts) {
+        int result = 0;
         for (int bitPosition = 0; bitPosition < 32; bitPosition++) {
             if (bitCounts[bitPosition] != 0) {
-                number |= 1 << bitPosition;
+                result |= 1 << bitPosition;
             }
         }
-        return number;
+        return result;
     }
 };
