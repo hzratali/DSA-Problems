@@ -133,6 +133,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [2095-minimum-number-of-swaps-to-make-the-string-balanced](https://github.com/ha-rahman/DSA-Problems/tree/master/2095-minimum-number-of-swaps-to-make-the-string-balanced) |
 | [2379-maximum-total-importance-of-roads](https://github.com/ha-rahman/DSA-Problems/tree/master/2379-maximum-total-importance-of-roads) |
 | [2616-maximal-score-after-applying-k-operations](https://github.com/ha-rahman/DSA-Problems/tree/master/2616-maximal-score-after-applying-k-operations) |
+| [2716-prime-subtraction-operation](https://github.com/ha-rahman/DSA-Problems/tree/master/2716-prime-subtraction-operation) |
 | [3195-separate-black-and-white-balls](https://github.com/ha-rahman/DSA-Problems/tree/master/3195-separate-black-and-white-balls) |
 | [3276-minimum-number-of-pushes-to-type-word-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/3276-minimum-number-of-pushes-to-type-word-ii) |
 ## Graph
@@ -280,6 +281,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [2554-minimum-total-distance-traveled](https://github.com/ha-rahman/DSA-Problems/tree/master/2554-minimum-total-distance-traveled) |
 | [2581-divide-players-into-teams-of-equal-skill](https://github.com/ha-rahman/DSA-Problems/tree/master/2581-divide-players-into-teams-of-equal-skill) |
 | [2616-maximal-score-after-applying-k-operations](https://github.com/ha-rahman/DSA-Problems/tree/master/2616-maximal-score-after-applying-k-operations) |
+| [2716-prime-subtraction-operation](https://github.com/ha-rahman/DSA-Problems/tree/master/2716-prime-subtraction-operation) |
 | [2727-number-of-senior-citizens](https://github.com/ha-rahman/DSA-Problems/tree/master/2727-number-of-senior-citizens) |
 | [2755-extra-characters-in-a-string](https://github.com/ha-rahman/DSA-Problems/tree/master/2755-extra-characters-in-a-string) |
 | [2794-maximum-number-of-moves-in-a-grid](https://github.com/ha-rahman/DSA-Problems/tree/master/2794-maximum-number-of-moves-in-a-grid) |
@@ -341,6 +343,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [1615-range-sum-of-sorted-subarray-sums](https://github.com/ha-rahman/DSA-Problems/tree/master/1615-range-sum-of-sorted-subarray-sums) |
 | [1766-minimum-number-of-removals-to-make-mountain-array](https://github.com/ha-rahman/DSA-Problems/tree/master/1766-minimum-number-of-removals-to-make-mountain-array) |
 | [2006-find-the-student-that-will-replace-the-chalk](https://github.com/ha-rahman/DSA-Problems/tree/master/2006-find-the-student-that-will-replace-the-chalk) |
+| [2716-prime-subtraction-operation](https://github.com/ha-rahman/DSA-Problems/tree/master/2716-prime-subtraction-operation) |
 ## Linked List
 |  |
 | ------- |
@@ -385,6 +388,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [1240-stone-game-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/1240-stone-game-ii) |
 | [1642-water-bottles](https://github.com/ha-rahman/DSA-Problems/tree/master/1642-water-bottles) |
 | [2155-find-missing-observations](https://github.com/ha-rahman/DSA-Problems/tree/master/2155-find-missing-observations) |
+| [2716-prime-subtraction-operation](https://github.com/ha-rahman/DSA-Problems/tree/master/2716-prime-subtraction-operation) |
 | [2903-insert-greatest-common-divisors-in-linked-list](https://github.com/ha-rahman/DSA-Problems/tree/master/2903-insert-greatest-common-divisors-in-linked-list) |
 ## String
 |  |
@@ -612,6 +616,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 ## Number Theory
 |  |
 | ------- |
+| [2716-prime-subtraction-operation](https://github.com/ha-rahman/DSA-Problems/tree/master/2716-prime-subtraction-operation) |
 | [2903-insert-greatest-common-divisors-in-linked-list](https://github.com/ha-rahman/DSA-Problems/tree/master/2903-insert-greatest-common-divisors-in-linked-list) |
 ## Brainteaser
 |  |
