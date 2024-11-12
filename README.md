@@ -226,6 +226,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 ## Array
 |  |
 | ------- |
+| [0004-median-of-two-sorted-arrays](https://github.com/ha-rahman/DSA-Problems/tree/master/0004-median-of-two-sorted-arrays) |
 | [0040-combination-sum-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/0040-combination-sum-ii) |
 | [0088-merge-sorted-array](https://github.com/ha-rahman/DSA-Problems/tree/master/0088-merge-sorted-array) |
 | [0179-largest-number](https://github.com/ha-rahman/DSA-Problems/tree/master/0179-largest-number) |
@@ -339,6 +340,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 ## Binary Search
 |  |
 | ------- |
+| [0004-median-of-two-sorted-arrays](https://github.com/ha-rahman/DSA-Problems/tree/master/0004-median-of-two-sorted-arrays) |
 | [0350-intersection-of-two-arrays-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/0350-intersection-of-two-arrays-ii) |
 | [0719-find-k-th-smallest-pair-distance](https://github.com/ha-rahman/DSA-Problems/tree/master/0719-find-k-th-smallest-pair-distance) |
 | [0731-my-calendar-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/0731-my-calendar-ii) |
@@ -494,6 +496,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 ## Divide and Conquer
 |  |
 | ------- |
+| [0004-median-of-two-sorted-arrays](https://github.com/ha-rahman/DSA-Problems/tree/master/0004-median-of-two-sorted-arrays) |
 | [0948-sort-an-array](https://github.com/ha-rahman/DSA-Problems/tree/master/0948-sort-an-array) |
 ## Merge Sort
 |  |
