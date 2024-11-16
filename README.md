@@ -298,6 +298,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [3329-find-the-length-of-the-longest-common-prefix](https://github.com/ha-rahman/DSA-Problems/tree/master/3329-find-the-length-of-the-longest-common-prefix) |
 | [3380-shortest-subarray-with-or-at-least-k-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/3380-shortest-subarray-with-or-at-least-k-ii) |
 | [3501-delete-nodes-from-linked-list-present-in-array](https://github.com/ha-rahman/DSA-Problems/tree/master/3501-delete-nodes-from-linked-list-present-in-array) |
+| [3522-find-the-power-of-k-size-subarrays-i](https://github.com/ha-rahman/DSA-Problems/tree/master/3522-find-the-power-of-k-size-subarrays-i) |
 ## Hash Table
 |  |
 | ------- |
@@ -567,6 +568,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [0567-permutation-in-string](https://github.com/ha-rahman/DSA-Problems/tree/master/0567-permutation-in-string) |
 | [2255-minimum-swaps-to-group-all-1s-together-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/2255-minimum-swaps-to-group-all-1s-together-ii) |
 | [3380-shortest-subarray-with-or-at-least-k-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/3380-shortest-subarray-with-or-at-least-k-ii) |
+| [3522-find-the-power-of-k-size-subarrays-i](https://github.com/ha-rahman/DSA-Problems/tree/master/3522-find-the-power-of-k-size-subarrays-i) |
 ## Recursion
 |  |
 | ------- |
