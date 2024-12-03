@@ -1,19 +1,19 @@
 class Solution {
 public:
     string addSpaces(string s, vector<int>& spaces) {
-        stringstream result;
+        string result;
+        // Pre-allocate space for efficiency
+        result.reserve(s.size() + spaces.size());
         int spaceIndex = 0;
         for (int stringIndex = 0; stringIndex < s.size(); ++stringIndex) {
-            if (spaceIndex < spaces.size() &&
-                stringIndex == spaces[spaceIndex]) {
+            if (spaceIndex < spaces.size() && stringIndex == spaces[spaceIndex]) {
                 // Insert space at the correct position
-                result << ' ';
+                result += ' ';
                 ++spaceIndex;
             }
             // Append the current character
-            result << s[stringIndex];
+            result += s[stringIndex];
         }
-        // Convert the stream to a string
-        return result.str();
+        return result;
     }
 };
