@@ -372,6 +372,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [2232-adding-spaces-to-a-string](https://github.com/ha-rahman/DSA-Problems/tree/master/2232-adding-spaces-to-a-string) |
 | [2581-divide-players-into-teams-of-equal-skill](https://github.com/ha-rahman/DSA-Problems/tree/master/2581-divide-players-into-teams-of-equal-skill) |
 | [2699-count-the-number-of-fair-pairs](https://github.com/ha-rahman/DSA-Problems/tree/master/2699-count-the-number-of-fair-pairs) |
+| [3018-make-string-a-subsequence-using-cyclic-increments](https://github.com/ha-rahman/DSA-Problems/tree/master/3018-make-string-a-subsequence-using-cyclic-increments) |
 | [3195-separate-black-and-white-balls](https://github.com/ha-rahman/DSA-Problems/tree/master/3195-separate-black-and-white-balls) |
 ## Binary Search
 |  |
@@ -476,6 +477,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [2727-number-of-senior-citizens](https://github.com/ha-rahman/DSA-Problems/tree/master/2727-number-of-senior-citizens) |
 | [2755-extra-characters-in-a-string](https://github.com/ha-rahman/DSA-Problems/tree/master/2755-extra-characters-in-a-string) |
 | [2800-minimum-string-length-after-removing-substrings](https://github.com/ha-rahman/DSA-Problems/tree/master/2800-minimum-string-length-after-removing-substrings) |
+| [3018-make-string-a-subsequence-using-cyclic-increments](https://github.com/ha-rahman/DSA-Problems/tree/master/3018-make-string-a-subsequence-using-cyclic-increments) |
 | [3174-minimum-number-of-changes-to-make-binary-string-beautiful](https://github.com/ha-rahman/DSA-Problems/tree/master/3174-minimum-number-of-changes-to-make-binary-string-beautiful) |
 | [3195-separate-black-and-white-balls](https://github.com/ha-rahman/DSA-Problems/tree/master/3195-separate-black-and-white-balls) |
 | [3235-minimum-cost-to-convert-string-i](https://github.com/ha-rahman/DSA-Problems/tree/master/3235-minimum-cost-to-convert-string-i) |
