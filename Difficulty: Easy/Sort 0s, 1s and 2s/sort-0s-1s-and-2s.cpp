@@ -8,11 +8,9 @@ class Solution {
   public:
     void sort012(vector<int>& arr) {
         // code here
-        int low=0;
-        int mid=0;
-        int high=arr.size()-1;
+        int low=0, mid=0, high=arr.size()-1;
         while(mid <= high){
-            if(arr[mid]==0){
+            if(arr[mid] == 0){
                 swap(arr[low], arr[mid]);
                 mid++;low++;
             }
@@ -51,6 +49,7 @@ int main() {
         }
 
         cout << endl;
+        cout << "~" << endl;
     }
     return 0;
 }
