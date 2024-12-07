@@ -284,6 +284,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [1766-minimum-number-of-removals-to-make-mountain-array](https://github.com/ha-rahman/DSA-Problems/tree/master/1766-minimum-number-of-removals-to-make-mountain-array) |
 | [1786-count-the-number-of-consistent-strings](https://github.com/ha-rahman/DSA-Problems/tree/master/1786-count-the-number-of-consistent-strings) |
 | [1803-average-waiting-time](https://github.com/ha-rahman/DSA-Problems/tree/master/1803-average-waiting-time) |
+| [1886-minimum-limit-of-balls-in-a-bag](https://github.com/ha-rahman/DSA-Problems/tree/master/1886-minimum-limit-of-balls-in-a-bag) |
 | [1923-sentence-similarity-iii](https://github.com/ha-rahman/DSA-Problems/tree/master/1923-sentence-similarity-iii) |
 | [1940-maximum-xor-for-each-query](https://github.com/ha-rahman/DSA-Problems/tree/master/1940-maximum-xor-for-each-query) |
 | [2006-find-the-student-that-will-replace-the-chalk](https://github.com/ha-rahman/DSA-Problems/tree/master/2006-find-the-student-that-will-replace-the-chalk) |
@@ -391,6 +392,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [1615-range-sum-of-sorted-subarray-sums](https://github.com/ha-rahman/DSA-Problems/tree/master/1615-range-sum-of-sorted-subarray-sums) |
 | [1679-shortest-subarray-to-be-removed-to-make-array-sorted](https://github.com/ha-rahman/DSA-Problems/tree/master/1679-shortest-subarray-to-be-removed-to-make-array-sorted) |
 | [1766-minimum-number-of-removals-to-make-mountain-array](https://github.com/ha-rahman/DSA-Problems/tree/master/1766-minimum-number-of-removals-to-make-mountain-array) |
+| [1886-minimum-limit-of-balls-in-a-bag](https://github.com/ha-rahman/DSA-Problems/tree/master/1886-minimum-limit-of-balls-in-a-bag) |
 | [2006-find-the-student-that-will-replace-the-chalk](https://github.com/ha-rahman/DSA-Problems/tree/master/2006-find-the-student-that-will-replace-the-chalk) |
 | [2179-most-beautiful-item-for-each-query](https://github.com/ha-rahman/DSA-Problems/tree/master/2179-most-beautiful-item-for-each-query) |
 | [2188-minimized-maximum-of-products-distributed-to-any-store](https://github.com/ha-rahman/DSA-Problems/tree/master/2188-minimized-maximum-of-products-distributed-to-any-store) |
