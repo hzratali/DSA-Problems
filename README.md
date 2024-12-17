@@ -452,6 +452,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 ## Math
 |  |
 | ------- |
+| [0070-climbing-stairs](https://github.com/ha-rahman/DSA-Problems/tree/master/0070-climbing-stairs) |
 | [0241-different-ways-to-add-parentheses](https://github.com/ha-rahman/DSA-Problems/tree/master/0241-different-ways-to-add-parentheses) |
 | [0264-ugly-number-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/0264-ugly-number-ii) |
 | [0273-integer-to-english-words](https://github.com/ha-rahman/DSA-Problems/tree/master/0273-integer-to-english-words) |
@@ -605,6 +606,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 ## Dynamic Programming
 |  |
 | ------- |
+| [0070-climbing-stairs](https://github.com/ha-rahman/DSA-Problems/tree/master/0070-climbing-stairs) |
 | [0241-different-ways-to-add-parentheses](https://github.com/ha-rahman/DSA-Problems/tree/master/0241-different-ways-to-add-parentheses) |
 | [0264-ugly-number-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/0264-ugly-number-ii) |
 | [0650-2-keys-keyboard](https://github.com/ha-rahman/DSA-Problems/tree/master/0650-2-keys-keyboard) |
@@ -723,6 +725,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 ## Memoization
 |  |
 | ------- |
+| [0070-climbing-stairs](https://github.com/ha-rahman/DSA-Problems/tree/master/0070-climbing-stairs) |
 | [0241-different-ways-to-add-parentheses](https://github.com/ha-rahman/DSA-Problems/tree/master/0241-different-ways-to-add-parentheses) |
 ## Rolling Hash
 |  |
