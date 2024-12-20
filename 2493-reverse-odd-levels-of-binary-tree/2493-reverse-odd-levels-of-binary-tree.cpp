@@ -12,17 +12,31 @@
 class Solution {
 public:
     TreeNode* reverseOddLevels(TreeNode* root) {
-        dfs(root->left, root->right, 0);
-        return root;
-    }
-    void dfs(TreeNode *lChild, TreeNode *rChild, int level){
-        if(lChild==NULL || rChild==NULL) return;
-        if(level%2 == 0){
-            int tmp = lChild->val;
-            lChild->val = rChild->val;
-            rChild->val = tmp;
+        if(!root) return NULL;
+        queue<TreeNode*> q;
+        q.push(root);
+        int level = 0;
+        while(!q.empty()){
+            int n = q.size();
+            vector<TreeNode*> currLevelNodes;
+            for(int i=0; i<n; i++){
+                TreeNode *node = q.front();q.pop();
+                currLevelNodes.push_back(node);
+                if(node->left) q.push(node->left);
+                if(node->right) q.push(node->right);
+            }
+            if(level%2 == 1){
+                int l = 0, r = currLevelNodes.size()-1;
+                while(l < r){
+                    int tmp = currLevelNodes[l]->val;
+                    currLevelNodes[l]->val = currLevelNodes[r]->val;
+                    currLevelNodes[r]->val = tmp;
+                    l++;
+                    r--;
+                }
+            }
+            level++;
         }
-        dfs(lChild->left, rChild->right, level+1);
-        dfs(lChild->right, rChild->left, level+1);
+        return root;
     }
 };
