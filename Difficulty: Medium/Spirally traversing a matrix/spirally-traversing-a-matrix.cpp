@@ -6,33 +6,24 @@ using namespace std;
 // } Driver Code Ends
 class Solution {
   public:
-    vector<int> spirallyTraverse(vector<vector<int> > &matrix) {
+    vector<int> spirallyTraverse(vector<vector<int> > &mat) {
         // code here
+        int n = mat.size(), m = mat[0].size();
+        int top = 0, bottom = n-1, left = 0, right = m-1;
         vector<int> ans;
-        int n = matrix.size(), m = matrix[0].size();
-        int totalCell = n*m, cnt = 0;
-        int rStart = 0, rEnd = n-1, cStart = 0, cEnd = m-1;
-        while(cnt < totalCell){
-            for(int i=cStart; cnt < totalCell && i<=cEnd; i++){
-                ans.push_back(matrix[rStart][i]);
-                cnt++;
+        while(top<=bottom && left<=right){
+            for(int i=left; i<=right; i++) ans.push_back(mat[top][i]);
+            top++;
+            for(int i=top; i<=bottom; i++) ans.push_back(mat[i][right]);
+            right--;
+            if(top <= bottom){
+                for(int i=right; i>=left; i--) ans.push_back(mat[bottom][i]);
+                bottom--;
             }
-            rStart++;
-            for(int i=rStart; cnt < totalCell && i<=rEnd; i++){
-                ans.push_back(matrix[i][cEnd]);
-                cnt++;
+            if(left <= right){
+                for(int i=bottom; i>=top; i--) ans.push_back(mat[i][left]);
+                left++;
             }
-            cEnd--;
-            for(int i=cEnd; cnt < totalCell && i>=cStart; i--){
-                ans.push_back(matrix[rEnd][i]);
-                cnt++;
-            }
-            rEnd--;
-            for(int i=rEnd; cnt < totalCell && i>=rStart; i--){
-                ans.push_back(matrix[i][cStart]);
-                cnt++;
-            }
-            cStart++;
         }
         return ans;
     }
@@ -46,9 +37,10 @@ int main() {
     while (t--) {
         int r, c;
         cin >> r >> c;
-        vector<vector<int>> matrix(r, vector<int>(c, 0));
+        vector<vector<int>> matrix(r);
 
         for (int i = 0; i < r; i++) {
+            matrix[i].assign(c, 0);
             for (int j = 0; j < c; j++) {
                 cin >> matrix[i][j];
             }
@@ -59,6 +51,9 @@ int main() {
         for (int i = 0; i < result.size(); ++i)
             cout << result[i] << " ";
         cout << endl;
+
+        cout << "~"
+             << "\n";
     }
     return 0;
 }
