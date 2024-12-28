@@ -270,6 +270,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [0494-target-sum](https://github.com/ha-rahman/DSA-Problems/tree/master/0494-target-sum) |
 | [0539-minimum-time-difference](https://github.com/ha-rahman/DSA-Problems/tree/master/0539-minimum-time-difference) |
 | [0624-maximum-distance-in-arrays](https://github.com/ha-rahman/DSA-Problems/tree/master/0624-maximum-distance-in-arrays) |
+| [0689-maximum-sum-of-3-non-overlapping-subarrays](https://github.com/ha-rahman/DSA-Problems/tree/master/0689-maximum-sum-of-3-non-overlapping-subarrays) |
 | [0719-find-k-th-smallest-pair-distance](https://github.com/ha-rahman/DSA-Problems/tree/master/0719-find-k-th-smallest-pair-distance) |
 | [0731-my-calendar-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/0731-my-calendar-ii) |
 | [0859-design-circular-deque](https://github.com/ha-rahman/DSA-Problems/tree/master/0859-design-circular-deque) |
@@ -642,6 +643,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [0494-target-sum](https://github.com/ha-rahman/DSA-Problems/tree/master/0494-target-sum) |
 | [0650-2-keys-keyboard](https://github.com/ha-rahman/DSA-Problems/tree/master/0650-2-keys-keyboard) |
 | [0664-strange-printer](https://github.com/ha-rahman/DSA-Problems/tree/master/0664-strange-printer) |
+| [0689-maximum-sum-of-3-non-overlapping-subarrays](https://github.com/ha-rahman/DSA-Problems/tree/master/0689-maximum-sum-of-3-non-overlapping-subarrays) |
 | [1063-best-sightseeing-pair](https://github.com/ha-rahman/DSA-Problems/tree/master/1063-best-sightseeing-pair) |
 | [1196-filling-bookcase-shelves](https://github.com/ha-rahman/DSA-Problems/tree/master/1196-filling-bookcase-shelves) |
 | [1240-stone-game-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/1240-stone-game-ii) |
