@@ -338,6 +338,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [2581-divide-players-into-teams-of-equal-skill](https://github.com/ha-rahman/DSA-Problems/tree/master/2581-divide-players-into-teams-of-equal-skill) |
 | [2616-maximal-score-after-applying-k-operations](https://github.com/ha-rahman/DSA-Problems/tree/master/2616-maximal-score-after-applying-k-operations) |
 | [2640-maximum-number-of-integers-to-choose-from-a-range-i](https://github.com/ha-rahman/DSA-Problems/tree/master/2640-maximum-number-of-integers-to-choose-from-a-range-i) |
+| [2691-count-vowel-strings-in-ranges](https://github.com/ha-rahman/DSA-Problems/tree/master/2691-count-vowel-strings-in-ranges) |
 | [2692-take-gifts-from-the-richest-pile](https://github.com/ha-rahman/DSA-Problems/tree/master/2692-take-gifts-from-the-richest-pile) |
 | [2695-find-score-of-an-array-after-marking-all-elements](https://github.com/ha-rahman/DSA-Problems/tree/master/2695-find-score-of-an-array-after-marking-all-elements) |
 | [2699-count-the-number-of-fair-pairs](https://github.com/ha-rahman/DSA-Problems/tree/master/2699-count-the-number-of-fair-pairs) |
@@ -529,6 +530,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [2494-sum-of-prefix-scores-of-strings](https://github.com/ha-rahman/DSA-Problems/tree/master/2494-sum-of-prefix-scores-of-strings) |
 | [2580-circular-sentence](https://github.com/ha-rahman/DSA-Problems/tree/master/2580-circular-sentence) |
 | [2599-take-k-of-each-character-from-left-and-right](https://github.com/ha-rahman/DSA-Problems/tree/master/2599-take-k-of-each-character-from-left-and-right) |
+| [2691-count-vowel-strings-in-ranges](https://github.com/ha-rahman/DSA-Problems/tree/master/2691-count-vowel-strings-in-ranges) |
 | [2727-number-of-senior-citizens](https://github.com/ha-rahman/DSA-Problems/tree/master/2727-number-of-senior-citizens) |
 | [2755-extra-characters-in-a-string](https://github.com/ha-rahman/DSA-Problems/tree/master/2755-extra-characters-in-a-string) |
 | [2800-minimum-string-length-after-removing-substrings](https://github.com/ha-rahman/DSA-Problems/tree/master/2800-minimum-string-length-after-removing-substrings) |
@@ -737,6 +739,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [1694-make-sum-divisible-by-p](https://github.com/ha-rahman/DSA-Problems/tree/master/1694-make-sum-divisible-by-p) |
 | [1940-maximum-xor-for-each-query](https://github.com/ha-rahman/DSA-Problems/tree/master/1940-maximum-xor-for-each-query) |
 | [2006-find-the-student-that-will-replace-the-chalk](https://github.com/ha-rahman/DSA-Problems/tree/master/2006-find-the-student-that-will-replace-the-chalk) |
+| [2691-count-vowel-strings-in-ranges](https://github.com/ha-rahman/DSA-Problems/tree/master/2691-count-vowel-strings-in-ranges) |
 | [3427-special-array-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/3427-special-array-ii) |
 ## Game Theory
 |  |
