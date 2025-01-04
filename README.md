@@ -383,6 +383,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [1715-split-a-string-into-the-max-number-of-unique-substrings](https://github.com/ha-rahman/DSA-Problems/tree/master/1715-split-a-string-into-the-max-number-of-unique-substrings) |
 | [1741-sort-array-by-increasing-frequency](https://github.com/ha-rahman/DSA-Problems/tree/master/1741-sort-array-by-increasing-frequency) |
 | [1786-count-the-number-of-consistent-strings](https://github.com/ha-rahman/DSA-Problems/tree/master/1786-count-the-number-of-consistent-strings) |
+| [2059-unique-length-3-palindromic-subsequences](https://github.com/ha-rahman/DSA-Problems/tree/master/2059-unique-length-3-palindromic-subsequences) |
 | [2163-kth-distinct-string-in-an-array](https://github.com/ha-rahman/DSA-Problems/tree/master/2163-kth-distinct-string-in-an-array) |
 | [2300-construct-string-with-repeat-limit](https://github.com/ha-rahman/DSA-Problems/tree/master/2300-construct-string-with-repeat-limit) |
 | [2306-create-binary-tree-from-descriptions](https://github.com/ha-rahman/DSA-Problems/tree/master/2306-create-binary-tree-from-descriptions) |
@@ -521,6 +522,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [1786-count-the-number-of-consistent-strings](https://github.com/ha-rahman/DSA-Problems/tree/master/1786-count-the-number-of-consistent-strings) |
 | [1818-maximum-score-from-removing-substrings](https://github.com/ha-rahman/DSA-Problems/tree/master/1818-maximum-score-from-removing-substrings) |
 | [1923-sentence-similarity-iii](https://github.com/ha-rahman/DSA-Problems/tree/master/1923-sentence-similarity-iii) |
+| [2059-unique-length-3-palindromic-subsequences](https://github.com/ha-rahman/DSA-Problems/tree/master/2059-unique-length-3-palindromic-subsequences) |
 | [2076-sum-of-digits-of-string-after-convert](https://github.com/ha-rahman/DSA-Problems/tree/master/2076-sum-of-digits-of-string-after-convert) |
 | [2095-minimum-number-of-swaps-to-make-the-string-balanced](https://github.com/ha-rahman/DSA-Problems/tree/master/2095-minimum-number-of-swaps-to-make-the-string-balanced) |
 | [2163-kth-distinct-string-in-an-array](https://github.com/ha-rahman/DSA-Problems/tree/master/2163-kth-distinct-string-in-an-array) |
@@ -740,6 +742,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [1694-make-sum-divisible-by-p](https://github.com/ha-rahman/DSA-Problems/tree/master/1694-make-sum-divisible-by-p) |
 | [1940-maximum-xor-for-each-query](https://github.com/ha-rahman/DSA-Problems/tree/master/1940-maximum-xor-for-each-query) |
 | [2006-find-the-student-that-will-replace-the-chalk](https://github.com/ha-rahman/DSA-Problems/tree/master/2006-find-the-student-that-will-replace-the-chalk) |
+| [2059-unique-length-3-palindromic-subsequences](https://github.com/ha-rahman/DSA-Problems/tree/master/2059-unique-length-3-palindromic-subsequences) |
 | [2358-number-of-ways-to-split-array](https://github.com/ha-rahman/DSA-Problems/tree/master/2358-number-of-ways-to-split-array) |
 | [2691-count-vowel-strings-in-ranges](https://github.com/ha-rahman/DSA-Problems/tree/master/2691-count-vowel-strings-in-ranges) |
 | [3427-special-array-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/3427-special-array-ii) |
@@ -755,6 +758,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [1473-find-the-longest-substring-containing-vowels-in-even-counts](https://github.com/ha-rahman/DSA-Problems/tree/master/1473-find-the-longest-substring-containing-vowels-in-even-counts) |
 | [1786-count-the-number-of-consistent-strings](https://github.com/ha-rahman/DSA-Problems/tree/master/1786-count-the-number-of-consistent-strings) |
 | [1940-maximum-xor-for-each-query](https://github.com/ha-rahman/DSA-Problems/tree/master/1940-maximum-xor-for-each-query) |
+| [2059-unique-length-3-palindromic-subsequences](https://github.com/ha-rahman/DSA-Problems/tree/master/2059-unique-length-3-palindromic-subsequences) |
 | [2170-count-number-of-maximum-bitwise-or-subsets](https://github.com/ha-rahman/DSA-Problems/tree/master/2170-count-number-of-maximum-bitwise-or-subsets) |
 | [2323-minimum-bit-flips-to-convert-number](https://github.com/ha-rahman/DSA-Problems/tree/master/2323-minimum-bit-flips-to-convert-number) |
 | [2356-largest-combination-with-bitwise-and-greater-than-zero](https://github.com/ha-rahman/DSA-Problems/tree/master/2356-largest-combination-with-bitwise-and-greater-than-zero) |
