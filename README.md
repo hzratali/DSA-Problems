@@ -510,6 +510,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [2155-find-missing-observations](https://github.com/ha-rahman/DSA-Problems/tree/master/2155-find-missing-observations) |
 | [2716-prime-subtraction-operation](https://github.com/ha-rahman/DSA-Problems/tree/master/2716-prime-subtraction-operation) |
 | [2903-insert-greatest-common-divisors-in-linked-list](https://github.com/ha-rahman/DSA-Problems/tree/master/2903-insert-greatest-common-divisors-in-linked-list) |
+| [3201-distribute-candies-among-children-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/3201-distribute-candies-among-children-ii) |
 | [3555-final-array-state-after-k-multiplication-operations-i](https://github.com/ha-rahman/DSA-Problems/tree/master/3555-final-array-state-after-k-multiplication-operations-i) |
 ## String
 |  |
@@ -861,6 +862,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 |  |
 | ------- |
 | [2170-count-number-of-maximum-bitwise-or-subsets](https://github.com/ha-rahman/DSA-Problems/tree/master/2170-count-number-of-maximum-bitwise-or-subsets) |
+| [3201-distribute-candies-among-children-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/3201-distribute-candies-among-children-ii) |
 ## Monotonic Stack
 |  |
 | ------- |
@@ -875,4 +877,8 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 |  |
 | ------- |
 | [2201-valid-arrangement-of-pairs](https://github.com/ha-rahman/DSA-Problems/tree/master/2201-valid-arrangement-of-pairs) |
+## Combinatorics
+|  |
+| ------- |
+| [3201-distribute-candies-among-children-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/3201-distribute-candies-among-children-ii) |
 <!---LeetCode Topics End-->
