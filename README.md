@@ -441,6 +441,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [2699-count-the-number-of-fair-pairs](https://github.com/ha-rahman/DSA-Problems/tree/master/2699-count-the-number-of-fair-pairs) |
 | [3018-make-string-a-subsequence-using-cyclic-increments](https://github.com/ha-rahman/DSA-Problems/tree/master/3018-make-string-a-subsequence-using-cyclic-increments) |
 | [3195-separate-black-and-white-balls](https://github.com/ha-rahman/DSA-Problems/tree/master/3195-separate-black-and-white-balls) |
+| [3683-find-the-lexicographically-largest-string-from-the-box-i](https://github.com/ha-rahman/DSA-Problems/tree/master/3683-find-the-lexicographically-largest-string-from-the-box-i) |
 ## Binary Search
 |  |
 | ------- |
@@ -576,6 +577,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [3309-count-prefix-and-suffix-pairs-i](https://github.com/ha-rahman/DSA-Problems/tree/master/3309-count-prefix-and-suffix-pairs-i) |
 | [3329-find-the-length-of-the-longest-common-prefix](https://github.com/ha-rahman/DSA-Problems/tree/master/3329-find-the-length-of-the-longest-common-prefix) |
 | [3451-string-compression-iii](https://github.com/ha-rahman/DSA-Problems/tree/master/3451-string-compression-iii) |
+| [3683-find-the-lexicographically-largest-string-from-the-box-i](https://github.com/ha-rahman/DSA-Problems/tree/master/3683-find-the-lexicographically-largest-string-from-the-box-i) |
 ## Stack
 |  |
 | ------- |
@@ -868,6 +870,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | ------- |
 | [2170-count-number-of-maximum-bitwise-or-subsets](https://github.com/ha-rahman/DSA-Problems/tree/master/2170-count-number-of-maximum-bitwise-or-subsets) |
 | [3201-distribute-candies-among-children-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/3201-distribute-candies-among-children-ii) |
+| [3683-find-the-lexicographically-largest-string-from-the-box-i](https://github.com/ha-rahman/DSA-Problems/tree/master/3683-find-the-lexicographically-largest-string-from-the-box-i) |
 ## Monotonic Stack
 |  |
 | ------- |
