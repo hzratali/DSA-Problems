@@ -142,6 +142,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [2716-prime-subtraction-operation](https://github.com/ha-rahman/DSA-Problems/tree/master/2716-prime-subtraction-operation) |
 | [3195-separate-black-and-white-balls](https://github.com/ha-rahman/DSA-Problems/tree/master/3195-separate-black-and-white-balls) |
 | [3276-minimum-number-of-pushes-to-type-word-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/3276-minimum-number-of-pushes-to-type-word-ii) |
+| [3445-lexicographically-minimum-string-after-removing-stars](https://github.com/ha-rahman/DSA-Problems/tree/master/3445-lexicographically-minimum-string-after-removing-stars) |
 ## Graph
 |  |
 | ------- |
@@ -211,6 +212,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [2711-minimum-time-to-visit-a-cell-in-a-grid](https://github.com/ha-rahman/DSA-Problems/tree/master/2711-minimum-time-to-visit-a-cell-in-a-grid) |
 | [2803-modify-graph-edge-weights](https://github.com/ha-rahman/DSA-Problems/tree/master/2803-modify-graph-edge-weights) |
 | [3181-find-building-where-alice-and-bob-can-meet](https://github.com/ha-rahman/DSA-Problems/tree/master/3181-find-building-where-alice-and-bob-can-meet) |
+| [3445-lexicographically-minimum-string-after-removing-stars](https://github.com/ha-rahman/DSA-Problems/tree/master/3445-lexicographically-minimum-string-after-removing-stars) |
 | [3555-final-array-state-after-k-multiplication-operations-i](https://github.com/ha-rahman/DSA-Problems/tree/master/3555-final-array-state-after-k-multiplication-operations-i) |
 ## Depth-First Search
 |  |
@@ -424,6 +426,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [2755-extra-characters-in-a-string](https://github.com/ha-rahman/DSA-Problems/tree/master/2755-extra-characters-in-a-string) |
 | [3276-minimum-number-of-pushes-to-type-word-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/3276-minimum-number-of-pushes-to-type-word-ii) |
 | [3329-find-the-length-of-the-longest-common-prefix](https://github.com/ha-rahman/DSA-Problems/tree/master/3329-find-the-length-of-the-longest-common-prefix) |
+| [3445-lexicographically-minimum-string-after-removing-stars](https://github.com/ha-rahman/DSA-Problems/tree/master/3445-lexicographically-minimum-string-after-removing-stars) |
 | [3501-delete-nodes-from-linked-list-present-in-array](https://github.com/ha-rahman/DSA-Problems/tree/master/3501-delete-nodes-from-linked-list-present-in-array) |
 ## Two Pointers
 |  |
@@ -581,6 +584,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [3276-minimum-number-of-pushes-to-type-word-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/3276-minimum-number-of-pushes-to-type-word-ii) |
 | [3309-count-prefix-and-suffix-pairs-i](https://github.com/ha-rahman/DSA-Problems/tree/master/3309-count-prefix-and-suffix-pairs-i) |
 | [3329-find-the-length-of-the-longest-common-prefix](https://github.com/ha-rahman/DSA-Problems/tree/master/3329-find-the-length-of-the-longest-common-prefix) |
+| [3445-lexicographically-minimum-string-after-removing-stars](https://github.com/ha-rahman/DSA-Problems/tree/master/3445-lexicographically-minimum-string-after-removing-stars) |
 | [3451-string-compression-iii](https://github.com/ha-rahman/DSA-Problems/tree/master/3451-string-compression-iii) |
 | [3683-find-the-lexicographically-largest-string-from-the-box-i](https://github.com/ha-rahman/DSA-Problems/tree/master/3683-find-the-lexicographically-largest-string-from-the-box-i) |
 ## Stack
@@ -603,6 +607,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [2800-minimum-string-length-after-removing-substrings](https://github.com/ha-rahman/DSA-Problems/tree/master/2800-minimum-string-length-after-removing-substrings) |
 | [2846-robot-collisions](https://github.com/ha-rahman/DSA-Problems/tree/master/2846-robot-collisions) |
 | [3181-find-building-where-alice-and-bob-can-meet](https://github.com/ha-rahman/DSA-Problems/tree/master/3181-find-building-where-alice-and-bob-can-meet) |
+| [3445-lexicographically-minimum-string-after-removing-stars](https://github.com/ha-rahman/DSA-Problems/tree/master/3445-lexicographically-minimum-string-after-removing-stars) |
 ## Tree
 |  |
 | ------- |
