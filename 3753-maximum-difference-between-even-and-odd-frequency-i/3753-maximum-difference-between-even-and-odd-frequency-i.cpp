@@ -1,13 +1,14 @@
 class Solution {
 public:
     int maxDifference(string s) {
-        unordered_map<char, int> mp;
-        for(char ch : s) mp[ch]++;
-        int maxOdd = 1, minEven = s.size();
-        for(auto& [_, value] : mp){
-            if(value % 2 == 1) maxOdd = max(maxOdd, value);
-            else minEven = min(minEven, value);
+        vector<int> freq(26, 0);
+        for(char c : s) freq[c-'a']++;
+        int oddCnt = 1, evenCnt = s.size();
+        for(int x : freq){
+            if(x == 0) continue;
+            if(x % 2 == 1) oddCnt = max(oddCnt, x);
+            else evenCnt = min(evenCnt, x);
         }
-        return maxOdd - minEven;
+        return oddCnt-evenCnt;
     }
 };
