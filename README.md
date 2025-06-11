@@ -589,6 +589,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [3451-string-compression-iii](https://github.com/ha-rahman/DSA-Problems/tree/master/3451-string-compression-iii) |
 | [3683-find-the-lexicographically-largest-string-from-the-box-i](https://github.com/ha-rahman/DSA-Problems/tree/master/3683-find-the-lexicographically-largest-string-from-the-box-i) |
 | [3753-maximum-difference-between-even-and-odd-frequency-i](https://github.com/ha-rahman/DSA-Problems/tree/master/3753-maximum-difference-between-even-and-odd-frequency-i) |
+| [3761-maximum-difference-between-even-and-odd-frequency-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/3761-maximum-difference-between-even-and-odd-frequency-ii) |
 ## Stack
 |  |
 | ------- |
@@ -747,6 +748,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [2891-maximum-beauty-of-an-array-after-applying-operation](https://github.com/ha-rahman/DSA-Problems/tree/master/2891-maximum-beauty-of-an-array-after-applying-operation) |
 | [3380-shortest-subarray-with-or-at-least-k-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/3380-shortest-subarray-with-or-at-least-k-ii) |
 | [3522-find-the-power-of-k-size-subarrays-i](https://github.com/ha-rahman/DSA-Problems/tree/master/3522-find-the-power-of-k-size-subarrays-i) |
+| [3761-maximum-difference-between-even-and-odd-frequency-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/3761-maximum-difference-between-even-and-odd-frequency-ii) |
 ## Recursion
 |  |
 | ------- |
@@ -799,6 +801,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [2465-shifting-letters-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/2465-shifting-letters-ii) |
 | [2691-count-vowel-strings-in-ranges](https://github.com/ha-rahman/DSA-Problems/tree/master/2691-count-vowel-strings-in-ranges) |
 | [3427-special-array-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/3427-special-array-ii) |
+| [3761-maximum-difference-between-even-and-odd-frequency-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/3761-maximum-difference-between-even-and-odd-frequency-ii) |
 ## Game Theory
 |  |
 | ------- |
@@ -885,6 +888,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [2170-count-number-of-maximum-bitwise-or-subsets](https://github.com/ha-rahman/DSA-Problems/tree/master/2170-count-number-of-maximum-bitwise-or-subsets) |
 | [3201-distribute-candies-among-children-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/3201-distribute-candies-among-children-ii) |
 | [3683-find-the-lexicographically-largest-string-from-the-box-i](https://github.com/ha-rahman/DSA-Problems/tree/master/3683-find-the-lexicographically-largest-string-from-the-box-i) |
+| [3761-maximum-difference-between-even-and-odd-frequency-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/3761-maximum-difference-between-even-and-odd-frequency-ii) |
 ## Monotonic Stack
 |  |
 | ------- |
