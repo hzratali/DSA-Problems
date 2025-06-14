@@ -139,6 +139,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [2520-using-a-robot-to-print-the-lexicographically-smallest-string](https://github.com/ha-rahman/DSA-Problems/tree/master/2520-using-a-robot-to-print-the-lexicographically-smallest-string) |
 | [2616-maximal-score-after-applying-k-operations](https://github.com/ha-rahman/DSA-Problems/tree/master/2616-maximal-score-after-applying-k-operations) |
 | [2640-maximum-number-of-integers-to-choose-from-a-range-i](https://github.com/ha-rahman/DSA-Problems/tree/master/2640-maximum-number-of-integers-to-choose-from-a-range-i) |
+| [2704-maximum-difference-by-remapping-a-digit](https://github.com/ha-rahman/DSA-Problems/tree/master/2704-maximum-difference-by-remapping-a-digit) |
 | [2716-prime-subtraction-operation](https://github.com/ha-rahman/DSA-Problems/tree/master/2716-prime-subtraction-operation) |
 | [2720-minimize-the-maximum-difference-of-pairs](https://github.com/ha-rahman/DSA-Problems/tree/master/2720-minimize-the-maximum-difference-of-pairs) |
 | [3195-separate-black-and-white-balls](https://github.com/ha-rahman/DSA-Problems/tree/master/3195-separate-black-and-white-balls) |
@@ -525,6 +526,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [1240-stone-game-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/1240-stone-game-ii) |
 | [1642-water-bottles](https://github.com/ha-rahman/DSA-Problems/tree/master/1642-water-bottles) |
 | [2155-find-missing-observations](https://github.com/ha-rahman/DSA-Problems/tree/master/2155-find-missing-observations) |
+| [2704-maximum-difference-by-remapping-a-digit](https://github.com/ha-rahman/DSA-Problems/tree/master/2704-maximum-difference-by-remapping-a-digit) |
 | [2716-prime-subtraction-operation](https://github.com/ha-rahman/DSA-Problems/tree/master/2716-prime-subtraction-operation) |
 | [2903-insert-greatest-common-divisors-in-linked-list](https://github.com/ha-rahman/DSA-Problems/tree/master/2903-insert-greatest-common-divisors-in-linked-list) |
 | [3201-distribute-candies-among-children-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/3201-distribute-candies-among-children-ii) |
