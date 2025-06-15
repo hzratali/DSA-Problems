@@ -130,6 +130,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [0890-lemonade-change](https://github.com/ha-rahman/DSA-Problems/tree/master/0890-lemonade-change) |
 | [0957-minimum-add-to-make-parentheses-valid](https://github.com/ha-rahman/DSA-Problems/tree/master/0957-minimum-add-to-make-parentheses-valid) |
 | [1502-construct-k-palindrome-strings](https://github.com/ha-rahman/DSA-Problems/tree/master/1502-construct-k-palindrome-strings) |
+| [1529-max-difference-you-can-get-from-changing-an-integer](https://github.com/ha-rahman/DSA-Problems/tree/master/1529-max-difference-you-can-get-from-changing-an-integer) |
 | [1766-minimum-number-of-removals-to-make-mountain-array](https://github.com/ha-rahman/DSA-Problems/tree/master/1766-minimum-number-of-removals-to-make-mountain-array) |
 | [1818-maximum-score-from-removing-substrings](https://github.com/ha-rahman/DSA-Problems/tree/master/1818-maximum-score-from-removing-substrings) |
 | [2089-maximum-matrix-sum](https://github.com/ha-rahman/DSA-Problems/tree/master/2089-maximum-matrix-sum) |
@@ -524,6 +525,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [0670-maximum-swap](https://github.com/ha-rahman/DSA-Problems/tree/master/0670-maximum-swap) |
 | [0870-magic-squares-in-grid](https://github.com/ha-rahman/DSA-Problems/tree/master/0870-magic-squares-in-grid) |
 | [1240-stone-game-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/1240-stone-game-ii) |
+| [1529-max-difference-you-can-get-from-changing-an-integer](https://github.com/ha-rahman/DSA-Problems/tree/master/1529-max-difference-you-can-get-from-changing-an-integer) |
 | [1642-water-bottles](https://github.com/ha-rahman/DSA-Problems/tree/master/1642-water-bottles) |
 | [2155-find-missing-observations](https://github.com/ha-rahman/DSA-Problems/tree/master/2155-find-missing-observations) |
 | [2704-maximum-difference-by-remapping-a-digit](https://github.com/ha-rahman/DSA-Problems/tree/master/2704-maximum-difference-by-remapping-a-digit) |
