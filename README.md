@@ -534,6 +534,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [2903-insert-greatest-common-divisors-in-linked-list](https://github.com/ha-rahman/DSA-Problems/tree/master/2903-insert-greatest-common-divisors-in-linked-list) |
 | [3201-distribute-candies-among-children-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/3201-distribute-candies-among-children-ii) |
 | [3555-final-array-state-after-k-multiplication-operations-i](https://github.com/ha-rahman/DSA-Problems/tree/master/3555-final-array-state-after-k-multiplication-operations-i) |
+| [3682-count-the-number-of-arrays-with-k-matching-adjacent-elements](https://github.com/ha-rahman/DSA-Problems/tree/master/3682-count-the-number-of-arrays-with-k-matching-adjacent-elements) |
 ## String
 |  |
 | ------- |
@@ -916,4 +917,5 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 |  |
 | ------- |
 | [3201-distribute-candies-among-children-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/3201-distribute-candies-among-children-ii) |
+| [3682-count-the-number-of-arrays-with-k-matching-adjacent-elements](https://github.com/ha-rahman/DSA-Problems/tree/master/3682-count-the-number-of-arrays-with-k-matching-adjacent-elements) |
 <!---LeetCode Topics End-->
