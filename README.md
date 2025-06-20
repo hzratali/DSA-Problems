@@ -438,6 +438,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [3445-lexicographically-minimum-string-after-removing-stars](https://github.com/ha-rahman/DSA-Problems/tree/master/3445-lexicographically-minimum-string-after-removing-stars) |
 | [3501-delete-nodes-from-linked-list-present-in-array](https://github.com/ha-rahman/DSA-Problems/tree/master/3501-delete-nodes-from-linked-list-present-in-array) |
 | [3753-maximum-difference-between-even-and-odd-frequency-i](https://github.com/ha-rahman/DSA-Problems/tree/master/3753-maximum-difference-between-even-and-odd-frequency-i) |
+| [3754-maximum-manhattan-distance-after-k-changes](https://github.com/ha-rahman/DSA-Problems/tree/master/3754-maximum-manhattan-distance-after-k-changes) |
 ## Two Pointers
 |  |
 | ------- |
@@ -538,6 +539,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [3201-distribute-candies-among-children-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/3201-distribute-candies-among-children-ii) |
 | [3555-final-array-state-after-k-multiplication-operations-i](https://github.com/ha-rahman/DSA-Problems/tree/master/3555-final-array-state-after-k-multiplication-operations-i) |
 | [3682-count-the-number-of-arrays-with-k-matching-adjacent-elements](https://github.com/ha-rahman/DSA-Problems/tree/master/3682-count-the-number-of-arrays-with-k-matching-adjacent-elements) |
+| [3754-maximum-manhattan-distance-after-k-changes](https://github.com/ha-rahman/DSA-Problems/tree/master/3754-maximum-manhattan-distance-after-k-changes) |
 ## String
 |  |
 | ------- |
@@ -602,6 +604,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [3451-string-compression-iii](https://github.com/ha-rahman/DSA-Problems/tree/master/3451-string-compression-iii) |
 | [3683-find-the-lexicographically-largest-string-from-the-box-i](https://github.com/ha-rahman/DSA-Problems/tree/master/3683-find-the-lexicographically-largest-string-from-the-box-i) |
 | [3753-maximum-difference-between-even-and-odd-frequency-i](https://github.com/ha-rahman/DSA-Problems/tree/master/3753-maximum-difference-between-even-and-odd-frequency-i) |
+| [3754-maximum-manhattan-distance-after-k-changes](https://github.com/ha-rahman/DSA-Problems/tree/master/3754-maximum-manhattan-distance-after-k-changes) |
 | [3761-maximum-difference-between-even-and-odd-frequency-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/3761-maximum-difference-between-even-and-odd-frequency-ii) |
 ## Stack
 |  |
@@ -708,6 +711,7 @@ This is the repo where I upload DSA questions with code. Mostly Leetcode and GFG
 | [2494-sum-of-prefix-scores-of-strings](https://github.com/ha-rahman/DSA-Problems/tree/master/2494-sum-of-prefix-scores-of-strings) |
 | [3276-minimum-number-of-pushes-to-type-word-ii](https://github.com/ha-rahman/DSA-Problems/tree/master/3276-minimum-number-of-pushes-to-type-word-ii) |
 | [3753-maximum-difference-between-even-and-odd-frequency-i](https://github.com/ha-rahman/DSA-Problems/tree/master/3753-maximum-difference-between-even-and-odd-frequency-i) |
+| [3754-maximum-manhattan-distance-after-k-changes](https://github.com/ha-rahman/DSA-Problems/tree/master/3754-maximum-manhattan-distance-after-k-changes) |
 ## Dynamic Programming
 |  |
 | ------- |
